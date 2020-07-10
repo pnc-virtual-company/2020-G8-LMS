@@ -11,7 +11,6 @@
 						<i class="material-icons float-left" data-toggle="tooltip" title="Add Pizza!" data-placement="left">add</i>&nbsp;Create
 					</a>
 				</div>
-                <!-- <hr> -->
                 <h3 class="ml-2 mt-5">Employee</h3>
                 <br>
 				<table class="table table-borderless table-hover">
