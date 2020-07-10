@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
 $routes->add('your_leave', 'Your_leave::yourLeave');
+$routes->add('leave', 'Leave::showSummitedleaves');
 
 
 $routes->add('employees','Employee::index');
