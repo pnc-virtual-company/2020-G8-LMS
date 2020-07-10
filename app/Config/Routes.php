@@ -33,6 +33,9 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Home::index');
 $routes->add('your_leave', 'Your_leave::yourLeave');
 
+
+$routes->add('employees','Employee::index');
+
 $routes->add('/', 'Login::index');
 
 //$routes->get('/', 'Home::index');
