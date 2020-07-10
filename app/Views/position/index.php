@@ -74,7 +74,7 @@
 </div>
 <!-- ////////////////////////////////////////////////// -->
 <!-- ========================================START Model CREATE================================================ -->
-	<!-- The Modal -->
+	<!-- The Modal --->
 	<div class="modal fade" id="createPizza">
     <div class="modal-dialog">
       <div class="modal-content">

@@ -17,7 +17,7 @@ class Position extends BaseController
     // edit position
 	public function editPosition()
 	{
-     //code
+     //codes
 	}
 	// delete position
 	public function deletePosition()
