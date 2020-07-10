@@ -34,7 +34,20 @@ $routes->setAutoRoute(true);
 
 $routes->add('employees','Employee::index');
 
+$routes->add('/', 'Login::index');
 
+//$routes->get('/', 'Home::index');
+$routes->group('position', function($routes)
+{
+  $routes->add('/', 'Position::index');
+
+
+});
+
+$routes->group('department', function($routes)
+{
+  $routes->add('/', 'Departments::index');
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing

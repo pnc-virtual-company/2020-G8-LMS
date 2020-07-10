@@ -145,7 +145,7 @@
             <div class="form-group">
                    <input type="text" class="form-control" placeholder="First name">
                 </div>
-                
+                 
 				<div class="form-group">
                    <input type="text" class="form-control" placeholder="Last name">
                 </div>
