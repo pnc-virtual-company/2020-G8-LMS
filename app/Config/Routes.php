@@ -30,8 +30,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-
+//$routes->get('/', 'Home::index');
+$routes->group('position', function($routes)
+{
+  $routes->add('/', 'Position::index');
+  $routes->add('edit', 'Position::FormeditPosition');
+  $routes->add('create', 'Position::FormaddPosition');
+  
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
