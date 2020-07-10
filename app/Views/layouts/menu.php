@@ -1,8 +1,6 @@
 
 <nav class="navbar navbar-expand-md bg-img navbar-dark">
 
-
-<!-- link menu -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="nav navbar-nav ml-auto">
          <a class="nav-link mt-2" href="#">Your leaves</a>
