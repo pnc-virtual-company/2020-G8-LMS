@@ -1,8 +1,5 @@
 
 <nav class="navbar navbar-expand-md bg-img navbar-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
 <!-- link menu -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
