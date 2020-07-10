@@ -32,6 +32,21 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
 $routes->add('your_leave', 'Your_leave::yourLeave');
+
+$routes->add('/', 'Login::index');
+
+//$routes->get('/', 'Home::index');
+$routes->group('position', function($routes)
+{
+  $routes->add('/', 'Position::index');
+
+
+});
+
+$routes->group('department', function($routes)
+{
+  $routes->add('/', 'Departments::index');
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
