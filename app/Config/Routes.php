@@ -34,9 +34,13 @@ $routes->setAutoRoute(true);
 $routes->group('position', function($routes)
 {
   $routes->add('/', 'Position::index');
-  $routes->add('edit', 'Position::FormeditPosition');
-  $routes->add('create', 'Position::FormaddPosition');
-  
+
+
+});
+
+$routes->group('department', function($routes)
+{
+  $routes->add('/', 'Department::index');
 });
 /**
  * --------------------------------------------------------------------

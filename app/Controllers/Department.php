@@ -1,11 +1,11 @@
 <?php namespace App\Controllers;
 use App\Models\PizzaModel;
-class Position extends BaseController
+class Department extends BaseController
 {
 	// show list pizza
 	public function index()
 	{
-		return view('position/index');
+		return view('department/index');
 	}
 
 	// add new position
