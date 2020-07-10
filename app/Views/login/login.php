@@ -10,10 +10,10 @@
 				<form class="form text-center" action="#" method="POST">
 					<div id="dynamic_container">
 						<div class="input-group">
-							<input type="email" placeholder="Enter Mail" class="form-control" id="email" />
+							<input type="email" placeholder="Enter Mail" class="form-control.." id="email" />
 						</div>
 						<div class="input-group mt-3">
-							<input type="password" placeholder="Enter Password" class="form-control" id="password" />
+							<input type="password" placeholder="Enter Password.." class="form-control" id="password" />
 						</div>
 					</div>
                     <button type="submit" class="btn btn-outline-success float-right mt-4">Login</button>
