@@ -4,7 +4,7 @@ class Your_leave extends BaseController
 {
 	public function yourLeave()
 	{
-		return view('your_leave/your_leave');
+		return view('your_leaves/your_leave');
 	}
 
 	//--------------------------------------------------------------------
