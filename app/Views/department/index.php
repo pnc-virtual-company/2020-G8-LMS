@@ -91,7 +91,7 @@
 			<form  action="/" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="department" class="form-control" placeholder="Department Name">
+					<input type="text" name="departments" class="form-control" placeholder="Department Name">
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;

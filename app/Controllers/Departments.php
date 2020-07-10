@@ -1,6 +1,6 @@
 <?php namespace App\Controllers;
 use App\Models\PizzaModel;
-class Department extends BaseController
+class Departments extends BaseController
 {
 	// show list pizza
 	public function index()
@@ -12,12 +12,12 @@ class Department extends BaseController
 	public function addPosition()
 	{	
 	
-       //
+       //code
 	}
     // edit position
 	public function editPosition()
 	{
-     //
+     //code
 	}
 	// delete position
 	public function deletePosition()

@@ -12,12 +12,12 @@ class Position extends BaseController
 	public function addPosition()
 	{	
 	
-       //
+       //code
 	}
     // edit position
 	public function editPosition()
 	{
-     //
+     //code
 	}
 	// delete position
 	public function deletePosition()
