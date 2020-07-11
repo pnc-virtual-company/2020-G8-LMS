@@ -20,7 +20,7 @@
 						<i class="material-icons float-left" data-toggle="tooltip" title="Add Pizza!" data-placement="left">add</i>&nbsp;Add
 					</a>
 				</div>
-				<hr>
+				
 				<table class="table table-borderless table-hover">
 					<tr>
 						<th>Position</th>
