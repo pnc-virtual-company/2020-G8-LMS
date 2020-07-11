@@ -2,7 +2,6 @@
 use App\Models\PizzaModel;
 class Position extends BaseController
 {
-	// show list pizza
 	public function index()
 	{
 		return view('position/index');
