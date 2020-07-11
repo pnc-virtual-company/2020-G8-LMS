@@ -31,26 +31,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
+$routes->add('/', 'Login::index');
 $routes->add('your_leave', 'Your_leave::yourLeave');
 $routes->add('leave', 'Leave::showSummitedleaves');
-
-
 $routes->add('employees','Employee::index');
+$routes->add('position', 'Position::index');
+$routes->add('department', 'Departments::index');
 
-$routes->add('/', 'Login::index');
-
-//$routes->get('/', 'Home::index');
-$routes->group('position', function($routes)
-{
-  $routes->add('/', 'Position::index');
-
-
-});
-
-$routes->group('department', function($routes)
-{
-  $routes->add('/', 'Departments::index');
-});
 /**
  * --------------------------------------------------------------------
  * Additional Routing

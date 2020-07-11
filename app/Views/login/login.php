@@ -7,7 +7,7 @@
                 <h4 class="text-center text-success">Login Account</h4>
 			</div>
 			<div class="card-body">
-				<form class="form text-center" action="#" method="POST">
+				<form class="form text-center" action="/your_leave" method="POST">
 					<div id="dynamic_container">
 						<div class="input-group">
 							<input type="email" placeholder="Enter Mail" class="form-control.." id="email" />
