@@ -13,13 +13,51 @@
          <a class="nav-link mt-2" href="/department">Departments</a>
          <a class="nav-link menu" href="#">
             <li class="dropdown">
-         <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
+            <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Log out</a>
-              </div>
+                <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
+                <a class="dropdown-item" href="/">Log out</a>
+            </div>
           </li>
          </a>
     </ul>
   </div>
 </nav>
+
+<div class="bs-example">
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h2>My information</h2>
+                </div>
+                <div class="modal-body">
+                <div class="row">
+              <div class="col-6">
+                <strong><p>Frist name</p></strong>
+                <strong><p>Last name</p></strong>
+                <strong><p>Departament</p></strong>
+                <strong><p>Position</p></strong>
+                <strong><p>Start date</p></strong>
+              </div>
+              <div class="col-5 ">
+                    <p>Rady</p>
+                    <p>Y</p>
+                    <p>Training and education</p>
+                    <p>WEP Coordinator</p>
+                    <p>25/5/2025</p>
+              </div>
+              
+          </div>
+          <div id="popup1" class="overlay">
+            <div class="popup" >
+              <a class="close text-warning" href="#popup1" data-dismiss = "modal">Close</a>
+            </div>
+           </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+</body>
