@@ -21,7 +21,7 @@
 		</a>
     </div>
     <!-- Text on Employee -->
-     <h4 class="font-weight-bold ml-2">List  Employee</h4><br>
+     <h4 class="font-weight-bold ml-2">Employees</h4><br>
      <!-- table Employee -->
 		<table class="table table-borderless table-hover">
 
