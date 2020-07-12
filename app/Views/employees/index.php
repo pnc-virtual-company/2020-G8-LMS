@@ -209,10 +209,21 @@
                         <input type="file" class="form-control" placeholder="Enter profile"  name="profile">
                     </div>
 
+                    <!-- role -->
+                    <div class="form-group">
+                        <select class="form-control" placeholder="Role">
+                            <option selected>Role</option>
+                            <option>Admin</option>
+                            <option>Manager</option>
+                            <option>Employee</option>
+                            <option>HR</option>
+                        </select>
+                    </div>
+
+                    <!-- Button update and Discard -->
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <input type="submit" value="UPDATE" class="btn text-info">
-                 
                 </form>
             </div>
         </div>
