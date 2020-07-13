@@ -16,7 +16,7 @@
     <div class="col"></div>
     <!-- button create Employee -->
     <div class="text-right">
-        <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:50px;">
+         <a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:105px;">
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
 		</a>
     </div>
@@ -136,13 +136,15 @@
 
                     <!-- input first startdate -->
                     <div class="form-group">
+                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
                         <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
                         name="startdate"  class="form-control" placeholder="start date" required>
                     </div>
                 
                     <!-- profile -->
                     <div class="form-group">
-                        <input type="file" class="form-control" placeholder="Enter profile"  name="profile">
+                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                       <input type="file" class="form-control-file border">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
@@ -198,17 +200,6 @@
                         </select>
                     </div>
                     
-                    <!-- input first startdate -->
-                    <div class="form-group">
-                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
-                        name="startdate"  class="form-control" placeholder="start date" required>
-                    </div>
-                    
-                    <!-- profile -->
-                    <div class="form-group">
-                        <input type="file" class="form-control" placeholder="Enter profile"  name="profile">
-                    </div>
-
                     <!-- role -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Role">
@@ -218,6 +209,19 @@
                             <option>Employee</option>
                             <option>HR</option>
                         </select>
+                    </div>
+                    
+                    <!-- input first startdate -->
+                    <div class="form-group">
+                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
+                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
+                        name="startdate"  class="form-control" placeholder="start date" required>
+                    </div>
+
+                    <!-- profile -->
+                    <div class="form-group">
+                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                       <input type="file" class="form-control-file border">
                     </div>
 
                     <!-- Button update and Discard -->

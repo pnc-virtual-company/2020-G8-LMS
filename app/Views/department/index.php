@@ -7,22 +7,22 @@
 			<div class="col-2"></div>
 			<div class="col-8">
 			<h5 class="text-center"></h5>
-            <div class="input-group mb-3">
-                <input type="text" id="search" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                    </div>
-                </div>
-				<div class="text-right">
-					<a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
-						<i class="material-icons float-left" data-toggle="tooltip" title="Add Departments!" data-placement="left">add</i>&nbsp;Create
-					</a>
-				</div>
-				
+            <div class="col-10">
+        <div class="input-group mb-3">
+            <input type="text" id="searchs" class="form-control" placeholder="Search">
+            <div class="input-group-append"></div>
+        </div><br>
+        </div>
 				<table class="table table-borderless table-hover">
 					<tr>
 						<th>Department</th>
+						<th><div class="">
+					        <a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createDepartment">
+						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Departments!" data-placement="left">add</i>&nbsp;Create
+					        </a>
+				</div></th>
 					</tr>
-					<!-- get data from tabe pizza -->
+                    <!-- add data to database -->
 					<tr>
 						<td>Training and education team</td>
 						<td>
@@ -50,9 +50,7 @@
 			<div class="col-2"></div>
 		</div>
 	</div>
-
-    <!-- ////////////////////////////////////////////////////////////// -->
-    <!-- The Modal Update Departments-->
+    <!-- The Modal Updates Departments-->
     <div class="modal fade" id="updateDepartment">
     <div class="modal-dialog">
         <div class="modal-content">         
@@ -75,10 +73,9 @@
         </div>
     </div>
 </div>
-<!-- ////////////////////////////////////////////////// -->
-<!-- ========================================START Model CREATE================================================ -->
+<!-- create Department -->
 	<!-- The Modal -->
-	<div class="modal fade" id="createDepartment">
+	<div class="modal fade" id="createDepartmen t">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -106,5 +103,5 @@
     </div>
   </div>
   <!-- =================================END MODEL CREATE==================================================== -->
-    <?= $this->endSection() ?>
+<?= $this->endSection() ?>
 						
