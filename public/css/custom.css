@@ -114,3 +114,28 @@ body {
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
 }
+
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+.raleway {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif
+}
+
+.icon-login {
+  color: rgb(81, 81, 247);
+  background: -webkit-linear-gradient(#bd2130, #d23535);
+  -webkit-background-clip: text;
+}
+
+body {
+    background: url(https://mywisdom.telkom.co.id/sources/images/telkom/20170530_144416.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
