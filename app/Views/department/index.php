@@ -50,7 +50,7 @@
 			<div class="col-2"></div>
 		</div>
 	</div>
-    <!-- The Modal Update Departments-->
+    <!-- The Modal Updates Departments-->
     <div class="modal fade" id="updateDepartment">
     <div class="modal-dialog">
         <div class="modal-content">         
