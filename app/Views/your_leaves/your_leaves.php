@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="container">
-<button type="button" class=" btn bg-warning text-white float-right btn-lg" data-toggle="modal" data-target="#exampleModal"
+<button type="button" class=" btn bg-warning text-white float-right btn-sm" data-toggle="modal" data-target="#exampleModal"
             data-whatever="">Request a Leave</button>
        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
             aria-hidden="true">
@@ -21,45 +21,39 @@
                       
                     
                             <div class="form-group row">
-                                <label class="col-3" for="startdate" >Start Date</label>
-                                <input class="col-4" type="date" data-date=""  data-date-format="DD-MM-YY" name="startdate"  class="form-control"
+                                <label class="col-sm-3" for="startdate" >Start Date</label>
+                                <input class="col-sm-4" type="date" data-date=""  data-date-format="DD-MM-YY" name="startdate"  class="form-control"
                                     placeholder="start date" required>
-                                <div class="col-5" class="input-group">
+                                <div class="col-sm-4" class="input-group">
                                 <select class="form-control-sm" id="startDate">
                                     <option class="0">Selecte Time</option>
                                     <option value="1">Morning</option>
                                     <option value="2">Afternoon</option>
                                 </select>
                                 </div>
-                                    
-                
                             </div>
                             <div class="form-group row">
-                                <label class="col-3" for="enddate">End Date</label>
+                                <label class="col-sm-3" for="enddate">End Date</label>
 
-                                <input class="col-4" type="date" data-date="" data-date-format="DD-MM-YY" name="enddate" class="form-control"
+                                <input class="col-sm-4" type="date" data-date="" data-date-format="DD-MM-YY" name="enddate" class="form-control"
 
                                     placeholder="end date" required>
-                                 <div class="col-5" class="input-group">
+                                 <div class="col-sm-4" class="input-group">
                                     <select class="form-control-sm" id="endDate">
                                         <option class="0">Selecte Time</option>
                                         <option value="1">Morning</option>
                                         <option value="2">Afternoon</option>
                                     </select>
                                 </div>
-                              
                             </div>
                             <div class="form-group row">
                                 <label class="col-3" for="date">Duration</label>
-                                <input class="col-4" type="text" name="duration" class="form-control"
+                                <input class="col-sm-4" type="text" name="duration" class="form-control"
                                     placeholder="Duration...." required>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-3" for="leaveType">Leave Types</label>
-                                <div class="col-5">
+
+                                <div class="col-sm-4">
                                 <select class="form-control-sm" id="leaveType">
-                                   
-                                    <option class="0">Select leave type...</option>
+                                    <option class="0">leave type...</option>
                                     <option value="1">Paid leave</option>
                                     <option value="2">Sick leave</option>
                                     <option value="3">Un paid leave</option>
@@ -70,14 +64,10 @@
                                 </select>
                                 </div>
                             </div>
-
-
-                         
-                            
-
+                        
                             <div class="form-group row">
-                                <label class="col-3" for="date">Comment</label>
-					            <textarea name="" class="col-5" id="" rows="2" cols="20"></textarea>
+                                <label class="col-sm-3" for="date">Comment</label>
+					            <textarea name="" class="col-sm-8" id="" rows="2" cols="20"></textarea>
 				
                             </div>
                     </div>
@@ -158,70 +148,69 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
-            <div class="form-group row">
-                                <label class="col-3" for="startdate" >Start Date</label>
-                                <input class="col-4" type="date" data-date=""  data-date-format="DD-MM-YY" name="startdate"  class="form-control" value="05/02/2019"
-                                    placeholder="start date" required>
-                                <div class="col-5" class="input-group">
-                                <select class="form-control-sm" id="startDate">
-                                    <option class="0">Selecte Time</option>
-                                    <option value="1">Morning</option>
-                                    <option value="2">Afternoon</option>
-                                </select>
-                                </div>
-                                    
-                
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-3" for="enddate">End Date</label>
-
-                                <input class="col-4" type="date" data-date="" data-date-format="DD-MM-YY" name="enddate" class="form-control" value="10/02/2019"
-
-                                    placeholder="end date" required>
-                                 <div class="col-5" class="input-group">
-                                    <select class="form-control-sm" id="endDate">
-                                        <option class="0">Selecte Time</option>
-                                        <option value="1">Morning</option>
-                                        <option value="2">Afternoon</option>
-                                    </select>
-                                </div>
+        <form action="" method="POST">
+                      
+                    
+                      <div class="form-group row">
+                          <label class="col-sm-3" for="startdate" >Start Date</label>
+                          <input class="col-sm-4" type="date" data-date=""  data-date-format="DD-MM-YY" name="startdate"  class="form-control"
+                              placeholder="start date" required>
+                          <div class="col-sm-4" class="input-group">
+                          <select class="form-control-sm" id="startDate">
+                              <option class="0">Selecte Time</option>
+                              <option value="1">Morning</option>
+                              <option value="2">Afternoon</option>
+                          </select>
+                          </div>
                               
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-3" for="date">Duration</label>
-                                <input class="col-4" type="text" name="duration" class="form-control" value="3day"
-                                    placeholder="Duration...." required>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-3" for="leaveType">Leave Types</label>
-                                <div class="col-5">
-                                <select class="form-control-sm" id="leaveType" value="Paid leave">
-                                   
-                                    <option class="0">Select leave type...</option>
-                                    <option value="1">Paid leave</option>
-                                    <option value="2">Sick leave</option>
-                                    <option value="3">Un paid leave</option>
-                                    <option value="4">Wedding leave</option>
-                                    <option value="5">Maternity leave</option>
-                                    
-                                   
-                                </select>
-                                </div>
-                            </div>
+          
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-3" for="enddate">End Date</label>
 
-                            <div class="form-group row">
-                                <label class="col-3" for="date" value="Update your leave request">Comment</label>
-					            <textarea name="" class="col-5" id="" rows="2" cols="20"></textarea>
-				
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                       <button type="submit" class="btn bg" data-dismiss="modal">DISCARD</button>
-                       <button type="button" class="btn btn text-warning" data-dismiss="modal">UPDATE</button>
+                          <input class="col-sm-4" type="date" data-date="" data-date-format="DD-MM-YY" name="enddate" class="form-control"
 
-                    </div>
-        </form>
+                              placeholder="end date" required>
+                           <div class="col-sm-4" class="input-group">
+                              <select class="form-control-sm" id="endDate">
+                                  <option class="0">Selecte Time</option>
+                                  <option value="1">Morning</option>
+                                  <option value="2">Afternoon</option>
+                              </select>
+                          </div>
+                        
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-3" for="date">Duration</label>
+                          <input class="col-sm-4" type="text" name="duration" class="form-control"
+                              placeholder="Duration...." required>
+
+                          <div class="col-sm-4">
+                          <select class="form-control-sm" id="leaveType">
+                              <option class="0">leave type...</option>
+                              <option value="1">Paid leave</option>
+                              <option value="2">Sick leave</option>
+                              <option value="3">Un paid leave</option>
+                              <option value="4">Wedding leave</option>
+                              <option value="5">Maternity leave</option>
+                              
+                             
+                          </select>
+                          </div>
+                      </div>
+                  
+                      <div class="form-group row">
+                          <label class="col-sm-3" for="date">Comment</label>
+                          <textarea name="" class="col-sm-8" id="" rows="2" cols="20"></textarea>
+          
+                      </div>
+              </div>
+              <div class="modal-footer">
+                 <button type="submit" class="btn bg" data-dismiss="modal">DISCARD</button>
+                 <button type="button" class="btn btn text-warning" data-dismiss="modal">UPDATE</button>
+
+              </div>
+          </form>
       </div>
     </div>
   </div>
