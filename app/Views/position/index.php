@@ -5,28 +5,28 @@
 
 <div class="container mt-5">
 <div class="row">
-        <div class="col-11">
-                <div class="input-group mb-3">
-                    <input type="text" id="search" class="form-control" placeholder="Search">
-                    <div class="input-group-append"></div>
-                </div><br>
-        </div>
-		
-			<div class="col-2"></div>
-			<div class="col-8">
+<div class="col-2"></div>
+			<div class="col-10">
 			<h5 class="text-center"></h5>
-				
-				
+            <div class="col-7">
+        <div class="input-group mb-3">
+            <input type="text" id="searchs" class="form-control" placeholder="Search">
+            <div class="input-group-append"></div>
+        </div><br>
+        </div>
 				<table class="table table-borderless table-hover">
+                
 					<tr>
 						<th>Position</th>
-						<th><div class="text-right">
-					        <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createPosition">
-						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Position" data-placement="left">add</i>&nbsp;Add
-					        </a>
-				    </div>
-                    </th>
+						<th>	
+                    <div class="create">
+					<a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createPosition">
+						<i class="material-icons float-left" data-toggle="tooltip" title="Add Position!" data-placement="left">add</i>&nbsp;Create
+					</a>
+				    </div></th>
+
 					</tr>
+					<!-- get data from tabe  Position-->
 					<tr>
 						<td>IT Addmin</td>
 						<td>
