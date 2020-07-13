@@ -54,8 +54,6 @@
 			<div class="col-2"></div>
 		</div>
 	</div>
-
-    <!-- ////////////////////////////////////////////////////////////// -->
     <!-- The Modal Update Position-->
     <div class="modal fade" id="updatePosition">
     <div class="modal-dialog">
@@ -81,8 +79,6 @@
         </div>
     </div>
 </div>
-<!-- ////////////////////////////////////////////////// -->
-<!-- ========================================START Model CREATE================================================ -->
 	<!-- The Modal --->
 	<div class="modal fade" id="createPosition">
     <div class="modal-dialog">
