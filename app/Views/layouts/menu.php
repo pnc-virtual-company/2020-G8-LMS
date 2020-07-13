@@ -50,7 +50,7 @@
           </div>
           <div id="popup1" class="overlay">
             <div class="popup" >
-              <a class="close text-warning" href="#popup1" data-dismiss = "modal">Close</a>
+              <a class="close text-info" href="#popup1" data-dismiss = "modal">Close</a>
             </div>
            </div>
         </div> 
