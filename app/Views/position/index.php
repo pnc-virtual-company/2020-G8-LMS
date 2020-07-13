@@ -15,17 +15,18 @@
 			<div class="col-2"></div>
 			<div class="col-8">
 			<h5 class="text-center"></h5>
-				<div class="text-right">
-					<a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createPizza">
-						<i class="material-icons float-left" data-toggle="tooltip" title="Add Pizza!" data-placement="left">add</i>&nbsp;Add
-					</a>
-				</div>
+				
 				
 				<table class="table table-borderless table-hover">
 					<tr>
 						<th>Position</th>
+						<th><div class="text-right">
+					        <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createPosition">
+						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Position" data-placement="left">add</i>&nbsp;Add
+					        </a>
+				    </div>
+                    </th>
 					</tr>
-					<!-- get data from tabe pizza -->
 					<tr>
 						<td>IT Addmin</td>
 						<td>
@@ -83,7 +84,7 @@
 <!-- ////////////////////////////////////////////////// -->
 <!-- ========================================START Model CREATE================================================ -->
 	<!-- The Modal --->
-	<div class="modal fade" id="createPizza">
+	<div class="modal fade" id="createPosition">
     <div class="modal-dialog">
       <div class="modal-content">
       
