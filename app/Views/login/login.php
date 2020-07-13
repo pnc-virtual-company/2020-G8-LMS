@@ -1,28 +1,49 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
-	<body style="background-color: #17a2b8;">
-	<div id="login" >
-		<!-- <h3 class="text-center text-white pt-5">Login Account</h3> -->
-        <div class="container">
-			<div id="login-row" class="row justify-content-center align-items-center">
-				<div id="login-column" class="col-md-6">
-					<div id="login-box" class="col-md-12">
-						<form id="login-form" class="form" action="/your_leave" method="post">
-						<h2 class="text-center text-info">Login Account</h2>
-						<div class="form-group">
-							<label for="username" class="text-info">Email:</label><br>
-							<input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-								<label for="password" class="text-info">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-							<button type="submit" name="submit" class="btn btn-info float-right">Next</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+  <div class='container'>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+      </div>
+      <div class="col-md-4"></div>
     </div>
-	</body>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="card mt-5 animated fadeIn mr-1 ml-1">
+          <div class="card-body">
+            <form action="/your_leave" method="post">
+              <div class="card-title text-center">
+                <img src="images/logo.png" style="width:80px" alt="Logo Telkom Indonesia" /></div>
+              <!-- <h4 class="form-group text-center text-primary">Login Account</h4> -->
+              <div class="form-group mt-3">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text icon-login" id="basic-addon1"><i class="material-icons">person</i></span>
+                  </div>
+                  <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text icon-login" id="basic-addon2"><i class="material-icons">lock</i></span>
+                  </div>
+                  <input class="prepend-fx form-control" type="password" id='password' name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group ml-3 mr-3">
+            <button type="submit" id="submit" class="btn btn-success form-control mb-4">Next</button>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+
+    </div>
+  </div>
+</body>
 	<?= $this->endSection() ?>
