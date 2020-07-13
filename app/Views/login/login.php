@@ -1,25 +1,28 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
-	<dvi class="container h-100">
-	<div class="d-flex justify-content-center">
-		<div class="card mt-5 col-md-4">
-			<div class="card-header">
-                <h4 class="text-center text-success">Login Account</h4>
-			</div>
-			<div class="card-body">
-				<form class="form text-center" action="/your_leave" method="POST">
-					<div id="dynamic_container">
-						<div class="input-group">
-							<input type="email" placeholder="Enter Mail" class="form-control.." id="email" />
-						</div>
-						<div class="input-group mt-3">
-							<input type="password" placeholder="Enter Password.." class="form-control" id="password" />
-						</div>
-					</div>
-                    <button type="submit" class="btn btn-outline-success float-right mt-4">Login</button>
-				</form>
-			</div>
-		</div>
-	</div>
-	</dvi>
-<?= $this->endSection() ?>
+	<body style="background-color: #17a2b8;">
+	<div id="login" >
+		<!-- <h3 class="text-center text-white pt-5">Login Account</h3> -->
+        <div class="container">
+			<div id="login-row" class="row justify-content-center align-items-center">
+				<div id="login-column" class="col-md-6">
+					<div id="login-box" class="col-md-12">
+						<form id="login-form" class="form" action="/your_leave" method="post">
+						<h2 class="text-center text-info">Login Account</h2>
+						<div class="form-group">
+							<label for="username" class="text-info">Email:</label><br>
+							<input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+								<label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+							<button type="submit" name="submit" class="btn btn-info float-right">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</body>
+	<?= $this->endSection() ?>
