@@ -10,7 +10,7 @@
 				<form class="form text-center" action="/your_leave" method="POST">
 					<div id="dynamic_container">
 						<div class="input-group">
-							<input type="email" placeholder="Enter Mail" class="form-control.." id="email" />
+							<input type="email" placeholder="Enter Mail" class="form-control" id="email" />
 						</div>
 						<div class="input-group mt-3">
 							<input type="password" placeholder="Enter Password.." class="form-control" id="password" />
