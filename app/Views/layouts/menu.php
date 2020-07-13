@@ -11,15 +11,13 @@
          <a class="nav-link mt-2" href="/employees">Employees</a>
          <a class="nav-link mt-2" href="/position">Positions</a>
          <a class="nav-link mt-2" href="/department">Departments</a>
-         <a class="nav-link menu" href="#">
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
-            <div class="dropdown-menu">
+           <li class="dropdown mt-2">
+             <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
+             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
                 <a class="dropdown-item" href="/">Log out</a>
             </div>
           </li>
-         </a>
     </ul>
   </div>
 </nav>
