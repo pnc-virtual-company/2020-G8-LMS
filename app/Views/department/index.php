@@ -78,7 +78,7 @@
 <!-- ////////////////////////////////////////////////// -->
 <!-- ========================================START Model CREATE================================================ -->
 	<!-- The Modal -->
-	<div class="modal fade" id="createDepartment">
+	<div class="modal fade" id="createDepartmen t">
     <div class="modal-dialog">
       <div class="modal-content">
       
