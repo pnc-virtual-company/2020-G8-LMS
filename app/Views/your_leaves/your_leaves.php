@@ -49,11 +49,11 @@
                             <div class="form-group row">
                                 <label class="col-3" for="date">Duration</label>
                                 <input class="col-sm-4" type="text" name="duration" class="form-control"
-                                    placeholder="Duration...." required>
+                                    placeholder="Duration..." required>
 
-                                <div class="col-sm-4">
+                                <div class="col-sm-4" class="input-group">
                                 <select class="form-control-sm" id="leaveType">
-                                    <option class="0">leave type...</option>
+                                    <option class="0">leave type</option>
                                     <option value="1">Paid leave</option>
                                     <option value="2">Sick leave</option>
                                     <option value="3">Un paid leave</option>
@@ -124,8 +124,8 @@
 		<tr>
 			
 			<td>11/4/2020</td>
-			<td>1/4/2018</td>
-			<td> day</td>
+			<td>13/4/2020</td>
+			<td>2 day</td>
 			<td>Vacation</td>
 			<td class="badge badge-success">Accepted</button></td>
 		</tr>
@@ -187,7 +187,7 @@
 
                           <div class="col-sm-4">
                           <select class="form-control-sm" id="leaveType">
-                              <option class="0">leave type...</option>
+                              <option class="0">leave type</option>
                               <option value="1">Paid leave</option>
                               <option value="2">Sick leave</option>
                               <option value="3">Un paid leave</option>
