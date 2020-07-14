@@ -6,7 +6,7 @@
     
     <!-- button search -->
 
-    <div class="col-11">
+    <div class="col-12">
         <div class="input-group mb-3">
             <input type="text" id="search" class="form-control" placeholder="Search">
             <div class="input-group-append"></div>
@@ -16,8 +16,8 @@
     <div class="col"></div>
     <!-- button create Employee -->
     <div class="text-right">
-         <a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:105px;">
-			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
+         <a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:50px;">
+			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;CREATE
 		</a>
     </div>
     <!-- Text on Employee -->
@@ -107,33 +107,52 @@
             <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input first name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- input first name -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input last name -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input Department -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Department">
+                                    <option selected>Department</option>
+                                    <option>Training/Education</option>
+                                    <option>Exteral relation team</option>
+                                    <option>Admin and finance team</option>
+                                    <option>Selection team</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Position -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Position">
+                                    <option selected>Position</option>
+                                    <option>IT Admin</option>
+                                    <option>WEP Coordinator</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                   <!-- input last name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                     <!-- input Department -->
-				    <div class="form-group">
-                        <select class="form-control" placeholder="Department">
-                            <option selected>Department</option>
-                            <option>Training/Education</option>
-                            <option>Exteral relation team</option>
-                            <option>Admin and finance team</option>
-                            <option>Selection team</option>
+                     <!-- Manager -->
+                     <div class="form-group">
+                        <select class="form-control" placeholder="Manager">
+                            <option selected>Manager</option>
+                            <option>Ronan</option>
+                            <option>Bengimen/option>
+                            <option>Mona</option>
+                            <option>right</option>
                         </select>
                     </div>
-                    <!-- Position -->
-			    	<div class="form-group">
-                        <select class="form-control" placeholder="Position">
-                            <option selected>Position</option>
-                            <option>IT Admin</option>
-                            <option>WEP Coordinator</option>
-                        </select>
-                    </div>
-
                     <!-- input first startdate -->
                     <div class="form-group">
                     <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
@@ -173,45 +192,67 @@
              <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input Firstname -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- input first name -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input last name -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input Department -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Department">
+                                    <option selected>Department</option>
+                                    <option>Training/Education</option>
+                                    <option>Exteral relation team</option>
+                                    <option>Admin and finance team</option>
+                                    <option>Selection team</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Position -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Position">
+                                    <option selected>Position</option>
+                                    <option>IT Admin</option>
+                                    <option>WEP Coordinator</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                             <!-- Manager -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Manager">
+                                    <option selected>Manager</option>
+                                    <option>Ronan</option>
+                                    <option>Bengimen/option>
+                                    <option>Mona</option>
+                                    <option>right</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- role -->
+                            <div class="form-group">
+                                <select class="form-control" placeholder="Role">
+                                    <option selected>Role</option>
+                                    <option>Admin</option>
+                                    <option>Manager</option>
+                                    <option>Employee</option>
+                                    <option>HR</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                        <!-- input Lastname -->
-                    <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                    <!-- Department -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Department">
-                            <option selected>Department</option>
-                            <option>Training/Education</option>
-                            <option>Exteral relation team</option>
-                            <option>Admin and finance team</option>
-                            <option>Selection team</option>
-                        </select>
-                    </div>
-                    <!-- Position -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Position">
-                            <option selected>Position</option>
-                            <option>IT Admin</option>
-                            <option>WEP Coordinator</option>
-                        </select>
-                    </div>
-                    
-                    <!-- role -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Role">
-                            <option selected>Role</option>
-                            <option>Admin</option>
-                            <option>Manager</option>
-                            <option>Employee</option>
-                            <option>HR</option>
-                        </select>
-                    </div>
-                    
-                    <!-- input first startdate -->
+                     <!-- input first startdate -->
                     <div class="form-group">
                     <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
                         <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
