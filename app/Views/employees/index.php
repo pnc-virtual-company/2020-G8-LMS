@@ -169,7 +169,7 @@
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <!-- input submit -->
-                     <input type="submit" value="CREATE" class="btn text-primary">
+                     <input type="submit" value="CREATE" class="btn text-info">
                 </form>
             </div>
         </div>
