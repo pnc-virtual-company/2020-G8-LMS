@@ -4,7 +4,7 @@ class User extends BaseController
 {
 	public function index()
 	{
-		return view('login/login');
+		return view('users/login');
 	}
 
 	//--------------------------------------------------------------------
