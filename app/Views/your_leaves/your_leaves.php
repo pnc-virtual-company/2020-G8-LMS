@@ -65,7 +65,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <select name="time" id="time" class="form-control">
                                             <option selected disabled>Leave type</option>
@@ -77,13 +77,11 @@
                                             <option value="5">Maternity leave</option>
                                         </select>
                                     </div>
-
                                     </div>
-                                <div class="col-sm-6"></div>
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <textarea   name="comment"
                                                     id="comment"
@@ -94,7 +92,6 @@
                                                     placeholder="Comment"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-sm-6"></div>
                             </div>
 
                             <div class="modal-footer">
@@ -108,9 +105,9 @@
             </div>
         </div>
 </div>       
-    <div class="container mt-5">
-    <h2>Your leave requests</h2>
-        <table id="request" class="table table-borderless" style="width:100%">
+<div class="container mt-5">
+    <h2><b> Your leave requests</b></h2>
+        <table id="request" class="table table-borderless" style="width:100% ">
             <thead class="text-center">
                 <tr>
                     <th>Start Date</th>
@@ -126,7 +123,7 @@
                     <td>15/06/2018</td>
                     <td>1 day</td>
                     <td>Vacation</td>
-                    <td class="badge badge-info">Requested</td>
+                    <td><h5><span class="badge badge-info">Requested</span></h5></td>
                             <td class="form"><a href="" data-toggle="modal" data-target="#updateLeave"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
                             <a href="" data-toggle="tooltip" title="Delete Leave!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a></td>
                 </tr>
@@ -136,7 +133,7 @@
                     <td>06/05/2019</td>
                     <td>3 days</td>
                     <td>Training</td>
-                    <td class="badge badge-danger">Canceled</td>
+                    <td><h5><span class="badge badge-danger">Canceled</span></h5></td>
                 </tr>
                     <br>
                 <tr>
@@ -145,7 +142,7 @@
                     <td>10/02/2020</td>
                     <td>0.5 day</td>
                     <td>Vacation</td>
-                    <td class="badge badge-danger">Rejected</button></td>
+                    <td><h5><span class="badge badge-danger">Rejected</span></h5></td>
                 </tr>
                     <br>
                 <tr>
@@ -154,7 +151,7 @@
                     <td>13/4/2020</td>
                     <td>2 day</td>
                     <td>Vacation</td>
-                    <td class="badge badge-success">Accepted</button></td>
+                    <td><h5><span class="badge badge-success">Accepted</span></h5></td>
                 </tr>
     
             </thead> 
@@ -219,7 +216,7 @@
                                 <h6 class="ml-3">Duration: 4</h6>
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <select name="time" id="time" class="form-control">
                                             <option selected disabled>Leave type</option>
@@ -231,12 +228,11 @@
                                             <option value="5">Maternity leave</option>
                                         </select>
                                     </div>
-
                                     </div>
-                                <div class="col-sm-6"></div>
                             </div>
+
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <textarea   name="comment"
                                                     id="comment"
@@ -247,7 +243,6 @@
                                                     placeholder="Comment"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-sm-6"></div>
                             </div>
             </form>
       </div>
