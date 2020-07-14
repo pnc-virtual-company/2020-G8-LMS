@@ -2,56 +2,60 @@
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
 
-
 <div class="container mt-5">
-<div class="row">
-<div class="col-2"></div>
-			<div class="col-10">
-			<h5 class="text-center"></h5>
-            <div class="col-7">
-        <div class="input-group mb-3">
-            <input type="text" id="searchs" class="form-control" placeholder="Search">
-            <div class="input-group-append"></div>
-        </div><br>
-        </div>
-				<table class="table table-borderless table-hover">
-                
-					<tr>
-						<th>Position</th>
-						<th>	
-                    <div class="create">
-					<a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createPosition">
-						<i class="material-icons float-left" data-toggle="tooltip" title="Add Position!" data-placement="left">add</i>&nbsp;Create
-					</a>
-				    </div></th>
-
-					</tr>
-					<!-- get data from tabe  Position-->
-					<tr>
-						<td>IT Addmin</td>
-						<td>
-							<a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-						</td>
-					</tr>
+    <div class="row">
+        <div class="col-3"></div>
+			<div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" id="searchs" class="form-control" placeholder="Search">
+                    <div class="input-group-append"></div>
+                </div><br>
+			    <h5 class="text-center"></h5>
+            
+                <table class="table table-borderless table-hover">
+                <thead>
                     <tr>
-                        <td>Manager</td>
-						<td>
-							<a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-						</td>
-					</tr>
+                        <th>Position</th>
+                        <th class="text-right">
+                            <a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createPosition">
+						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Position!" data-placement="left">add</i>&nbsp;Create
+					        </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <td>HR Officer</td>
-						<td>
-							<a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
+                        <td> Training </td>
+                        <td class="text-right">
+                            <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
 							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-						</td>
-					</tr>
-				
-				</table>
-			</div>
-			<div class="col-2"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Education </td>
+                        <td class="text-right">
+                            <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
+							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> HR  </td>
+                        <td class="text-right">
+                            <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
+							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> IT Admin </td>
+                        <td class="text-right">
+                            <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position" data-placement="left">edit</i></a>
+							<a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+			<div class="col-3"></div>
 		</div>
 	</div>
     <!-- The Modal Update Position-->
