@@ -28,7 +28,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                  <h2>My information</h2>
+                <h2>My information</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                 <div class="row">
@@ -50,7 +51,7 @@
           </div>
           <div id="popup1" class="overlay">
             <div class="popup" >
-              <a class="close text-info" href="#popup1" data-dismiss = "modal">Close</a>
+              <a class="close text-info" href="#popup1" data-dismiss = "modal"></a>
             </div>
            </div>
         </div> 
