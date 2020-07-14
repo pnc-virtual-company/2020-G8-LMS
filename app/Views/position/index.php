@@ -58,6 +58,7 @@
 			<div class="col-3"></div>
 		</div>
 	</div>
+    <!-- ===============================START UPDATE POSITION=============================== -->
     <!-- The Modal Update Position-->
     <div class="modal fade" id="updatePosition">
     <div class="modal-dialog">
