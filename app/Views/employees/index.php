@@ -20,7 +20,6 @@
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;CREATE
 		</a>
     </div>
-    <!-- Text on Employee -->
      <h4 class="font-weight-bold ml-2">Employees</h4><br>
      <!-- table Employee -->
 		<table class="table table-borderless table-hover">
@@ -42,6 +41,7 @@
                 <td>IT Admin</td>
                 <td>Ronan</td>
                 <td>25/05/2005</td>
+
                 <!-- Icon edit and delete -->
 				<td>
 					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
