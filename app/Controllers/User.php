@@ -6,6 +6,7 @@ class User extends BaseController
 	{
 		return view('users/login');
 	}
+	// log out
 	public function logoutUser() 
 	{
 		// $this->session->sess_destroy();
