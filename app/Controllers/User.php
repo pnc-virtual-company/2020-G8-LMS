@@ -6,7 +6,13 @@ class User extends BaseController
 	{
 		return view('users/login');
 	}
+	public function logoutUser() 
+	{
+		// $this->session->sess_destroy();
+	 return redirect()->to('/');
 
+	}
+    
 	//--------------------------------------------------------------------
 
 }
