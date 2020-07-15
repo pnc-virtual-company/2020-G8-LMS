@@ -25,34 +25,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($department as $values) :?>
                     <tr>
-                        <td> Training </td>
+                        <td class="departmentName"> <?= $values['department_name']; ?> </td>
                         <td class="text-right">
-                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Departments" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Departments!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                            <a href="/department/editDepartment<?= $values['id']; ?>" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Departments" data-placement="left">edit</i></a>
+							<a href="/department/deleteDepartment<?= $values['id']; ?>" data-toggle="tooltip" title="Delete Departments!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td> Education </td>
-                        <td class="text-right">
-                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Departments" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Departments!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> HR  </td>
-                        <td class="text-right">
-                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Departments" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Departments!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> IT Admin </td>
-                        <td class="text-right">
-                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Departments" data-placement="left">edit</i></a>
-							<a href="" data-toggle="tooltip" title="Delete Departments!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
-                        </td>
-                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
 
@@ -75,10 +56,10 @@
         <!-- Modal body -->
 
         <div class="modal-body text-right">
-			<form  action="department/addDepartment" method="post">
+			<form  action="/department/addDepartment" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="departments" class="form-control" placeholder="Department Name">
+					<input type="text" name="department_name" class="form-control" placeholder="Department Name">
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -97,14 +78,14 @@
         <div class="modal-content">         
             <!-- Modal Header -->
                 <div class="modal-header">
-                <h4 class="modal-title">Update Department</h4>
+                    <h4 class="modal-title">Update Department</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                     <!-- Modal body -->
                         <div class="modal-body text-right">
-                            <form  action="/department/" method="post">
+                            <form  action="/department/updateDepartment" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Department name" value="" id="Department name" name="department">
+                                    <input type="text" class="form-control" placeholder="Enter Department name" id="department" name="department_name" >
                             </div>
                         <a data-dismiss="modal" class="closeModal">DISCARD</a>
                         &nbsp;
@@ -115,6 +96,23 @@
     </div>
 </div>
 <!-- =================================END UPDATE DEPARTMENT============================================= -->
+
+<script>
+	$(document).ready(function(){
+		$('.editdata').on('click',function(){
+			$('#updateDepartment');
+			$tr = $(this).closest('tr');
+			var data = $tr.children('td').map(function(){
+				return $(this).text();
+			}).get();
+
+			console.log(data);
+			$('#id').val(data[0]);
+			$('#department_name').val(data[1]);
+
+		});
+	});
+</script> 
 
 <?= $this->endSection() ?>
 

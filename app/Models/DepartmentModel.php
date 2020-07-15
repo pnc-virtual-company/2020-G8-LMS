@@ -7,7 +7,7 @@ class DepartmentModel extends Model
     protected $table      = 'departments';
     protected $primaryKey = 'id';
 
-    protected $returnType     = 'array';
+    // protected $returnType     = 'array';
 
     protected $allowedFields = ['department_name'];
 
