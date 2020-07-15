@@ -16,13 +16,12 @@
             <form action="/your_leave" method="post">
               <div class="card-title text-center">
                 <img src="images/logo.png" style="width:80px" alt="Logo Telkom Indonesia" /></div>
-              <!-- <h4 class="form-group text-center text-primary">Login Account</h4> -->
               <div class="form-group mt-3">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text icon-login" id="basic-addon1"><i class="material-icons">person</i></span>
                   </div>
-                  <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+                  <input type="email" class="form-control" name="email" placeholder="Enter Mail" aria-label="Email" aria-describedby="basic-addon1" required>
                 </div>
               </div>
               <div class="form-group ">
