@@ -34,9 +34,18 @@ $routes->setAutoRoute(true);
 $routes->add('/', 'User::index');
 $routes->add('your_leave', 'Your_leave::yourLeave');
 $routes->add('leave', 'Leave::showSummitedleaves');
-$routes->add('employees','Employee::index');
+//$routes->add('employees','Employee::index');
 $routes->add('position', 'Position::index');
 $routes->add('department', 'Departments::index');
+
+$routes->group('employees', function($routes)
+{
+	$routes->add('/', 'Employee::index');
+	$routes->add('add', 'Employee::addEmployee');
+	$routes->add('delete/(:num)', 'Employee::deleteEmployee/$1');
+	$routes->add('updateForm/(:num)', 'Employee::updateForm/$1');
+	$routes->add('update', 'Employee::updateEmployee');
+});
 
 /**
  * --------------------------------------------------------------------

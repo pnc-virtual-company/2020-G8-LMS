@@ -33,9 +33,8 @@
                 <th>Manager</th>
                 <th>start date</th>
                
-      </tr>
-                    
-			<tr>
+            </tr>
+            <tr>
                 <td>jack</td>
                 <td>Thomas</td>
                 <td>Training/Education</td>
@@ -48,48 +47,48 @@
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
 				</td>
             </tr>
-                    
-			<tr>
-                <td>Ronan</td>
-                <td>Ogor</td>
-                <td>Training/Education</td>
-                <td>WEP Coordinator</td>
-                <td>Bengimen</td>
-                <td>25/05/2005</td>
-				<td>
-          <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
-				</td>
-      </tr>
-                    
-        <tr>
-                  <td>Seiha</td>
-                  <td>Sam</td>
-                  <td>Training/Education</td>
-                  <td>WEP Trainer</td>
-                  <td>Mona</td>
-                  <td>25/05/2005</td>
-          <td>
-            <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-            <a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
-          </td>
-        </tr>
 
+            <?php foreach ($employees as $employee): ?>            
+			
         <tr>
-                  <td>Rady</td>
-                  <td>Y</td>
-                  <td>Training/Education</td>
-                  <td>WEP Coordinator</td>
-                  <td>Rith</td>
-                  <td>25/05/2005</td>
+                  <td><?= $employee['id'];?></td>
+                  <td><?= $employee['firstname'];?></td>
+                  <td><?= $employee['lastname'];?></td>
+                  <td><?= $employee['start_date'];?></td>
+                  
           <td>
             <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
             <a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
           </td>
-        </tr>
-					
-		</table>
-			<div class="col-2"></div>
+        
+                     <!-- The Modal delete -->
+      <div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog">
+        <div class="modal-dialog mt-3">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+
+            <!-- Modal body -->
+            <form action="employee/delete/<?= $employee['id']?>" method="post">
+              <div class="modal-body mt-3">
+                <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+
+
+                <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
+                &nbsp;
+                <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+              </div>
+            </form>
+          </div>
+
+          <?php endforeach; ?>
+          <div class="col-3"></div>
+        </div>
+      </div>
+    </tr>
+   </table>  
+
+            
 </div>
 
 <!-- ========================================START Model CREATE================================================ -->
@@ -106,18 +105,30 @@
         
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form  action="/" method="post">
+                <form  action="employees" method="post">
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input first name -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First name">
+                                <input type="text" name ="firstname" class="form-control" placeholder="First name">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <!-- input last name -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last name">
+                                <input type="text" name="lastname" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input email -->
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input password -->
+                            <div class="form-group">
+                                <input type="text" name="Password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -125,7 +136,7 @@
                             <div class="form-group">
                                 <select class="form-control" placeholder="Department">
                                     <option selected>Department</option>
-                                    <option>Training/Education</option>
+                                    <option >Training/Education</option>
                                     <option>Exteral relation team</option>
                                     <option>Admin and finance team</option>
                                     <option>Selection team</option>
@@ -166,6 +177,14 @@
                        <input type="file" class="form-control-file border">
                     </div>
 
+                    <?php if(isset($validation)) :?>
+        			<div class="col-12">
+         				<div class="alert alert-danger" role="alert">
+            			<?= $validation->listErrors(); ?>
+          				</div>
+        			</div>
+      			<?php endif; ?>  
+                    <!-- input Discard --> 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <!-- input submit -->
@@ -203,6 +222,19 @@
                             <!-- input last name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <!-- input email -->
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- input password -->
+                            <div class="form-group">
+                                <input type="text" name="Password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-sm-6">
