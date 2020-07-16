@@ -54,6 +54,10 @@
                   <td><?= $employee['id'];?></td>
                   <td><?= $employee['firstname'];?></td>
                   <td><?= $employee['lastname'];?></td>
+                  <td><?= $employee['email'];?></td>
+                  <td><?= $employee['password'];?></td>
+                  <td><?= $employee['department_id'];?></td>
+                  <td><?= $employee['position_id'];?></td>
                   <td><?= $employee['start_date'];?></td>
                   
           <td>
