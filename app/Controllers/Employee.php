@@ -29,7 +29,7 @@ class Employee extends BaseController
 			 'start_date'=>$start_date
 		);
 		$employee->save($employeeData);
-		return redirect()->to('/employees');
+		return redirect()->to('employees');
 	}
 	
 	// delete employy
@@ -37,7 +37,7 @@ class Employee extends BaseController
 		$employee = new EmployeeModel();
 		$employee->delete($id);
 		$employee->where("id",$id);
-		return redirect()->to('/employees');
+		return redirect()->to('employees');
 	}
 	//update employee
 	public function updateForm($id){
@@ -89,7 +89,7 @@ class Employee extends BaseController
             //     $sessionError->setFlashdata('error', $validation);
 		 	// }
 		// }
-		return redirect()->to('/employees');
+		return redirect()->to('employees');
 }
 }
 
