@@ -279,7 +279,7 @@
                                 <option>Selection team</option>
                                 </select>
                             </div>
-                            <!-- Position -->
+                            <!-- position -->
                             <div class="form-group">
                                 <select class="form-control" id="" name="">
                                 <option selected>Position</option>
