@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <!-- input Email -->
+                            <!-- input email -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                 <input type="Email" class="form-control" placeholder="Email" name="email">
                             </div>
