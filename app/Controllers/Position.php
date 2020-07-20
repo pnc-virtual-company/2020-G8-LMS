@@ -49,6 +49,7 @@ class Position extends BaseController
 	// {
 	// 	 $position = new PositionModel();
 	// 	 $position->find($po_id);
+	
 	// 	 $delete = $position->delete($po_id);
 	// 	 return redirect()->to('/position');
 	// }
