@@ -13,7 +13,7 @@ class User extends BaseController
 			];
 			$error = [
 				'password' => [
-					'validateUser' => 'incorrect not match!'
+					'validateUser' => 'incorrect  please check again !'
 				]
 
 			];
@@ -36,12 +36,13 @@ class User extends BaseController
 
 	public function setUserSession($user){
 		$data = [
-			'id' => $user['id'],
+			'id' => $user['user_id'],
 			'firstname' => $user['firstname'],
 			'lastname' => $user['lastname'],
 			'email' => $user['email'],
 			'password' => $user['password'],
 			'role' => $user['role'],
+			'start_date' => $user['start_date'],
 			'profile' => $user['profile']
 		];
 

@@ -9,6 +9,6 @@ class UserModel extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['firstname','lastname','email','password','role','profile'];
+    protected $allowedFields = ['firstname','lastname','email','password','role','start_date','profile'];
 
 }
