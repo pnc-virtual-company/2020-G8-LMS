@@ -27,16 +27,16 @@
                 <tbody>
                 <?php foreach($dataPosition as $position): ?>
                     <tr>
-                       <td><?= $position['po_id']; ?></td>
+                       <td><?= $position['id']; ?></td>
                         <td><?= $position['title']; ?> </td>
                         <td class="text-right">
 
-                            <a href="position/editPosition" data-toggle="modal" data-target="#updatePosition">
-                            <i class="material-icons text-info positionEdit" data-toggle="tooltip" title="Edit Position" 
+                            <a href="" data-toggle="modal" data-target="#updatePosition">
+                            <i class="material-icons text-info positionEdit" data-target="#updatePosition" data-toggle="tooltip" title="Edit Position" 
                             data-placement="left">edit</i></a>
-
-							<a href="position/deletePosition/<?= $position['po_id']; ?>" data-toggle="tooltip" 
-                            title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                            
+                            <a href=""data-toggle="modal" data-target="#deletePosition"  data-toggle="tooltip" 
+                            title="Delete Position!" data-placement="right"  data-target="#deletePosition"><i class="material-icons text-danger">delete</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -46,6 +46,35 @@
 			<div class="col-3"></div>
 		</div>
 	</div>
+  <!-- =================================START MODEL DELETE==================================================== -->
+  
+  <!-- The Modal -->
+	<div class="modal fade" id="deletePosition">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Department</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        
+		<div class="modal-body text-right">
+			<form  action="" method="post">
+      <div class="form-group">
+				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to delete the selected Position?</p>
+			</div>
+			  <a data-dismiss="modal" class="closeModal">CANCEL</a>
+		 	  &nbsp;
+		    <input type="submit" value="DELETE" class="createBtn text-warning">
+        </div>
+        </form>
+      </div>
+    </div> 
+  </div>
+  <!-- =================================END MODEL DELETE==================================================== -->
     <!-- ===============================START UPDATE POSITION=============================== -->
     <!-- The Modal Update Position-->
     <div class="modal fade" id="updatePosition">
@@ -60,7 +89,7 @@
                         <div class="modal-body text-right">
                             <form  action="position/updatePosition" method="post">
                                 <div class="form-group">
-					                <input type="hidden" class="form-control"  name="id" id="id">
+					                <input type="hidden" class="form-control"  name="id" id="po_id">
 				                </div>
                                 <div class="form-group">
                                     <label for="name">Position Name:</label>
@@ -99,21 +128,6 @@
       </div>
     </div>
   </div>
-  <script>
-			$(document).ready(function(){
-			$('.positionEdit').on('click', function(){
-		    $('#updatePosition');
-			$tr = $(this).closest('tr');
-			var data = $tr.children('td').map(function(){
-			return $(this).text();
-			}).get();	
-             console.log(data);
-			// get name and id 
-            $('#id').val(data[0]);
-			$('#title').val(data[1]);
-		})
-	});		
-</script>
 <!-- =================================END MODEL CREATE==================================================== -->
 <?= $this->endSection() ?>
 						

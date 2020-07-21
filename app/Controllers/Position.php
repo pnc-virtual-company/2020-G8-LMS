@@ -32,25 +32,6 @@ class Position extends BaseController
 				return redirect()->to('/position');
 		}
 	}
-    // edit position
-	// public function editPosition($id)
-	// {
-	//  $position = new PositionModel();
-	//  $data['editPosition'] = $position->find($id);
-	//  return view('/position', $data);
-	// }
-	// public function updatePosition(){
-	// 	$position = new PositionModel();
-	// 	$position->update($_POST['id'], $_POST);
-	// 	return redirect()->to('/position');
-	// }
-	// delete position
-	// public function deletePosition($po_id)
-	// {
-	// 	 $position = new PositionModel();
-	// 	 $position->find($po_id);
-	
-	// 	 $delete = $position->delete($po_id);
-	// 	 return redirect()->to('/position');
-	// }
+    
 }
+?>
