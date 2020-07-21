@@ -109,7 +109,7 @@
                         <div class="col-sm-6">
                             <!-- input last password -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password">
+                                <input type="password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -214,7 +214,7 @@
                         <div class="col-sm-6">
                             <!-- input last password -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password">
+                                <input type="password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-sm-6">
