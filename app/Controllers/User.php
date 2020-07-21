@@ -36,7 +36,7 @@ class User extends BaseController
 
 	public function setUserSession($user){
 		$data = [
-			'id' => $user['user_id'],
+			'id' => $user['id'],
 			'firstname' => $user['firstname'],
 			'lastname' => $user['lastname'],
 			'email' => $user['email'],

@@ -21,7 +21,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text icon-login" id="basic-addon1"><i class="material-icons">email</i></span>
                   </div>
-                  <input type="email" class="form-control" name="email" placeholder="Enter Mail" aria-label="Email" aria-describedby="basic-addon1" >
+                  <input type="email" class="form-control" name="email" placeholder="Enter email" aria-label="Email" aria-describedby="basic-addon1" >
                 </div>
               </div>
               <div class="form-group ">
