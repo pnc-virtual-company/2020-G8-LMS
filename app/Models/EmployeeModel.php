@@ -14,7 +14,7 @@ class EmployeeModel extends Model
     protected $table      = 'users';
     protected $primaryKey = 'id';
     protected $returnType     = 'array';
-    protected $allowedFields = ['firstname','lastname', 'email','password','role','profile','start_date','department_id','position_id'];
+    protected $allowedFields = ['firstname','lastname', 'email','password','role','start_date','profile','de_id','po_id'];
    
         
 }

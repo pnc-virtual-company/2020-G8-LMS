@@ -40,7 +40,7 @@
 		<table class="table table-borderless table-hover">
 
 			<tr>
-                <th>ID</th>
+                <th class = "hide">ID</th>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
@@ -55,8 +55,9 @@
                     <td><?= $employee['firstname']?></td>
                     <td><?= $employee['lastname']?></td>
                     <td><?= $employee['email']?></td>
-                    <td><?= $employee['department_id']?></td>
-                    <td><?= $employee['position_id']?></td>
+                    <td class="hide"><?= $employee['password']?></td>
+                    <td><?= $employee['de_id']?></td>
+                    <td><?= $employee['po_id']?></td>
                     <td><?= $employee['start_date']?></td>
                     <td>
                     <!-- Icon delete and edit -->
@@ -104,7 +105,7 @@
 
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employee/add" method="post">
+                <form action="employees/add" method="post">
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input First name -->
@@ -129,8 +130,9 @@
                             </div>
 
                         </div>
-                    </div>
-                    <!-- input Department -->
+
+                        <div class="col-sm-6">
+                        <!-- input Department -->
                     <div class="form-group">
                         <select class="form-control" name="department">
                             <option selected>Department</option>
@@ -140,8 +142,10 @@
                             <option>Selection team</option>
                         </select>
                     </div>
+                    </div>
 
-                    <!-- Position -->
+                    <div class="col-sm-6">
+                        <!-- Position -->
                     <div class="form-group">
                         <select class="form-control" name="position">
                             <option selected>Position</option>
@@ -149,6 +153,11 @@
                             <option>WEP Coordinator</option>
                         </select>
                     </div>
+                    </div>
+
+                    
+                    </div>
+                     <!-- role -->
                     <div class="form-group">
                         <select class="form-control" name="position">
                             <option selected>Role</option>
@@ -224,7 +233,7 @@
                             </div>
                             <!-- input password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password"  value = "<?= $employee['password'];?>">
+                                <input type="password" class="form-control" name="password">
                         </div>
                     </div>
                 </div> 
@@ -248,7 +257,16 @@
                             <option>WEP Coordinator</option>
                         </select>
                     </div>
-                    
+                    <!-- role -->
+                    <div class="form-group">
+                        <select class="form-control" name="position">
+                            <option selected>Role</option>
+                            <option>Manager</option>
+                            <option>Empoyee</option>
+                            <option>HR</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
                     <!-- input first startdate -->
                     <div class="form-group">
                         <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
@@ -269,33 +287,6 @@
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <input type="submit" value="UPDATE" class="btn text-info">
-
-                    <div class=" form-group">
-                                <select class="form-control" name="department_id" id = "department_id">
-                                <option selected>Department</option>
-                                <option>Training/Education</option>
-                                <option>Exteral relation team</option>
-                                <option>Admin and finance team</option>
-                                <option>Selection team</option>
-                                </select>
-                            </div>
-                            <!-- position -->
-                            <div class="form-group">
-                                <select class="form-control" id="" name="">
-                                <option selected>Position</option>
-                                <option>IT Admin</option>
-                                <option>WEP Coordinator</option>
-                                </select>
-                            </div>
-                            <!-- input first startdate -->
-                            <div class="form-group">
-                                <input class="form-control datetimepicker" type="date" value = "<?= date('Y-m-d');?>" id = "startdate" data-date-format="DD-YY-MM"
-                                    name="startdate" class="form-control" placeholder="start date" required>
-                            </div>
-                            <a data-dismiss="modal" class="closeModal">DISCARD</a>
-                            &nbsp;
-                            <input type="submit" value="UPDATE" class="btn text-info">
-
                 </form>
             </div>
         </div>
