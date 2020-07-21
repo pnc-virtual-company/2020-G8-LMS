@@ -229,7 +229,7 @@
 
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employees/update<?= $employee['id']?> " method="post">
+                <form action="employees<?= $employee['id']?> " method="post">
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input First name -->
