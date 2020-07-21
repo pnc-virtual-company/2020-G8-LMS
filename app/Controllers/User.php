@@ -13,7 +13,7 @@ class User extends BaseController
 			];
 			$error = [
 				'password' => [
-					'validateUser' => 'incorrect  please check again !'
+					'validateUser' => ' Email and Password do not match'
 				]
 
 			];
