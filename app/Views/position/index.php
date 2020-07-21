@@ -31,11 +31,11 @@
                         <td><?= $position['title']; ?> </td>
                         <td class="text-right">
 
-                            <a href="" data-toggle="modal" data-target="#updatePosition">
+                            <a href="position/editPosition" data-toggle="modal" data-target="#updatePosition">
                             <i class="material-icons text-info positionEdit" data-target="#updatePosition" data-toggle="tooltip" title="Edit Position" 
                             data-placement="left">edit</i></a>
                             
-                            <a href=""data-toggle="modal" data-target="#deletePosition"  data-toggle="tooltip" 
+                            <a href="position/deletePosition"data-toggle="modal" data-target="#deletePosition"  data-toggle="tooltip" 
                             title="Delete Position!" data-placement="right"  data-target="#deletePosition"><i class="material-icons text-danger">delete</i></a>
                         </td>
                     </tr>
@@ -62,7 +62,7 @@
         <!-- Modal body -->
         
 		<div class="modal-body text-right">
-			<form  action="" method="post">
+			<form  action="position/deletePosition/<?= $position['id'];?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to delete the selected Position?</p>
 			</div>
