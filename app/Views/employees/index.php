@@ -51,13 +51,13 @@
                     
 			<?php foreach ($employees as $employee): ?>
                 <tr>
-                    <td class = "hide"><?= $employee['id']?></td>
-                    <td><?= $employee['firstname']?></td>
-                    <td><?= $employee['lastname']?></td>
-                    <td><?= $employee['email']?></td>
+                    <td class ="hide"><?= $employee['id'] ?></td>
+                    <td><?= $employee['firstname'] ?></td>
+                    <td><?= $employee['lastname'] ?></td>
+                    <td><?= $employee['email'] ?></td>
                     <td class="hide"><?= $employee['password']?></td>
-                    <td><?= $employee['de_id']?></td>
-                    <td><?= $employee['po_id']?></td>
+                    <td><?= $employee['de_id'] ?></td>
+                    <td><?= $employee['po_id'] ?></td>
                     <td><?= $employee['start_date']?></td>
                     <td>
                     <!-- Icon delete and edit -->
