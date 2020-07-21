@@ -29,8 +29,8 @@
     </div>
     <!-- button create Employee -->
     <div class="text-right">
-         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:65px;">
-			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
+         <a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:65px;">
+			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;CREATE
 		</a>
     </div>
     	
@@ -46,6 +46,7 @@
                 <th>Email</th>
                 <th>Department</th> 
                 <th>Position</th>
+                <th class="hide">Role</th>
                 <th>Start date</th>
             </tr>
                     
@@ -63,23 +64,23 @@
                     <!-- Icon delete and edit -->
                     <div class='edit_hover_class'>
                         <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info updateEmployee" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-                        <a href="" data-toggle="modal" data-target="#deleteEmployee" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                        <a href="" data-toggle="modal" data-target="#deleteEmployee<?= $employee['id']?>" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
                     </div>
                     </td>
                      <!-- The Modal delete -->
-                <div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog">
+                <div class="modal fade" id="deleteEmployee<?= $employee['id']?>" tabindex="-1" role="dialog">
                     <div class="modal-dialog mt-3">
                     <div class="modal-content">
                         <!-- Modal Header -->
                         <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
 
                         <!-- Modal body -->
-                        <form action="employee/delete/<?= $employee['id']?>" method="post">
+                        <form action="employees/delete/<?= $employee['id']?>" method="post">
                         <div class="modal-body mt-3">
-                            <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+                            <p style="margin-left:50px;">Are you sure you want to Remove?</p>
                             <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
                             &nbsp;
-                            <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+                            <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-info">
                         </div>
                         </form>
                     </div>
@@ -112,84 +113,98 @@
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                 <input type="text" class="form-control" placeholder="First name" name="firstname">
                             </div>
+                        </div>
+                        <div class="col-sm-6">
                             <!-- input Last name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Last name" name="lastname">
                             </div>
-
                         </div>
-
+                        
                         <div class="col-sm-6">
                             <!-- input email -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                 <input type="Email" class="form-control" placeholder="Email" name="email">
                             </div>
+                        </div>
+
+                        <div class="col-sm-6">
                             <!-- input password -->
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" name="password">
                             </div>
-
+                        </div>
+                        <div class="col-sm-6">
+                        <!-- input Department -->
+                            <div class="form-group">
+                                <select class="form-control" name="department">
+                                    <option selected>Department</option>
+                                    <option>Training/Education</option>
+                                    <option>Exteral relation team</option>
+                                    <option>Admin and finance team</option>
+                                    <option>Selection team</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-sm-6">
-                        <!-- input Department -->
-                    <div class="form-group">
-                        <select class="form-control" name="department">
-                            <option selected>Department</option>
-                            <option>Training/Education</option>
-                            <option>Exteral relation team</option>
-                            <option>Admin and finance team</option>
-                            <option>Selection team</option>
-                        </select>
-                    </div>
-                    </div>
+                            <!-- Position -->
+                            <div class="form-group">
+                                <select class="form-control" name="position">
+                                    <option selected>Position</option>
+                                    <option>IT Admin</option>
+                                    <option>WEP Coordinator</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <div class="col-sm-6">
-                        <!-- Position -->
-                    <div class="form-group">
-                        <select class="form-control" name="position">
-                            <option selected>Position</option>
-                            <option>IT Admin</option>
-                            <option>WEP Coordinator</option>
-                        </select>
-                    </div>
-                    </div>
+                        <div class="col-sm-6">
+                            <!-- profile -->
+                            <div class="form-group">
+                                <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                                <input type="file" class="form-control-file border">
+                            </div>
+                        </div>
 
+                        <!-- startDate -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
+                                <input  type="date"
+                                        name="startDate"
+                                        class="form-control"
+                                        placeholder="Start Date..." 
+                                >
+                            </div>
+                        </div>
                     
                     </div>
-                     <!-- role -->
+                    <!-- role -->
                     <div class="form-group">
-                        <select class="form-control" name="position">
-                            <option selected>Role</option>
-                            <option>Manager</option>
-                            <option>Empoyee</option>
-                            <option>HR</option>
-                            <option>Admin</option>
-                        </select>
-                    </div>
-                    <!-- input first startdate -->
-                    <div class="form-group">
-                        <input class="form-control datetimepicker" type="date" id = "startdate" data-date-format="DD-YY-MM"
-                        name="startdate" class="form-control" placeholder="start date" required>
-                    </div>
-
-                    <!-- profile -->
-                    <div class="form-group">
-                        <input type="file" class="form-control-file border">
-                    </div>
+                                <select class="form-control" name="position">
+                                    <option selected>Role</option>
+                                    <option>Manager</option>
+                                    <option>Empoyee</option>
+                                    <option>HR</option>
+                                    <option>Admin</option>
+                                </select>
+                            </div>
+                     
+                   
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <!-- input submit -->
-                    <input type="submit" value="CREATE" class="btn text-primary">
+                    <input type="submit" value="CREATE" class="btn text-info">
                 </form>
             </div>
         </div>
     </div>
 </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+<!-- =================================END MODEL CREATE==================================================== -->
+ 
 
-  <!-- ========================================START Model UPDATE================================================ -->
+<!-- ========================================START Model UPDATE================================================ -->
 	<!-- The Modal -->
     <div class="modal fade" id="updateEmployee">
     <div class="modal-dialog">
@@ -200,7 +215,7 @@
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-6 ">
-                            <img src="images/thoeurn-smile.jpg" alt="Avatar" width = "45%" height = "90" class = " rounded-circle "><br>
+                            <img src="images/k-smile.jpg" alt="Avatar" width = "45%" height = "90" class = " rounded-circle "><br>
                             <a href='#'>
                                 <i class="material-icons float-left text-info" style = "margin-left:20px" data-toggle="tooltip">edit</i>
                                 <i class="material-icons float-left text-danger" data-toggle="tooltip">delete</i>
@@ -211,73 +226,92 @@
                 </div>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employee/update" method="post">
+                <form action="employees/update<?= $employee['id']?> " method="post">
                     <div class="row">
-                        <div class="col-sm-6">      
+                        <div class="col-sm-6">
                             <!-- input First name -->
-                            <input type="hidden" name="id" id="id">
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="text" class="form-control" id = "firstname" name="firstname">
-                            </div>
-                            <!-- input Last name -->
-                            <div class="form-group">
-                                <input type="text" class="form-control"  id = "lastname" name="lastname" >
+                                <input type="text" class="form-control" placeholder="First name" name="firstname">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <!-- input Email -->
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="Email" class="form-control" name="email" id = "email" >
+                            <!-- input Last name -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last name" name="lastname">
                             </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <!-- input email -->
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <input type="Email" class="form-control" placeholder="Email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
                             <!-- input password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                            </div>
                         </div>
-                    </div>
-                </div> 
-                    <!-- Department -->
+                        <div class="col-sm-6">
+                        <!-- input Department -->
+                            <div class="form-group">
+                                <select class="form-control" name="department">
+                                    <option selected>Department</option>
+                                    <option>Training/Education</option>
+                                    <option>Exteral relation team</option>
+                                    <option>Admin and finance team</option>
+                                    <option>Selection team</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Department">
-                            <option selected>Department</option>
-                            <option>Training/Education</option>
-                            <option>Exteral relation team</option>
-                            <option>Admin and finance team</option>
-                            <option>Selection team</option>
-                        </select>
-                    </div>
+                        <div class="col-sm-6">
+                            <!-- Position -->
+                            <div class="form-group">
+                                <select class="form-control" name="position">
+                                    <option selected>Position</option>
+                                    <option>IT Admin</option>
+                                    <option>WEP Coordinator</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <!-- Position -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Position">
-                            <option selected>Position</option>
-                            <option>IT Admin</option>
-                            <option>WEP Coordinator</option>
-                        </select>
-                    </div>
-                    <!-- role -->
-                    <div class="form-group">
-                        <select class="form-control" name="position">
-                            <option selected>Role</option>
-                            <option>Manager</option>
-                            <option>Empoyee</option>
-                            <option>HR</option>
-                            <option>Admin</option>
-                        </select>
-                    </div>
-                    <!-- input first startdate -->
-                    <div class="form-group">
-                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
-                        name="startdate"  class="form-control" placeholder="start date" required>
-                    </div>
+                        <div class="col-sm-6">
+                            <!-- profile -->
+                            <div class="form-group">
+                                <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                                <input type="file" class="form-control-file border">
+                            </div>
+                        </div>
+
+                        <!-- startDate -->
+                        <div class="col-sm-6">
+                        <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
+                            <div class="form-group">
+                                <input  type="date"
+                                        name="startDate"
+                                        class="form-control"
+                                        placeholder="Start Date..." 
+                                        onfocus="(this.type='date')">
+                            </div>
+                        </div>
                     
-                    <!-- profile -->
-                    <div class="form-group">
-                        <input type="file" class="form-control-file border">
                     </div>
-
+                     <!-- role -->
+                     <div class="form-group">
+                                <select class="form-control" name="position">
+                                    <option selected>Role</option>
+                                    <option>Manager</option>
+                                    <option>Empoyee</option>
+                                    <option>HR</option>
+                                    <option>Admin</option>
+                                </select>
+                            </div>
                     <?php if(isset($validation)): ?>
 					<div class="alert alert-danger" role="alert">
 						<?= $validation->listErrors(); ?>
