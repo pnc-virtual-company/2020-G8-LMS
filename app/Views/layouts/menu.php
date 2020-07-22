@@ -12,7 +12,11 @@
          <a class="nav-link mt-2" href="/position">Positions</a>
          <a class="nav-link mt-2" href="/department">Departments</a>
            <li class="dropdown mt-2">
-             <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
+             <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+             
+             <?php $email = strstr(session()->get('email'),'@',true) ?>
+              <?= $email ?>
+             </a>
              <div class="dropdown-menu">
                 <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
                 <a class="dropdown-item" href="logout">Log out</a>
