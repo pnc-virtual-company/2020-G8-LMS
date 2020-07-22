@@ -44,9 +44,9 @@ $routes->add('department', 'Department::index');
 // {
 //     $routes->add('department', 'Department::index');
 //     $routes->add('deleteDepartment/(:num)', 'Department::deleteDepartment/$id');
-//     $routes->add('updateDepartment/(:num)', 'Department::updateDepartment/$id');
-    
-// });
+//     $routes->add('updateDepartment/(:num)', 'Department::updateDepartment/$id'
+
+$routes->add('department', 'Departments::index');
 
 /**
  * --------------------------------------------------------------------
