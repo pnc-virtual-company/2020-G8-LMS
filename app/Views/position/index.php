@@ -15,8 +15,9 @@
                 <table class="table table-borderless table-hover">
                 <thead>
                     <tr>
-                       <th>id</th>
+                       
                         <th>Position</th>
+                        <th class="hide">Id</th>
                         <th class="text-right">
                             <a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createPosition">
 						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Position!" data-placement="left">add</i>&nbsp;Create
@@ -27,16 +28,16 @@
                 <tbody>
                 <?php foreach($dataPosition as $position): ?>
                     <tr>
-                       <td><?= $position['id']; ?></td>
                         <td><?= $position['title']; ?> </td>
+                       <td class="hide"><?= $position['id']; ?></td>
                         <td class="text-right">
 
-                            <a href="position/editPosition" data-toggle="modal" data-target="#updatePosition">
-                            <i class="material-icons text-info positionEdit" data-target="#updatePosition" data-toggle="tooltip" title="Edit Position" 
+                            <a href="" data-toggle="modal" data-target="#updatePosition<?= $position['id']?>">
+                            <i class="material-icons text-info positionEdit"  data-toggle="tooltip" title="Edit Position" 
                             data-placement="left">edit</i></a>
                             
-                            <a href="position/deletePosition"data-toggle="modal" data-target="#deletePosition"  data-toggle="tooltip" 
-                            title="Delete Position!" data-placement="right"  data-target="#deletePosition"><i class="material-icons text-danger">delete</i></a>
+                            <a href=""data-toggle="modal" data-target="#deletePosition<?= $position['id']?>"  data-toggle="tooltip" 
+                            title="Delete Position!" data-placement="right"  ><i class="material-icons text-danger">delete</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -47,9 +48,9 @@
 		</div>
 	</div>
   <!-- =================================START MODEL DELETE==================================================== -->
-  
+  <?php foreach($dataPosition as $position): ?>
   <!-- The Modal -->
-	<div class="modal fade" id="deletePosition">
+	<div class="modal fade" id="deletePosition<?= $position['id']?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -74,10 +75,13 @@
       </div>
     </div> 
   </div>
+  <?php endforeach; ?>
   <!-- =================================END MODEL DELETE==================================================== -->
     <!-- ===============================START UPDATE POSITION=============================== -->
+
+    <?php foreach($dataPosition as $position): ?>
     <!-- The Modal Update Position-->
-    <div class="modal fade" id="updatePosition">
+    <div class="modal fade" id="updatePosition<?= $position['id']?>">
     <div class="modal-dialog">
         <div class="modal-content">         
             <!-- Modal Header -->
@@ -89,11 +93,11 @@
                         <div class="modal-body text-right">
                             <form  action="position/updatePosition" method="post">
                                 <div class="form-group">
-					                <input type="hidden" class="form-control"  name="id" id="po_id">
+					                <input type="hidden" class="form-control"  name="id" id="po_id" value="<?= $position['id']?>" >
 				                </div>
                                 <div class="form-group">
                                     <label for="name">Position Name:</label>
-                                    <input type="text" class="form-control" placeholder="Enter Position name" value="" id="position name" name="position">
+                                    <input type="text" class="form-control" placeholder="Enter Position name" id="position_name" name="title" value="<?= $position['title']?>">
                             </div>
                         <a data-dismiss="modal" class="closeModal">DISCARD</a>
                         <a data-dismiss="modal" class="updateModal">Update</a>
@@ -104,6 +108,7 @@
         </div>
     </div>
 </div>
+<?php endforeach; ?>
 	<!-- The Modal --->
 	<div class="modal fade" id="createPosition">
     <div class="modal-dialog">

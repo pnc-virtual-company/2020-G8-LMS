@@ -33,17 +33,17 @@ class Position extends BaseController
 		}
 	}
     // edit position
-	// public function editPosition($id)
-	// {
-	//  $position = new PositionModel();
-	//  $data['editPosition'] = $position->find($id);
-	//  return view('/position', $data);
-	// }
-	// public function updatePosition(){
-	// 	$position = new PositionModel();
-	// 	$position->update($_POST['id'], $_POST);
-	// 	return redirect()->to('/position');
-	// }
+	public function editPosition($id)
+	{
+	 $position = new PositionModel();
+	 $data['editPosition'] = $position->find($id);
+	 return view('/position', $data);
+	}
+	public function updatePosition(){
+		$position = new PositionModel();
+		$position->update($_POST['id'], $_POST);
+		return redirect()->to('/position');
+	}
 	// delete position
 	public function deletePosition($id)
 	{
