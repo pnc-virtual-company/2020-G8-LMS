@@ -13,7 +13,7 @@ class User extends BaseController
 			];
 			$error = [
 				'password' => [
-					'validateUser' => ' Email and Password do not match'
+					'validateUser' => ' Wrong email or password, please check again !'
 				]
 
 			];
@@ -41,9 +41,8 @@ class User extends BaseController
 			'lastname' => $user['lastname'],
 			'email' => $user['email'],
 			'password' => $user['password'],
-			'role' => $user['role'],
-			'start_date' => $user['start_date'],
-			'profile' => $user['profile']
+			'isLoggedIn' => true,
+			
 		];
 
 		session()->set($data);
