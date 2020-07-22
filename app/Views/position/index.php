@@ -7,12 +7,30 @@
         <div class="col-3"></div>
 			<div class="col-6">
                 <div class="input-group mb-3">
-                    <input type="text" id="searchs" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
                     <div class="input-group-append"></div>
                 </div><br>
-			    <h5 class="text-center"></h5>
-            
-                <table class="table table-borderless table-hover">
+          <script>
+          function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("search");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("position");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          } else {
+          tr[i].style.display = "none";
+          }
+          }
+          }
+          }
+          </script>
+                <table class="table table-borderless table-hover" id="position">
                 <thead>
                     <tr>
                        
@@ -47,6 +65,7 @@
 			<div class="col-3"></div>
 		</div>
 	</div>
+
   <!-- =================================START MODEL DELETE==================================================== -->
   <?php foreach($dataPosition as $position): ?>
   <!-- The Modal -->
@@ -133,6 +152,8 @@
       </div>
     </div>
   </div>
+  
+
 <!-- =================================END MODEL CREATE==================================================== -->
 <?= $this->endSection() ?>
 						
