@@ -37,6 +37,14 @@ $routes->add('your_leave', 'Your_leave::yourLeave');
 $routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'noauth']);
 $routes->add('employees','Employee::index');
 $routes->add('position', 'Position::index');
+$routes->add('department', 'Department::index');
+
+//route of departments
+// $routes->group('/', function($routes)
+// {
+//     $routes->add('department', 'Department::index');
+//     $routes->add('deleteDepartment/(:num)', 'Department::deleteDepartment/$id');
+//     $routes->add('updateDepartment/(:num)', 'Department::updateDepartment/$id'
 
 $routes->add('department', 'Departments::index');
 
