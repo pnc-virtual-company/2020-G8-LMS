@@ -5,10 +5,31 @@
     <!-- button search -->
     <div class="search">
         <div class="input-group mb-3">
-            <input type="text" id="search" class="form-control" placeholder="Search">
+            <input type="text" id="search" onkeyup="myFunction()" class="form-control" placeholder="Search">
             <div class="input-group-append"></div>
         </div><br>
     </div>
+        
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            } else {
+            tr[i].style.display = "none";
+            }
+            }
+            }
+            }
+    </script>
     <div class="row">
         <div class="col-10">
                   <!-- alert message success if user correctly information-->
@@ -37,7 +58,7 @@
     <!-- Text on Employee -->
      <h4 class="font-weight-bold ml-2">List  Employee</h4><br>
      <!-- table Employee -->
-		<table class="table table-borderless table-hover">
+		<table class="table table-borderless table-hover" id="myTable">
 
 			<tr>
                 <th class = "hide">ID</th>
