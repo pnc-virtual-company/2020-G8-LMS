@@ -20,7 +20,6 @@
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;CREATE
 		</a>
     </div>
-    <!-- Text on Employee -->
      <h4 class="font-weight-bold ml-2">Employees</h4><br>
      <!-- table Employee -->
 		<table class="table table-borderless table-hover">
@@ -28,9 +27,11 @@
 			<tr>
                 <th>First name</th>
                 <th>Last name</th>
+                <th>Email</th>
+                <th class="hide">Password</th>
                 <th>Department</th> 
                 <th>Position</th>
-                <th>Manager</th>
+                <th class="hide">Role</th>
                 <th>start date</th>
                
       </tr>
@@ -38,10 +39,13 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>jack.thomas@gmail.com</td>
+                <td class="hide">123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
-                <td>Ronan</td>
+                <td class="hide">HR</td>
                 <td>25/05/2005</td>
+
                 <!-- Icon edit and delete -->
 				<td>
 					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
@@ -52,42 +56,18 @@
 			<tr>
                 <td>Ronan</td>
                 <td>Ogor</td>
+                <td>ronan.ogor@gmail.com</td>
+                <td class="hide">123</td>
                 <td>Training/Education</td>
                 <td>WEP Coordinator</td>
-                <td>Bengimen</td>
+                <td class="hide">Manager</td>
                 <td>25/05/2005</td>
 				<td>
           <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
 				</td>
       </tr>
-                    
-        <tr>
-                  <td>Seiha</td>
-                  <td>Sam</td>
-                  <td>Training/Education</td>
-                  <td>WEP Trainer</td>
-                  <td>Mona</td>
-                  <td>25/05/2005</td>
-          <td>
-            <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-            <a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
-          </td>
-        </tr>
-
-        <tr>
-                  <td>Rady</td>
-                  <td>Y</td>
-                  <td>Training/Education</td>
-                  <td>WEP Coordinator</td>
-                  <td>Rith</td>
-                  <td>25/05/2005</td>
-          <td>
-            <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-            <a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
-          </td>
-        </tr>
-					
+                
 		</table>
 			<div class="col-2"></div>
 </div>
@@ -108,20 +88,37 @@
             <div class="modal-body text-right">
                 <form  action="/" method="post">
                     <div class="row">
+
+                        <!-- input first name -->
                         <div class="col-sm-6">
-                            <!-- input first name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="First name">
                             </div>
                         </div>
+
+                        <!-- input last name -->
                         <div class="col-sm-6">
-                            <!-- input last name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Last name">
                             </div>
                         </div>
+
+                        <!-- input last email -->
                         <div class="col-sm-6">
-                            <!-- input Department -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <!-- input last password -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <!-- input Department -->
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="form-control" placeholder="Department">
                                     <option selected>Department</option>
@@ -132,8 +129,9 @@
                                 </select>
                             </div>
                         </div>
+
+                         <!-- Position -->
                         <div class="col-sm-6">
-                            <!-- Position -->
                             <div class="form-group">
                                 <select class="form-control" placeholder="Position">
                                     <option selected>Position</option>
@@ -142,28 +140,38 @@
                                 </select>
                             </div>
                         </div>
+                        
+                        <!-- profile -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                                <input type="file" class="form-control-file border">
+                            </div>
+                        </div>
+
+                        <!-- startDate -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
+                                <input  type="date"
+                                        name="startDate"
+                                        class="form-control"
+                                        placeholder="Start Date..." 
+                                >
+                            </div>
+                        </div>
+                    
                     </div>
-                     <!-- Manager -->
-                     <div class="form-group">
-                        <select class="form-control" placeholder="Manager">
-                            <option selected>Manager</option>
-                            <option>Ronan</option>
-                            <option>Bengimen/option>
-                            <option>Mona</option>
-                            <option>right</option>
-                        </select>
-                    </div>
-                    <!-- input first startdate -->
+
+                    <!-- role -->
                     <div class="form-group">
-                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
-                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
-                        name="startdate"  class="form-control" placeholder="start date" required>
-                    </div>
-                
-                    <!-- profile -->
-                    <div class="form-group">
-                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
-                       <input type="file" class="form-control-file border">
+                                <select class="form-control" name="position">
+                                    <option selected>Role</option>
+                                    <option>Manager</option>
+                                    <option>Empoyee</option>
+                                    <option>HR</option>
+                                    <option>Admin</option>
+                                </select>
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
@@ -175,7 +183,7 @@
         </div>
     </div>
 </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+  
 
   <!-- ========================================START Model UPDATE================================================ -->
 	<!-- The Modal -->
@@ -190,23 +198,40 @@
             </div>
         
              <!-- Modal body -->
-            <div class="modal-body text-right">
+             <div class="modal-body text-right">
                 <form  action="/" method="post">
                     <div class="row">
+
+                        <!-- input first name -->
                         <div class="col-sm-6">
-                            <!-- input first name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="First name">
                             </div>
                         </div>
+
+                        <!-- input last name -->
                         <div class="col-sm-6">
-                            <!-- input last name -->
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Last name">
                             </div>
                         </div>
+
+                        <!-- input last email -->
                         <div class="col-sm-6">
-                            <!-- input Department -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <!-- input last password -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <!-- input Department -->
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="form-control" placeholder="Department">
                                     <option selected>Department</option>
@@ -217,8 +242,9 @@
                                 </select>
                             </div>
                         </div>
+
+                        <!-- Position -->
                         <div class="col-sm-6">
-                            <!-- Position -->
                             <div class="form-group">
                                 <select class="form-control" placeholder="Position">
                                     <option selected>Position</option>
@@ -227,48 +253,43 @@
                                 </select>
                             </div>
                         </div>
+
+                        <!-- profile -->
                         <div class="col-sm-6">
-                             <!-- Manager -->
                             <div class="form-group">
-                                <select class="form-control" placeholder="Manager">
-                                    <option selected>Manager</option>
-                                    <option>Ronan</option>
-                                    <option>Bengimen/option>
-                                    <option>Mona</option>
-                                    <option>right</option>
-                                </select>
+                                <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
+                                <input type="file" class="form-control-file border">
                             </div>
                         </div>
+
+                        <!-- startDate -->
                         <div class="col-sm-6">
-                            <!-- role -->
                             <div class="form-group">
-                                <select class="form-control" placeholder="Role">
+                            <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
+                                <input  type="date"
+                                        name="startDate"
+                                        class="form-control"
+                                        placeholder="Start Date..." 
+                                >
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- role -->
+                    <div class="form-group">
+                                <select class="form-control" name="position">
                                     <option selected>Role</option>
-                                    <option>Admin</option>
                                     <option>Manager</option>
-                                    <option>Employee</option>
+                                    <option>Empoyee</option>
                                     <option>HR</option>
+                                    <option>Admin</option>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                     <!-- input first startdate -->
-                    <div class="form-group">
-                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
-                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
-                        name="startdate"  class="form-control" placeholder="start date" required>
-                    </div>
 
-                    <!-- profile -->
-                    <div class="form-group">
-                    <label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">Profile:</label>
-                       <input type="file" class="form-control-file border">
-                    </div>
-
-                    <!-- Button update and Discard -->
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
-                    <input type="submit" value="UPDATE" class="btn text-info">
+                    <!-- input submit -->
+                     <input type="submit" value="CREATE" class="btn text-info">
                 </form>
             </div>
         </div>
