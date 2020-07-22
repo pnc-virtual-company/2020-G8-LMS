@@ -61,7 +61,7 @@
 			<form  action="<?= base_url("/department/addDepartment") ?>" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="department_name" class="form-control" placeholder="Department Name">
+					<input type="text" name="department_name" class="form-control" placeholder="Department Name" required>
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
