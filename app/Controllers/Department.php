@@ -18,7 +18,7 @@ class Department extends BaseController
 		return view('department/index', $data);
 	}
 	
-	//function create departments
+	//function create department
 	public function addDepartment()
 	{	
 		$department = $this->request->getVar('department_name');
