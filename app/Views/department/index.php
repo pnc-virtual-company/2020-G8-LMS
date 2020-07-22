@@ -8,31 +8,31 @@
 		<div class="col-6">
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
-                <input type="text" id="searchs" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
                 <div class="input-group-append"></div>
             </div>
             <br>
 
-            <table class="table table-borderless table-hover">
+            <table class="table table-borderless table-hover" id="myTable">
                 <thead>
                     <tr>
                         <th>Department</th>
                         <th class="hide">Id</th>
                         <th class="text-right">
-                            <a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createDepartment">
-						        <i class="material-icons float-left" data-toggle="tooltip" title="Add Position!" data-placement="left">add</i>&nbsp;Create
-					        </a>
+                          <a href="" class="btn btn-info btn-sm text-white font-weight-bolder " data-toggle="modal" data-target="#createDepartment">
+						                <i class="material-icons float-left" data-toggle="tooltip" title="Add Department!" data-placement="left">add</i>&nbsp;Create
+					                </a>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($department as $values) :?>
+                <?php foreach($departmentData as $values) :?>
                     <tr>
                         <td class="departmentName"> <?= $values['department_name']; ?> </td>
                         <td class="hide"> <?= $values['id']; ?> </td>
                         <td class="text-right">
-                            <a href="department/editDepartment/<?= $values['id']; ?>" data-toggle="modal" data-target="#updateDepartment"><i class="editdata material-icons text-info" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
-							              <a href="department/deleteDepartment/<?= $values['id']; ?>" data-toggle="modal" data-target="#deleteDepartment" title="Delete Department!" data-placement="right"><i class="material-icons text-danger" data-toggle="tooltip">delete</i></a>
+                            <a href="" data-toggle="modal" data-target="#updateDepartment<?= $values['id']?>"><i class="editdata material-icons text-info" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
+							              <a href="" data-toggle="modal" data-target="#deleteDepartment<?= $values['id']?>" title="Delete Department!" data-placement="right"><i class="material-icons text-danger" data-toggle="tooltip">delete</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -58,10 +58,10 @@
         <!-- Modal body -->
 
         <div class="modal-body text-right">
-			<form  action="/department/addDepartment" method="post">
+			<form  action="<?= base_url("/department/addDepartment") ?>" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="department_name" class="form-control" placeholder="Department Name">
+					<input type="text" name="department_name" class="form-control" placeholder="Department Name" required>
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -75,8 +75,9 @@
   <!-- =================================END MODEL CREATE==================================================== -->
 
   <!-- ========================================START Model UPDATE================================================ -->
-	<!-- The Modal -->
-	<div class="modal fade" id="updateDepartment">
+	<?php foreach($departmentData as $values) :?>
+  <!-- The Modal -->
+	<div class="modal fade" id="updateDepartment<?= $values['id']; ?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -88,12 +89,12 @@
         
         <!-- Modal body -->
 		<div class="modal-body text-right">
-			<form  action="/department/updateDepartment/" method="post">
+			<form  action="<?= base_url("/department/updateDepartment") ?>" method="post">
 				<div class="form-group">
-					<input type="hidden" class="form-control"  name="id" id="id" value="<?= $values['id'];?>">
+					<input type="hidden" class="form-control"  name="id" id="id" value="<?= $values['id']?>">
 				</div>
 				<div class="form-group">
-					<input type="text" name="department_name" class="form-control" id="department_name" value="<?= $values['department_name']; ?>">
+					<input type="text" name="department_name" class="form-control" id="department_name" value="<?= $values['department_name']?>">
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -103,13 +104,15 @@
       </div>
     </div> 
   </div>
- 
+  <?php endforeach; ?>
   <!-- =================================END MODEL UPDATE==================================================== -->
   
   <!-- =================================START MODEL DELETE==================================================== -->
+  <?php foreach($departmentData as $values) :?>
+
   
   <!-- The Modal -->
-	<div class="modal fade" id="deleteDepartment">
+	<div class="modal fade" id="deleteDepartment<?= $values['id'];?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -133,26 +136,29 @@
       </div>
     </div> 
   </div>
-
+  <?php endforeach; ?>
   <!-- =================================END MODEL DELETE==================================================== -->
 
-
   <script>
-	$(document).ready(function(){
-		$('.editdata').on('click',function(){
-			$('#updateDepartment');
-			$tr = $(this).closest('tr');
-			var data = $tr.children('td').map(function(){
-				return $(this).text();
-			}).get();
-
-			console.log(data);
-			$('#id').val(data[0]);
-			$('#department_name').val(data[1]);
-
-		});
-	});
-</script> 
+    function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+    txtValue = td.textContent || td.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    tr[i].style.display = "";
+    } else {
+    tr[i].style.display = "none";
+    }
+    }
+    }
+    }
+</script>
 
 <?= $this->endSection() ?>
 
