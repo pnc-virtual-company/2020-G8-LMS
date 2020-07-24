@@ -13,7 +13,7 @@ class User extends BaseController
 			];
 			$error = [
 				'password' => [
-					'validateUser' => ' Wrong email or password, please check again !'
+					'validateUser' => ' incorrect email or password !'
 				]
 
 			];
@@ -36,9 +36,9 @@ class User extends BaseController
 
 	public function setUserSession($user){
 		$data = [
-			'id' => $user['id'],
-			'firstname' => $user['firstname'],
-			'lastname' => $user['lastname'],
+			'id' => $user['u_id'],
+			'firstname' => $user['firstName'],
+			'lastname' => $user['lastName'],
 			'email' => $user['email'],
 			'password' => $user['password'],
 			'isLoggedIn' => true,
