@@ -21,9 +21,9 @@ class Department extends BaseController
 	//function create department
 	public function addDepartment()
 	{	
-		$department = $this->request->getVar('department_name');
+		$department = $this->request->getVar('dname');
         $data = array(
-            'department_name' => $department
+            'dname' => $department
         );
         $this->department->insert($data);
         return redirect()->to("/department");
@@ -40,10 +40,10 @@ class Department extends BaseController
 	//Function update departments
    	public function updateDepartment()
 	{	
-		$Id = $this->request->getVar('id');
-        $department = $this->request->getVar('department_name');
+		$Id = $this->request->getVar('d_id');
+        $department = $this->request->getVar('dname');
         $data = array(
-            'department_name' => $department
+            'dname' => $department
         );
 		$this->department->update($Id, $data);
 		var_dump($data);

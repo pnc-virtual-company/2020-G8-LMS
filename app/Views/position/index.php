@@ -46,15 +46,15 @@
                 <tbody>
                 <?php foreach($dataPosition as $position): ?>
                     <tr>
-                        <td><?= $position['title']; ?> </td>
-                       <td class="hide"><?= $position['id']; ?></td>
+                        <td><?= $position['pname']; ?> </td>
+                       <td class="hide"><?= $position['p_id']; ?></td>
                         <td class="text-right">
 
-                            <a href="" data-toggle="modal" data-target="#updatePosition<?= $position['id']?>">
+                            <a href="" data-toggle="modal" data-target="#updatePosition<?= $position['p_id']?>">
                             <i class="material-icons text-info positionEdit"  data-toggle="tooltip" title="Edit Position" 
                             data-placement="left">edit</i></a>
                             
-                            <a href=""data-toggle="modal" data-target="#deletePosition<?= $position['id']?>"  data-toggle="tooltip" 
+                            <a href=""data-toggle="modal" data-target="#deletePosition<?= $position['p_id']?>"  data-toggle="tooltip" 
                             title="Delete Position!" data-placement="right"  ><i class="material-icons text-danger">delete</i></a>
                         </td>
                     </tr>
@@ -69,7 +69,7 @@
   <!-- =================================START MODEL DELETE==================================================== -->
   <?php foreach($dataPosition as $position): ?>
   <!-- The Modal -->
-	<div class="modal fade" id="deletePosition<?= $position['id']?>">
+	<div class="modal fade" id="deletePosition<?= $position['p_id']?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -82,7 +82,7 @@
         <!-- Modal body -->
         
 		<div class="modal-body text-right">
-			<form  action="position/deletePosition/<?= $position['id'];?>" method="post">
+			<form  action="position/deletePosition/<?= $position['p_id'];?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to delete the selected Position?</p>
 			</div>
@@ -100,7 +100,7 @@
 
     <?php foreach($dataPosition as $position): ?>
     <!-- The Modal Update Position-->
-    <div class="modal fade" id="updatePosition<?= $position['id']?>">
+    <div class="modal fade" id="updatePosition<?= $position['p_id']?>">
     <div class="modal-dialog">
         <div class="modal-content">         
             <!-- Modal Header -->
@@ -112,11 +112,11 @@
                         <div class="modal-body text-right">
                             <form  action="position/updatePosition" method="post">
                                 <div class="form-group">
-					                <input type="hidden" class="form-control"  name="id" id="po_id" value="<?= $position['id']?>" >
+					                <input type="hidden" class="form-control"  name="p_id" id="p_id" value="<?= $position['p_id']?>" >
 				                </div>
                                 <div class="form-group">
                                     <label for="name">Position Name:</label>
-                                    <input type="text" class="form-control" placeholder="Enter Position name" id="position_name" name="title" value="<?= $position['title']?>">
+                                    <input type="text" class="form-control" placeholder="Enter Position name" id="pname" name="pname" value="<?= $position['pname']?>">
                             </div>
                         <a data-dismiss="modal" class="closeModal">DISCARD</a>
                         <a data-dismiss="modal" class="updateModal">Update</a>
@@ -141,7 +141,7 @@
         <div class="modal-body text-right">
 			<form  action="position/addPosition" method="post">
 				<div class="form-group">
-					<input type="text" name="title" class="form-control" placeholder="Position Name">
+					<input type="text" name="pname" class="form-control" placeholder="Position Name">
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;

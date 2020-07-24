@@ -4,16 +4,16 @@ use CodeIgniter\Model;
 
 class DepartmentModel extends Model
 {
-    protected $table      = 'departments';
-    protected $primaryKey = 'id';
+    protected $table      = 'department';
+    protected $primaryKey = 'd_id';
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['department_name'];
+    protected $allowedFields = ['dname'];
 
     public function getAllSubject() 
     {
-        return $this->db->table('departments')->get()->getResultArray();
+        return $this->db->table('department')->get()->getResultArray();
     }
 
 }

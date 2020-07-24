@@ -16,17 +16,17 @@ class Position extends BaseController
 		if($this->request->getMethod() == "post"){
 			helper(['form']);
 			$rules = [
-				'title'=>'required|min_length[1]|max_length[50]',
+				'pname'=>'required|min_length[1]|max_length[50]',
 			];
 			$errors = [
-				'title' => [
+				'pname' => [
 					'validateUser' => 'name,ingredient or price don\'t match'
 				]
 				];
 				$position = new PositionModel();
-				$positionTitle = $this->request->getVar('title');
+				$positionTitle = $this->request->getVar('pname');
 				$positionData = array(
-					'title'=>$positionTitle,
+					'pname'=>$positionTitle,
 				);
 				$position->insert($positionData);
 				return redirect()->to('/position');
@@ -41,7 +41,7 @@ class Position extends BaseController
 	}
 	public function updatePosition(){
 		$position = new PositionModel();
-		$position->update($_POST['id'], $_POST);
+		$position->update($_POST['p_id'], $_POST);
 		return redirect()->to('/position');
 	}
 	// delete position
