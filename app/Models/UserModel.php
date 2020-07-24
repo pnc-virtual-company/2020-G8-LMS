@@ -1,18 +1,20 @@
 <?php namespace App\Models;
-
 use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    
-    public function getAllUser(){
-        return $this->db->table('users')
-        ->join('department', 'department.de_id = users.de_id')
-        ->join('positions', 'position.po_id = users.po_id')
+    protected $table      = 'user';
+    protected $primaryKey = 'u_id';
+
+    protected $returnType     = 'array';
+
+    protected $allowedFields = ['firstName', 'lastName','startDate', 'profile', 'email', 'password', 'role', 'position_id', 'department_id'];
+
+    public function getUserInfo() 
+    {
+        return $this->db->table('user')
+        ->join('position', 'user.position_id = position.p_id')
+        ->join('department', 'department.d_id = user.department_id')
         ->get()->getResultArray();
     }
-    protected $table      = 'users';
-    protected $primaryKey = 'id';
-    protected $returnType     = 'array';
-    protected $allowedFields = ['firstname','lastname', 'email','password','role','profile','start_date','de_id','po_id'];
 }
