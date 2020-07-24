@@ -4,11 +4,11 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table      = 'users';
-    protected $primaryKey = 'id';
+    protected $table      = 'user';
+    protected $primaryKey = 'u_id';
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['firstname','lastname','email','password','role','start_date','profile'];
+    protected $allowedFields = ['firstName','lastName','startDate','profile','email','password','role',];
 
 }
