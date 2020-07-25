@@ -37,12 +37,13 @@ $routes->add('leave', 'Leave::showSummitedleaves');
 //$routes->add('employees','Employee::index');
 $routes->add('position', 'Position::index');
 $routes->add('department', 'Departments::index');
+$routes->add('positions', 'Position::position');
+$routes->add('departments', 'Department::department');
 
-
-$routes->add('employee', 'User::showUser');
-$routes->add('addUser', 'User::createUser');
-$routes->add('remove/(:num)', 'User::deleteEmployee/$1');
-$routes->add('update', 'User::updateEmployee');
+$routes->add('employee', 'Employee::showUser');
+$routes->add('addUser', 'Employee::createUser');
+$routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
+$routes->add('update', 'Employee::updateEmployee');
 
 
 
