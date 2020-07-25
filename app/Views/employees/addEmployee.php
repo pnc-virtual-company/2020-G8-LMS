@@ -14,36 +14,31 @@
 			<form  action="/addUser" method="post" enctype="multipart/form-data">
 					<div class="container">
 						<div class="row">
+						<!-- input First name -->
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="First name" name= "firstName" required>
 								</div>
 							</div>
+						<!-- input Last name -->	
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="Last name" name= "lastName" required>
 								</div>
 							</div>
+						<!-- input Email -->	
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input type="email" class="form-control" placeholder="email" name= "email" required>
 								</div>
 							</div>
+						<!-- input password -->	
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input type="password" class="form-control" placeholder="password" name= "password" required>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<select class="form-control" name="position">
-										<option value="" selected disabled>Position...</option>
-										<?php foreach($positionData as $position): ?>
-											<option value="<?= $position['p_id'] ?>"><?= $position['pname'] ?></option>
-										<?php endforeach ?>
-									</select>
-								</div>
-							</div>
+						<!-- Department -->	  
 							<div class="col-sm-6">
 								<div class="form-group">
 									<select class="form-control" name="department">
@@ -54,22 +49,30 @@
 									</select>
 								</div>
 							</div>
-
+						<!-- Position -->	
 							<div class="col-sm-6">
-								<!-- startDate -->
-					
+								<div class="form-group">
+									<select class="form-control" name="position">
+										<option value="" selected disabled>Position...</option>
+										<?php foreach($positionData as $position): ?>
+											<option value="<?= $position['p_id'] ?>"><?= $position['pname'] ?></option>
+										<?php endforeach ?>
+									</select>
+								</div>
+							</div>
+						<!-- startDate -->	
+							<div class="col-sm-6">
 								<div class="form-group">
 									<label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
 										<input  type="date"
 												name="startDate"
 												class="form-control"
 												placeholder="Start Date..." >
-								
 								</div>
 							</div>
-
+						<!-- profile -->					
 							<div class="col-sm-6">
-								<!-- profile -->
+								
 								<div class="form-group">
 								<label class="font-weight-bolder" for="profile" style="margin-right:100%; ">Profile:</label>
 									<input type="file" class="form-control-file border" name="profile">
@@ -77,8 +80,7 @@
 							</div>
 
 						</div>
-						
-
+					<!-- input role -->
 						<div class="form-group">
                         <select class="form-control" name="role">
                             <option selected>Role</option>
@@ -88,9 +90,9 @@
                             <option>Admin</option>
                         </select>
                     </div>
-						<a data-dismiss="modal" class="closeModal">DISCARD</a>
+					<!-- input discard and create -->
+					<a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
-                    <!-- input submit -->
                     <input type="submit" value="CREATE" class="btn text-info">
 					</div>
         	</form>
