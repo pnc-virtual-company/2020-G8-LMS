@@ -21,7 +21,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text icon-login" id="basic-addon1"><i class="material-icons">email</i></span>
                   </div>
-                  <input type="email" class="form-control" name="email" placeholder="Enter email" aria-label="Email" aria-describedby="basic-addon1" >
+                  <input type="email" class="form-control" name="email" value="<?= set_value('email') ?>" placeholder="Enter email" aria-label="Email" aria-describedby="basic-addon1" >
                 </div>
               </div>
               <div class="form-group ">
@@ -29,7 +29,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text icon-login" id="basic-addon2"><i class="material-icons">lock</i></span>
                   </div>
-                  <input class="prepend-fx form-control" type="password" id='password' name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
+                  <input class="prepend-fx form-control" type="password" id='password' name="password" value="<?= set_value('password') ?>" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                 </div>
               </div>
           </div>
