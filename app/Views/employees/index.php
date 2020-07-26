@@ -87,8 +87,10 @@
 							<td> <?= $user['pname'] ?> </td>
 							<td> <?= $user['dname'] ?> </td>
 							<td> <?= $user['startDate'] ?> </td>
-							<td style="display:flex;justify-content:flex-end">
+
 							<!-- <button class = "submit" class = " employeeInfo"><i class="material-icons employeeInfo text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></button> -->
+							<td style="display:flex;justify-content:flex-end">
+							
 								<a href=""  data-toggle="modal" data-target="#updateEmployee<?= $user['u_id'] ?>"><i class="material-icons employeeInfo text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></a> 
 								<a href="" data-toggle="modal" data-target="#deleteEmployee<?= $user['u_id'] ?>"><i class="material-icons text-danger" data-toggle="tooltip" title="Delete Employee!" data-placement="right">delete</i></a>
 							</td>
