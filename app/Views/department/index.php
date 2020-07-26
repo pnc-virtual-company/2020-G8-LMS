@@ -6,6 +6,16 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
+
+<!-- alert message error if user incorrect information-->
+
+  <?php if(session()->get('error')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
+  </div>
+  <?php endif ?>
+
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
@@ -27,7 +37,7 @@
                 </thead>
                 <tbody>
                 <?php foreach($departmentData as $values) :?>
-                    <tr>
+                    <tr class = "edit_hover_class">
                         <td class="departmentName"> <?= $values['dname']; ?> </td>
                         <td class="hide"> <?= $values['d_id']; ?> </td>
                         <td class="text-right">
@@ -44,7 +54,8 @@
 	</div>
 </div>
     <!-- =======================================START CREATE DEPARTMENT========================================== -->
-	<!-- The Modal -->
+  
+  <!-- The Modal -->
 	<div class="modal fade" id="createDepartment">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -61,14 +72,15 @@
 			<form  action="<?= base_url("/department/addDepartment") ?>" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="dname" class="form-control" placeholder="Department Name" required>
+					<input type="text" name="dname" class="form-control" placeholder="Department Name" >
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-info>
+		  <input type="submit" value="CREATE" class="createBtn text-primary">
         </div>
         </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -98,7 +110,7 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-info">
+		  <input type="submit" value="UPDATE" class="createBtn text-primary">
         </div>
         </form>
       </div>
@@ -130,7 +142,7 @@
 			</div>
 			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
 		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-info">
+		    <input type="submit" value="REMOVE" class="createBtn text-danger">
         </div>
         </form>
       </div>
