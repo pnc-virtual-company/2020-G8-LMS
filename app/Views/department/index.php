@@ -9,12 +9,12 @@
 
 <!-- alert message error if user incorrect information-->
 
-<?php if(session()->get('error')): ?>
-<div class="alert alert-danger alert-dismissible fade show">
-<button type="button" class="close" data-dismiss="alert">&times;</button>
-<strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
-</div>
-<?php endif ?>
+  <?php if(session()->get('error')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
+  </div>
+  <?php endif ?>
 
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
@@ -76,7 +76,7 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-warning">
+		  <input type="submit" value="CREATE" class="createBtn text-primary">
         </div>
         </div>
         </form>
@@ -110,7 +110,7 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-warning">
+		  <input type="submit" value="UPDATE" class="createBtn text-primary">
         </div>
         </form>
       </div>
@@ -142,7 +142,7 @@
 			</div>
 			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
 		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-warning">
+		    <input type="submit" value="REMOVE" class="createBtn text-danger">
         </div>
         </form>
       </div>
