@@ -8,8 +8,20 @@ class User extends BaseController
 		$data = [];
 		if($this->request->getMethod() == "post"){
 			$rules = [
-				'email' => 'required|valid_email',
-				'password' => 'required|validateUser[email,password]'
+				'email' => [
+					'rules'=>'required|valid_email',
+					'label'=>'Email address',
+					'errors'=>[
+						'required'=>'email not yet complete',
+					],
+				],
+				'password' => [
+					'rules'=>'required|validateUser[email,password]',
+					'label'=>'Password ',
+					'errors'=>[
+						'required'=>' password not yet complete',
+					],
+				],
 			];
 			$error = [
 				'password' => [
@@ -24,7 +36,7 @@ class User extends BaseController
 			}else{
 				$model = new UserModel();
 				$user = $model->where('email',$email)->first();
-							 
+				
 				$this->setUserSession($user);
 				return redirect()->to('/your_leave');
 			}
