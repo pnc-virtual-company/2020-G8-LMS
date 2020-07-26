@@ -146,3 +146,9 @@ body {
 .table{
   margin-right:auto;
 }
+.edit_hover_class a{
+  visibility:hidden;
+}
+.edit_hover_class:hover a {
+ visibility:visible;
+}

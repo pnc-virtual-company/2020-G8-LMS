@@ -4,15 +4,16 @@ use CodeIgniter\Model;
 
 class PositionModel extends Model
 {
-    protected $table      = 'positions';
-    protected $primaryKey = 'id';
+    protected $table      = 'position';
+    protected $primaryKey = 'p_id';
+
     protected $returnType     = 'array';
-    protected $allowedFields = ['title'];
-    public function listPosition($user)
+
+    protected $allowedFields = ['pname'];
+
+    public function getAllSubject() 
     {
-        $this->insert([
-                'title'=>$user['title'],
-        ]);
+        return $this->db->table('position')->get()->getResultArray();
     }
 
 }
