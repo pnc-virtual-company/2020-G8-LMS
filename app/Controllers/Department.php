@@ -72,10 +72,9 @@ class Department extends BaseController
 					$Id = $this->request->getVar('d_id');
 					$department = $this->request->getVar('dname');
 					$data = array(
-						'd_id' => $Id,
-						'dname' => $department
+						'dname' => $department,
 					);
-					$this->department->insert($data);
+					$this->department->update($Id, $data);
 					return redirect()->to('/department');
 				}else{
 					$data['validation'] = $this->validator;
