@@ -4,8 +4,7 @@ class Position extends BaseController
 {
 	public function index()
 	{
-		$position = new PositionModel();
-		$data['dataPosition'] =$position->findAll();
+		 
 		return view('position/index', $data);
 	}
 

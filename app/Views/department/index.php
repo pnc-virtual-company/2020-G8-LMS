@@ -6,6 +6,16 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
+
+<!-- alert message error if user incorrect information-->
+
+<?php if(session()->get('error')): ?>
+<div class="alert alert-danger alert-dismissible fade show">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
+</div>
+<?php endif ?>
+
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
@@ -27,12 +37,12 @@
                 </thead>
                 <tbody>
                 <?php foreach($departmentData as $values) :?>
-                    <tr>
-                        <td class="departmentName"> <?= $values['department_name']; ?> </td>
-                        <td class="hide"> <?= $values['id']; ?> </td>
+                    <tr class = "edit_hover_class">
+                        <td class="departmentName"> <?= $values['dname']; ?> </td>
+                        <td class="hide"> <?= $values['d_id']; ?> </td>
                         <td class="text-right">
-                            <a href="" data-toggle="modal" data-target="#updateDepartment<?= $values['id']?>"><i class="editdata material-icons text-info" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
-							              <a href="" data-toggle="modal" data-target="#deleteDepartment<?= $values['id']?>" title="Delete Department!" data-placement="right"><i class="material-icons text-danger" data-toggle="tooltip">delete</i></a>
+                            <a href="" data-toggle="modal" data-target="#updateDepartment<?= $values['d_id']?>"><i class="editdata material-icons text-info" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
+							              <a href="" data-toggle="modal" data-target="#deleteDepartment<?= $values['d_id']?>" title="Delete Department!" data-placement="right"><i class="material-icons text-danger" data-toggle="tooltip">delete</i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -44,7 +54,8 @@
 	</div>
 </div>
     <!-- =======================================START CREATE DEPARTMENT========================================== -->
-	<!-- The Modal -->
+  
+  <!-- The Modal -->
 	<div class="modal fade" id="createDepartment">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -61,7 +72,7 @@
 			<form  action="<?= base_url("/department/addDepartment") ?>" method="post">
 				
 				<div class="form-group">
-					<input type="text" name="department_name" class="form-control" placeholder="Department Name" required>
+					<input type="text" name="dname" class="form-control" placeholder="Department Name" >
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -69,6 +80,7 @@
         </div>
         </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -77,7 +89,7 @@
   <!-- ========================================START Model UPDATE================================================ -->
 	<?php foreach($departmentData as $values) :?>
   <!-- The Modal -->
-	<div class="modal fade" id="updateDepartment<?= $values['id']; ?>">
+	<div class="modal fade" id="updateDepartment<?= $values['d_id']; ?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -91,10 +103,10 @@
 		<div class="modal-body text-right">
 			<form  action="<?= base_url("/department/updateDepartment") ?>" method="post">
 				<div class="form-group">
-					<input type="hidden" class="form-control"  name="id" id="id" value="<?= $values['id']?>">
+					<input type="hidden" class="form-control"  name="d_id" id="d_id" value="<?= $values['d_id']?>">
 				</div>
 				<div class="form-group">
-					<input type="text" name="department_name" class="form-control" id="department_name" value="<?= $values['department_name']?>">
+					<input type="text" name="dname" class="form-control" id="dname" value="<?= $values['dname']?>">
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -112,7 +124,7 @@
 
   
   <!-- The Modal -->
-	<div class="modal fade" id="deleteDepartment<?= $values['id'];?>">
+	<div class="modal fade" id="deleteDepartment<?= $values['d_id'];?>">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -124,7 +136,7 @@
         
         <!-- Modal body -->
 		<div class="modal-body text-right">
-			<form  action="/department/deleteDepartment/<?= $values['id']?>" method="post">
+			<form  action="/department/deleteDepartment/<?= $values['d_id']?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Department?</p>
 			</div>

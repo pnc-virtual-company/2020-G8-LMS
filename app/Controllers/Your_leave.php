@@ -2,9 +2,20 @@
 
 class Your_leave extends BaseController
 {
+	// protected $yourLeave;
+
+	// public function __construct() 
+    // {
+    //     $this->yourLeave = new YourLeaveModel();
+	// }
+	
 	public function yourLeave()
 	{
-		return view('your_leaves/your_leaves');
+		// $data = [
+        //     'yourLeaveData' => $this->yourLeave->getAllSubject(),
+        //     "copy" => "@copyright By Dy Dy"
+        // ];
+		return view('your_leaves/yourLeave', $data);
 	}
 // add your leave
 	public function addYourLeave()
