@@ -209,7 +209,7 @@
                             </div>
                         </div>
 
-                        <!-- input last name -->
+                        <!-- input Last name -->
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Last name">
