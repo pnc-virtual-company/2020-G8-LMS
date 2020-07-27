@@ -1,5 +1,4 @@
 <?php namespace App\Models;
-
 use CodeIgniter\Model;
 
 class PositionModel extends Model
@@ -11,9 +10,8 @@ class PositionModel extends Model
 
     protected $allowedFields = ['pname'];
 
-    public function getAllPositions() 
+    public function getAllPosition() 
     {
         return $this->db->table('position')->get()->getResultArray();
     }
-
 }
