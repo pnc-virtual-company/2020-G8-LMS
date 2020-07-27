@@ -12,7 +12,7 @@ class Department extends BaseController
 	public function index()
 	{
 		$data = [
-            'departmentData' => $this->department->getAllSubject(),
+            'departmentData' => $this->department->getAllDepartments(),
             "copy" => "@copyright By Hy Hy"
         ];
 		return view('department/index', $data);

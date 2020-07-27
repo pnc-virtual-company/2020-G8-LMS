@@ -11,7 +11,7 @@ class DepartmentModel extends Model
 
     protected $allowedFields = ['dname'];
 
-    public function getAllSubject() 
+    public function getAllDepartments() 
     {
         return $this->db->table('department')->get()->getResultArray();
     }
