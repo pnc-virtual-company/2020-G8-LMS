@@ -10,7 +10,7 @@ class PositionModel extends Model
 
     protected $allowedFields = ['pname'];
 
-    public function getAllPositions() 
+    public function getAllPosition() 
     {
         return $this->db->table('position')->get()->getResultArray();
     }
