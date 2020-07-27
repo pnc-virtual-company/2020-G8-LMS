@@ -7,9 +7,12 @@
   </div>
 </div>
 <div class="container">
-<button type="button" class=" btn bg-info text-white float-right btn-sm" data-toggle="modal" data-target="#exampleModal"
+<button type="button" class=" btn bg-info text-white float-right btn-sm" data-toggle="modal" data-target="#leaveRequest"
             data-whatever="">Request a Leave</button>
-       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+
+    <!-- ===================================START MODAL CREATE========================================== -->
+
+       <div class="modal fade" id="leaveRequest" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -17,7 +20,7 @@
                         <h5 class="modal-title" id="ModalLabel">Create a Request</h5>
                     </div>
                     <div class="container mt-5">
-                        <form action="" method="POST">
+                        <form action="your_leaves/your_leaves" method="POST">
 
                             <div class="row">
                                 <div class="col-sm-6">
@@ -89,7 +92,8 @@
                                                     rows="2"
                                                     name="comment"
                                                     class="form-control"
-                                                    placeholder="Comment"></textarea>
+                                                    placeholder="Comment">
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
