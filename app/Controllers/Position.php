@@ -5,7 +5,7 @@ class Position extends BaseController
 	public function index()
 	{
 		 
-		return view('position/index', $data);
+		return view('position/index');
 	}
 
 	// add new position
