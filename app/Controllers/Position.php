@@ -2,7 +2,7 @@
 use App\Models\PositionModel;
 class Position extends BaseController
 {
-	//Departments List
+	//position List
 	protected $position;
 
 	public function __construct() 
@@ -18,7 +18,7 @@ class Position extends BaseController
 		return view('position/index', $data);
 	}
 	
-	//function create department
+	//function create position
 	public function addPosition()
 	{	
 		$data = [];
@@ -52,7 +52,7 @@ class Position extends BaseController
 			 }
 	}
 
-	//Function update departments
+	//Function update position
 	public function updatePosition()
 	{	
 		$data = [];
@@ -86,9 +86,7 @@ class Position extends BaseController
 	}
 }
 		
-
-
-	//Function delete departments
+	//Function delete position
 
 	public function deletePosition($id)
 	{	
