@@ -6,13 +6,14 @@ class PositionModel extends Model
 {
     protected $table      = 'position';
     protected $primaryKey = 'p_id';
+
     protected $returnType     = 'array';
+
     protected $allowedFields = ['pname'];
-    public function listPosition($user)
+
+    public function getAllSubject() 
     {
-        $this->insert([
-                'pname'=>$user['pname'],
-        ]);
+        return $this->db->table('position')->get()->getResultArray();
     }
 
 }
