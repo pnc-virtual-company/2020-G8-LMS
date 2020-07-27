@@ -130,7 +130,7 @@
                             </div>
                         </div>
 
-                         <!-- Position -->
+                         <!-- Position- -->
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="form-control" placeholder="Position">
