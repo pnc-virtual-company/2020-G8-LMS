@@ -60,17 +60,14 @@
                                 </select>
                         </div>          
                     </div>
-                    <!-- startDate -->
-                    <div class="col-sm-6">
-						<div class="form-group">
-							<label class="font-weight-bolder" for="startdate" style="margin-right:100%; ">StartDate:</label>
-							<input  type="date"
-                                    value="<?= date('Y-m-d');?>
-									name="startDate"
-									class="form-control"
-									placeholder="Start Date..." >	
-						</div>               
-                    </div>
+                     <!-- startDate -->	
+							<div class="col-sm-6">
+								<div class="form-group">
+								<label class="font-weight-bolder" for="profile" style="margin-right:100%; ">StartDate:</label>
+								<input class="form-control datetimepicker"  name="startdate" type="date" value="<?= date('Y-m-d');?>"
+									id="startdate" data-date-format="DD-YY-MM" class="form-control">
+                        		</div>
+							</div>
                     <!-- profile -->
                     <div class="col-sm-6">
 						<div class="form-group">

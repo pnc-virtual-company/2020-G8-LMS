@@ -72,11 +72,11 @@
 						<th>Position</th>
 						<th>Department</th>
 						<th>Start Date</th>
-						<th>Status</th>
+					
 					</tr>
 					<?php foreach($userData as $user): ?>
 						
-						<tr>
+						<tr class="hover_class">
 						<td class="hide"><?= $user['u_id']?></td>
 							<td> <?= $user['firstName'] ?> </td>
 							<td> <?= $user['lastName'] ?> </td>

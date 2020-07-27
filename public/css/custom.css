@@ -143,3 +143,10 @@ body {
 .a{
   margin-left: 140px;
 }
+
+.hover_class a{
+  visibility: hidden;
+}
+.hover_class:hover a{
+  visibility: visible;
+}
