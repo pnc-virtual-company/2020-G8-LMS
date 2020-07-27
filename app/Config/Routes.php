@@ -31,11 +31,21 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
-$routes->add('/', 'User::index');
+$routes->add('/', 'User::index',['filter' => 'noauth']);
+$routes->add('logout', 'User::logoutUser');
 $routes->add('your_leave', 'Your_leave::yourLeave');
-$routes->add('leave', 'Leave::showSummitedleaves');
-//$routes->add('employees','Employee::index');
+$routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'noauth']);
+// $routes->add('employees','Employee::index');
 $routes->add('position', 'Position::index');
+$routes->add('department', 'Department::index');
+
+//route of departments
+// $routes->group('/', function($routes)
+// {
+//     $routes->add('department', 'Department::index');
+//     $routes->add('deleteDepartment/(:num)', 'Department::deleteDepartment/$id');
+//     $routes->add('updateDepartment/(:num)', 'Department::updateDepartment/$id'
+
 $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
 $routes->add('departments', 'Department::department');
