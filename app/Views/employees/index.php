@@ -72,6 +72,7 @@
 						<th>Position</th>
 						<th>Department</th>
 						<th>Start Date</th>
+						<th></th>
 						
 					</tr>
 					<?php foreach($userData as $user): ?>

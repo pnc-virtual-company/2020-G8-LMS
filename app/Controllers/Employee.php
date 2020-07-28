@@ -21,8 +21,8 @@ class Employee extends BaseController
 	{
         $data = [
             'userData' => $this->user->getUserInfo(),
-            "positionData" => $this->positions->getAllPosition(),
-            "departmentData" => $this->departments->getAllDepartment(),
+            "positionData" => $this->positions->getAllPositions(),
+            "departmentData" => $this->departments->getAllDepartments(),
             
         ];
 		return view('employees/index', $data);
@@ -73,7 +73,7 @@ class Employee extends BaseController
 		$sessionError->setFlashdata('error', $validation);
 		}
 		}
-		return redirect()->to('/employee');
+		return redirect()->to('/employees');
 		}
      
         
@@ -115,7 +115,7 @@ class Employee extends BaseController
                         $sessionError->setFlashdata('error', $validation);
                     }
                 }
-        return redirect()->to("/employee");
+        return redirect()->to("/employees");
     }
 
 
@@ -125,7 +125,7 @@ class Employee extends BaseController
     public function deleteEmployee($id){
         $employee = new UserModel();
         $employee->delete($id);
-        return redirect()->to('/employee');
+        return redirect()->to('/employees');
     }
 
 	//--------------------------------------------------------------------
