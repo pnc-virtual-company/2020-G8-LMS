@@ -10,7 +10,7 @@
 		<div class="col-11">
 		<div class="search">
         <div class="input-group mb-3">
-            	<input type="text" id="search" onkeyup="myFunction()" class="form-control" placeholder="Search">
+            	<input type="text" id="search"  class="form-control" placeholder="Search">
             	<div class="input-group-append"></div>
 				
     		</div><br>
@@ -19,26 +19,17 @@
 		</div>
 		
 	</div>   
-    <script>
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-            } else {
-            tr[i].style.display = "none";
-            }
-            }
-            }
-            }
-    </script>
+<script>
+	$(document).ready(function(){
+	$("#search").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#myTable tr").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+	});
+</script>
+            
 
 
 <div class="col-11">
@@ -57,10 +48,6 @@
 					<strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
 				</div>
 		<?php endif ?>
-
-
-				
-
 					<div class="text-right">
 								<a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee">
 									<i class="material-icons float-left" data-toggle="tooltip" title="Add Department!" data-placement="left">add</i>&nbsp;CREATE
@@ -70,7 +57,7 @@
 				<table class="table table-borderless table-hover" id='myTable'>
 				<thead>
         			<tr>
-					<th class="hide">ID</th>
+						<th class="hide">ID</th>
 						<th>First Name</th>
 						<th>Last Name</th>
 						<!-- <th class="hide">Email</th> -->
@@ -79,13 +66,10 @@
 						<th class="hide">Profile</th> -->
 						<th>Position</th>
 						<th>Department</th>
-						<th>Start Date</th>
-					
-						
-						
+						<th>Start Date</th>	
 					</tr>
-					    </thead>
-						<tbody >
+				</thead>
+					<tbody >
 						<?php foreach($userData as $user): ?>
 						<tr class="edit_hover_class ">
 							<td class="hide"><?= $user['u_id']?></td>
@@ -106,7 +90,7 @@
 								<a href="" data-toggle="modal" data-target="#deleteEmployee<?= $user['u_id'] ?>"><i class="material-icons text-danger" data-toggle="tooltip" title="Delete Employee!" data-placement="right">delete</i></a>
 							</td>
 						</tr>
-						</tbody>
+					</tbody>
 					<?php endforeach ?>
           			
 				</table>
