@@ -73,10 +73,9 @@ class Employee extends BaseController
 		$sessionError->setFlashdata('error', $validation);
 		}
 		}
-		return redirect()->to('/employee');
+		return redirect()->to('/employees');
 		}
      
-        
     public function updateEmployee() 
     {
         $data = [];
@@ -115,17 +114,13 @@ class Employee extends BaseController
                         $sessionError->setFlashdata('error', $validation);
                     }
                 }
-        return redirect()->to("/employee");
+        return redirect()->to("/employees");
     }
-
-
-
-
 
     public function deleteEmployee($id){
         $employee = new UserModel();
         $employee->delete($id);
-        return redirect()->to('/employee');
+        return redirect()->to('/employees');
     }
 
 	//--------------------------------------------------------------------

@@ -5,13 +5,20 @@
 <?= $this->include('employees/editEmployee') ?>
 <div class="container mt-5">
     <!-- button search -->
-    <div class="search">
+	<div class="row">
+		
+		<div class="col-11">
+		<div class="search">
         <div class="input-group mb-3">
-            <input type="text" id="search" onkeyup="myFunction()" class="form-control" placeholder="Search">
-            <div class="input-group-append"></div>
-    </div><br>
-</div>
-        
+            	<input type="text" id="search" onkeyup="myFunction()" class="form-control" placeholder="Search">
+            	<div class="input-group-append"></div>
+				
+    		</div><br>
+			<h3 class="font-weight-bolder employee"> Employee </h3>
+		</div>
+		</div>
+		
+	</div>   
     <script>
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
@@ -35,7 +42,7 @@
 
 
 <div class="col-11">
-         <!-- alert message success if user correctly information-->
+         <!--alert message success if user correctly information-->
 		<?php if(session()->get('success')): ?>
 			<div class="alert alert-success alert-dismissible fade show" >
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -52,7 +59,7 @@
 		<?php endif ?>
 
 
-				<h3 class="font-weight-bolder"> Employee </h3>
+				
 
 					<div class="text-right">
 								<a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee">
@@ -61,8 +68,9 @@
 					</div><br>
 
 				<table class="table table-borderless table-hover" id='myTable'>
+				<thead>
         			<tr>
-					   <th class="hide">ID</th>
+					<th class="hide">ID</th>
 						<th>First Name</th>
 						<th>Last Name</th>
 						<!-- <th class="hide">Email</th> -->
@@ -72,12 +80,15 @@
 						<th>Position</th>
 						<th>Department</th>
 						<th>Start Date</th>
+					
+						
 						
 					</tr>
-					<?php foreach($userData as $user): ?>
-						
-						<tr class="edit_hover_class">
-						<td class="hide"><?= $user['u_id']?></td>
+					    </thead>
+						<tbody >
+						<?php foreach($userData as $user): ?>
+						<tr class="edit_hover_class ">
+							<td class="hide"><?= $user['u_id']?></td>
 							<td> <?= $user['firstName'] ?> </td>
 							<td> <?= $user['lastName'] ?> </td>
 							<!-- <td class="hide"><?= $user['email']?></td> -->
@@ -87,7 +98,7 @@
 							<td> <?= $user['pname'] ?> </td>
 							<td> <?= $user['dname'] ?> </td>
 							<td> <?= $user['startDate'] ?> </td>
-
+							
 							<!-- <button class = "submit" class = " employeeInfo"><i class="material-icons employeeInfo text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></button> -->
 							<td style="display:flex;justify-content:flex-end">
 							
@@ -95,7 +106,7 @@
 								<a href="" data-toggle="modal" data-target="#deleteEmployee<?= $user['u_id'] ?>"><i class="material-icons text-danger" data-toggle="tooltip" title="Delete Employee!" data-placement="right">delete</i></a>
 							</td>
 						</tr>
-
+						</tbody>
 					<?php endforeach ?>
           			
 				</table>
