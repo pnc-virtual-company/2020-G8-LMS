@@ -35,7 +35,7 @@ $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
 $routes->add('your_leave', 'Your_leave::yourLeave');
 $routes->add('leave', 'Leave::showSummitedleaves');//['filter' => 'noauth']);
-$routes->add('employees','Employee::index')
+$routes->add('employees','Employee::index');
 
 $routes->add('position', 'Position::index');
 $routes->add('department', 'Department::index');
