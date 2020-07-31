@@ -89,8 +89,7 @@
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <input type="submit" value="UPDATE" class="btn text-info">
-                    <input type="file" class="hide" id="profile" name="profile">
-                                    
+                    <input type="file" class="hide" id="profile" name="profile">           
                 </form>
             </div>
         </div>
