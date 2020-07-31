@@ -42,6 +42,7 @@
       </div>
       <div class="col-md-4"></div>
     </div>
+    <!-- message error -->
     <?php if(isset($message)): ?>
             <div class="col-12 mt-5">
               <div class="alert alert-danger" role="alert" style="width:31.5%; margin-left:34.2%">
