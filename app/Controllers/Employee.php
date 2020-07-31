@@ -21,8 +21,8 @@ class Employee extends BaseController
 	{
         $data = [
             'userData' => $this->user->getUserInfo(),
-            "positionData" => $this->positions->getAllPosition(),
-            "departmentData" => $this->departments->getAllDepartment(),
+            "positionData" => $this->positions->getAllPositions(),
+            "departmentData" => $this->departments->getAllDepartments(),
             
         ];
 		return view('employees/index', $data);

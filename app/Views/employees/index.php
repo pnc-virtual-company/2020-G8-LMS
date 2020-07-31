@@ -66,7 +66,9 @@
 						<th class="hide">Profile</th> -->
 						<th>Position</th>
 						<th>Department</th>
-						<th>Start Date</th>	
+						<th>Start Date</th>
+						<th></th>
+						
 					</tr>
 				</thead>
 					<tbody >

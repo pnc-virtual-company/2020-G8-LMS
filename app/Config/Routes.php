@@ -34,11 +34,10 @@ $routes->setAutoRoute(true);
 $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
 $routes->add('your_leave', 'Your_leave::yourLeave');
-$routes->add('leave', 'Leave::showSummitedleaves');
 $routes->add('position', 'Position::index');
 $routes->add('department', 'Department::index');
 
-
+$routes->add('leave', 'Leave::showSummitedleaves');//['filter' => 'noauth']);
 $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
 $routes->add('departments', 'Department::department');
