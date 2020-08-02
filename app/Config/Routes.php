@@ -47,6 +47,11 @@ $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
 
+$routes->add('email', 'Email::showEmail');
+$routes->add('email/verify', 'Email::showEmailVeryfy');
+$routes->add('sendback', 'Email::showEmailback');
+
+
 
 
 /**
