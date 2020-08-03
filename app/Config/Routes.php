@@ -33,7 +33,6 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Home::index');
 $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
-
 $routes->add('your_leave', 'Your_leave::yourLeave',['filter' => 'auth']);
 $routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'auth']);
 $routes->add('employees','Employee::index',['filter' => 'auth']);
