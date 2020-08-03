@@ -33,12 +33,12 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Home::index');
 $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
-$routes->add('your_leave', 'Your_leave::yourLeave');
-$routes->add('leave', 'Leave::showSummitedleaves');//['filter' => 'noauth']);
-$routes->add('employees','Employee::index');
+$routes->add('your_leave', 'Your_leave::yourLeave',['filter' => 'auth']);
+$routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'auth']);
+$routes->add('employees','Employee::index',['filter' => 'auth']);
 
-$routes->add('position', 'Position::index');
-$routes->add('department', 'Department::index');
+$routes->add('position', 'Position::index',['filter' => 'auth']);
+$routes->add('department', 'Department::index',['filter' => 'auth']);
 
 $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
