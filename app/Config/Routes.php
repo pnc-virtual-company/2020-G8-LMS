@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Home::index');
 $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
+
 $routes->add('your_leave', 'Your_leave::yourLeave',['filter' => 'auth']);
 $routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'auth']);
 $routes->add('employees','Employee::index',['filter' => 'auth']);
@@ -40,6 +41,7 @@ $routes->add('employees','Employee::index',['filter' => 'auth']);
 $routes->add('position', 'Position::index',['filter' => 'auth']);
 $routes->add('department', 'Department::index',['filter' => 'auth']);
 
+$routes->add('leave', 'Leave::showSummitedleaves');//['filter' => 'noauth']);
 $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
 $routes->add('departments', 'Department::department');
@@ -48,6 +50,11 @@ $routes->add('employees', 'Employee::showUser');
 $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
+
+$routes->add('email', 'Email::showEmail');
+$routes->add('email/verify', 'Email::showEmailVeryfy');
+$routes->add('sendback', 'Email::showEmailback');
+
 
 
 
