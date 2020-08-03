@@ -76,7 +76,9 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-primary">
+
+		  <input type="submit" value="CREATE" class="createBtn text-info">
+
         </div>
         </div>
         </form>
@@ -153,23 +155,23 @@
 
   <script>
     function myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-    txtValue = td.textContent || td.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    tr[i].style.display = "";
-    } else {
-    tr[i].style.display = "none";
-    }
-    }
-    }
-    }
+      var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                  } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
 </script>
 
 <?= $this->endSection() ?>

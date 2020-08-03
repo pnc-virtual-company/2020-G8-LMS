@@ -12,7 +12,8 @@ class Department extends BaseController
 	public function index()
 	{
 		$data = [
-            'departmentData' => $this->department->getAllSubject(),
+
+            'departmentData' => $this->department->getAllDepartments(),
             "copy" => "@copyright By Hy Hy"
         ];
 		return view('department/index', $data);
@@ -74,7 +75,8 @@ class Department extends BaseController
 					$data = array(
 						'dname' => $department,
 					);
-					$this->department->update($Id,$data);
+					$this->department->update($Id, $data);
+          
 					return redirect()->to('/department');
 				}else{
 					$data['validation'] = $this->validator;

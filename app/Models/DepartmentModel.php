@@ -1,5 +1,4 @@
 <?php namespace App\Models;
-
 use CodeIgniter\Model;
 
 class DepartmentModel extends Model
@@ -11,9 +10,8 @@ class DepartmentModel extends Model
 
     protected $allowedFields = ['dname'];
 
-    public function getAllSubject() 
+    public function getAllDepartments() 
     {
         return $this->db->table('department')->get()->getResultArray();
     }
-
 }

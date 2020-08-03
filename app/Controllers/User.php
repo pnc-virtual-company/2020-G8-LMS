@@ -1,7 +1,9 @@
 <?php namespace App\Controllers;
 use App\Models\UserModel;
+
 class User extends BaseController
 {
+	// login user
 	public function index()
 	{
 		helper(['form']);
@@ -9,28 +11,31 @@ class User extends BaseController
 		if($this->request->getMethod() == "post"){
 			$rules = [
 				'email' => [
-					'rules'=>'required|valid_email',
+					'rules'=>'required|validateUser[email]',
 					'label'=>'Email address',
 					'errors'=>[
 						'required'=>'email not yet complete',
+						'validateUser' => ' incorrect email !',
+						
 					],
 				],
 				'password' => [
-					'rules'=>'required|validateUser[email,password]',
+					'rules'=>'required|validateUser[password]',
 					'label'=>'Password ',
 					'errors'=>[
 						'required'=>' password not yet complete',
+						'validateUser' => ' incorrect password !',
 					],
 				],
 			];
-			$error = [
-				'password' => [
-					'validateUser' => ' incorrect email or password !'
-				]
+			// $error = [
+			// 	'password' => [
+			// 		
+			// 	]
 
-			];
+			// ];
 			$email = $this->request->getVar('email');
-			if(!$this->validate($rules,$error)){
+			if(!$this->validate($rules)){
 				$data['message'] = $this->validator;
 				return view('users/login',$data);
 			}else{
@@ -60,16 +65,11 @@ class User extends BaseController
 		session()->set($data);
 		return true;
 	}	
-	
+// logout user
     public function logoutUser() 
 	{
 		session()->destroy();
 	 return redirect()->to('/');
 
 	}
-	
-    	//--------------------------------------------------------------------
-    
-	//--------------------------------------------------------------------
-
 }
