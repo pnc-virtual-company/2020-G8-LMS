@@ -48,7 +48,6 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
-
         </div>
 		<div class="col-3"></div>
 	</div>
@@ -75,7 +74,6 @@
         </div>
         </div>
         </form>
-
       </div>
     </div>
   </div>
@@ -87,7 +85,6 @@
 	<div class="modal fade" id="updatePosition<?= $values['p_id']; ?>">
     <div class="modal-dialog">
       <div class="modal-content">
-      
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Edit Position</h4>
@@ -126,7 +123,7 @@
         </div>
         <!-- Modal body -->
 		<div class="modal-body text-right">
-			<form  action="/position/deletePosition/<?= $values['p_id']?>" method="post">
+			<form  action="<?= base_url("removePosition/".$values['p_id']) ?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Department?</p>
 			</div>

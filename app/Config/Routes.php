@@ -33,13 +33,14 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Home::index');
 $routes->add('/', 'User::index',['filter' => 'noauth']);
 $routes->add('logout', 'User::logoutUser');
-$routes->add('your_leave', 'Your_leave::yourLeave');
+// $routes->add('your_leave', 'Your_leave::yourLeave');
 $routes->add('position', 'Position::index');
 $routes->add('department', 'Department::index');
 
 $routes->add('leave', 'Leave::showSummitedleaves');//['filter' => 'noauth']);
 $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
+$routes->add('removePosition/(:num)', 'Position::deletePosition/$1');
 $routes->add('departments', 'Department::department');
 
 $routes->add('employees', 'Employee::showUser');
@@ -47,6 +48,9 @@ $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
 
+$routes->add('your_leave', 'Your_leave::yourLeaveList');
+$routes->add('addYourLeave', 'Your_leave::createYourLeave');
+$routes->add('deleteLeaveRequest/(:num)', 'Your_leave::deleteLeaveRequest/$1');
 
 
 /**

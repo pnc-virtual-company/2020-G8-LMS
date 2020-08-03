@@ -11,7 +11,7 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/addUser" method="post" enctype="multipart/form-data">
+			<form  action="<?= base_url("/addUser") ?>" method="post" enctype="multipart/form-data">
 					<div class="container">
 						<div class="row">
 						<!-- input First name -->

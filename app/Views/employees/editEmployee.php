@@ -12,7 +12,7 @@
         
              <!-- Modal body -->
             <div class="modal-body text-right">
-                <form  action="/update" method="post" enctype="multipart/form-data">
+                <form  action="<?= base_url("/update") ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <!-- input First name -->
                     <div class="col-sm-6">
