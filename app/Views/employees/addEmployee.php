@@ -75,7 +75,7 @@
 								
 								<div class="form-group">
 								<label class="font-weight-bolder" for="profile" style="margin-right:100%; ">Profile:</label>
-									<input type="file" class="form-control-file border" name="profile">
+									<input type="file" class="form-control-file border" name="profile" id="employeeProfile">
 								</div>			
 							</div>
 

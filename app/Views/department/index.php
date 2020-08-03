@@ -76,7 +76,9 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
+
 		  <input type="submit" value="CREATE" class="createBtn text-info">
+
         </div>
         </div>
         </form>
@@ -110,7 +112,7 @@
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-info">
+		  <input type="submit" value="UPDATE" class="createBtn text-primary">
         </div>
         </form>
       </div>
