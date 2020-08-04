@@ -1,6 +1,3 @@
-
-<!-- ======================================================================================== -->
-
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
@@ -21,7 +18,7 @@
         <a href="" class="btn btn-info btn-sm text-white font-weight-bolder" data-toggle="modal"
           data-target="#createYourLeave">
           <i class="material-icons float-left" data-toggle="tooltip" title="Add Your Leave!"
-            data-placement="left"></i>&nbsp;REQUEST A LEAVE
+            data-placement="left"></i>&nbsp;Request a leave
         </a>
       </div>
       <h4 class="font-weight-bolder"> Your Leave requests </h4>
@@ -38,16 +35,14 @@
         </tr>
         <?php foreach($yourLeaveData as $yourLeave):?>
         <tr>
-          <td class="hide"> <?= $yourLeave['id'] ?> </td>
+          <td class="hide"> <?= $yourLeave['l_id'] ?> </td>
           <td><?= $yourLeave['startDate']?></td>
           <td><?= $yourLeave['endDate']?></td>
           <td><?= $yourLeave['duration']?></td>
           <td><?= $yourLeave['leave_type']?></td>
           <td> <span class="badge badge-info"> Requested </span> </td>
           <td style="display:flex;justify-content:flex-end">
-            <a href="" data-toggle="modal" data-target="#updateYourLeave"><i class="material-icons text-info"
-                data-toggle="tooltip" title="Edit Your Leave!" data-placement="left">edit</i></a>
-            <a href="" data-toggle="modal" data-target="#deleteYourLeave"><i class="material-icons text-danger"
+            <a href="" data-toggle="modal" data-target="#deleteYourLeave<?= $yourLeave['l_id'] ?>"><i class="material-icons text-danger"
                 data-toggle="tooltip" title="Delete Your Leave!" data-placement="right">delete</i></a>
           </td>
         </tr>
@@ -62,7 +57,7 @@
 <!-- ========================================START Model DELETE================================================ -->
 <!-- The Modal -->
 <?php foreach($yourLeaveData as $yourLeave):?>
-<div class="modal fade" id="deleteYourLeave<?= $yourLeave['id']?>">
+<div class="modal fade" id="deleteYourLeave<?= $yourLeave['l_id'] ?>">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -73,14 +68,14 @@
 
       <!-- Modal body -->
       <div class="modal-body text-right">
-        <form action="deleteLeaveRequest/<?= $yourLeave['id']?>" method="post">
+        <form action="<?= base_url("deleteLeaveRequest/".$yourLeave['l_id']) ?>" method="post">
           <div class="form-group">
             <p style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected your leave?
             </p>
           </div>
           <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
           &nbsp;
-          <a href="" type="submit" value="DELETE" class="text-warning">DELETE</a>
+          <input type="submit" value="REMOVE" class="createBtn text-info">
         </form>
       </div>
     </div>
@@ -113,8 +108,8 @@
                   id="startDate" onchange="cal()">
               </div>
               <div class="form-group">
-                <select class="form-control" name="time">
-                  <option>select time</option>
+                <select class="form-control" name="startTime">
+                  <option>select time start</option>
                   <option>Morning</option>
                   <option>Afternoon</option>
                 </select>
@@ -128,8 +123,8 @@
                   id="endDate" onchange="cal()">
               </div>
               <div class="form-group">
-                <select class="form-control" name="time">
-                  <option>select exactime</option>
+                <select class="form-control" name="endTime">
+                  <option>select end time</option>
                   <option>Morning</option>
                   <option>Afternoon</option>
                 </select>`
@@ -155,111 +150,17 @@
               <option>Maternity leave</option>
             </select>
           </div>
-          <div class="form-group">
-            <select name="status" id="status">
-                <option disabled>status</option>
-                <option>canceled</option>
-                <option>rejected</option>
-                <option>accepted</option>
-            </select>
-          </div>
+          
           <div class="form-group">
             <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Comment"></textarea>
           </div>
           <a data-dismiss="modal" class="btn closeModal">DISCARD</a>
           &nbsp;
-          <button type="submit" value="SUBMIT" class="btn text-warning">SUBMIT</button>
+          <button type="submit" value="SUBMIT" class="btn text-info">SUBMIT</button>
       </div>
       </form>
     </div>
   </div>
 </div>
 <!-- =================================END MODEL CREATE==================================================== -->
-
-<!-- ========================================START Model UPDATE================================================ -->
-<!-- The Modal -->
-<div class="modal fade" id="updateYourLeave">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title font-weight-bolder"> Edit a request </h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body text-right">
-        <form action="/" method="post">
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-                <div class="form-group">
-                  <label class="font-weight-bolder" id="label"> Start Date: </label>
-                  <input type="date" class="form-control">
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <label class="font-weight-bolder" id="label"> End Date: </label>
-                  <input type="date" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="form-group">
-                  <select id="select" class="form-control">
-                    <option value="" disabled selected> Select time... </option>
-                    <option value="Morning"> MORNING </option>
-                    <option value="Afternoon"> AFTERNOON </option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <select id="select" class="form-control">
-                    <option value="" disabled selected> Select time... </option>
-                    <option value="Morning"> MORNING </option>
-                    <option value="Afternoon"> AFTERNOON </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <input type="number" class="form-control" placeholder="Duration">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <select id="select" class="form-control">
-                    <option value="" disabled selected> Leave Type... </option>
-                    <option value="Paid leave"> Paid leave </option>
-                    <option value="Sick leave"> Sick leave </option>
-                    <option value="Un paid leave"> Un paid leave </option>
-                    <option value="Wedding leave"> Wedding leave </option>
-                    <option value="Maternity leave"> Maternity leave </option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <textarea type="text" class="form-control" placeholder="Comment"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a data-dismiss="modal" class="closeModal">DISCARD</a>
-          &nbsp;
-          <a href="" type="submit" value="UPDATE" class="text-warning">UPDATE</a>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- =================================END MODEL UPDATE==================================================== -->
 <?= $this->endSection() ?>

@@ -3,21 +3,21 @@ use App\Models\YourLeaveModel;
 class Your_leave extends BaseController
 {
 
-	protected  $yourLeave;
+	protected  $yourLeaveRequest;
 	
 	public function __construct() 
 	{
-		$this->yourLeave = new YourLeaveModel();
+		$this->yourLeaveRequest = new YourLeaveModel();
 	}
 
 	public function yourLeaveList()
 	{
 		$data = [
-			'yourLeaveData' => $this->yourLeave->getAllYourLeave(),
+			'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
 		];
-		// if(!session()->get('isLoggedIn')){
-		// 	redirect()->to('/');
-	// }
+		if(!session()->get('isLoggedIn')){
+			redirect()->to('/');
+	}
 	return view('your_leaves/your_leaves', $data);	 
     
 	//--------------------------------------------------------------------
@@ -30,22 +30,22 @@ class Your_leave extends BaseController
 		helper(['form']);
 		if($this->request->getMethod() == "post"){
 			$startDate = $this->request->getVar('startDate');
+			$exactime_start = $this->request->getVar('exactime_start');
 			$endDate = $this->request->getVar('endDate');
-			$time = $this->request->getVar('time');
+			$exactime_end = $this->request->getVar('exactime_end');
 			$duration = $this->request->getVar('duration');
-			$leave_type = $this->request->getVar('leave_type');
-			$status = $this->request->getVar('status');
+			$leaveType = $this->request->getVar('leave_type');
 			$comment = $this->request->getVar('comment');
 			$yourLeaveData = array(
 				'startDate'=>$startDate,
+				'exactime_start'=>$exactime_start,
 				'endDate'=>$endDate,
-				'time'=>$time,
+				'exactime_end'=>$exactime_end,
 				'duration'=>$duration,
-				'leave_type'=>$leave_type,
-				'status'=>$status,
+				'leave_type'=>$leaveType,
 				'comment'=>$comment,
 			);
-			$this->yourLeave->insert($yourLeaveData);
+			$this->yourLeaveRequest->insert($yourLeaveData);
 		}	
 		
 		return redirect()->to('/your_leave');

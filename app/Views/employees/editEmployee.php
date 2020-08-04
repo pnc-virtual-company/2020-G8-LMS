@@ -12,7 +12,7 @@
         
              <!-- Modal body -->
             <div class="modal-body text-right">
-                <form  action="/update" method="post" enctype="multipart/form-data">
+                <form  action="<?= base_url("/update") ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <!-- input First name -->
                     <div class="col-sm-6">
@@ -72,7 +72,7 @@
                     <div class="col-sm-6">
 						<div class="form-group">
 						<label class="font-weight-bolder" for="profile" style="margin-right:100%; ">Profile:</label>
-							<input type="file" class="form-control-file border" name="profile">
+                        <input type="file" class="form-control-file border" name="profile" id="editProfile">
 						</div>			
 					</div>
                 </div>  
@@ -95,5 +95,5 @@
         </div>
     </div>
 </div>
-    <!-- =================================END MODEL UPDATE=========================== -->
+<!-- =================================END MODEL UPDATE=========================== -->
      

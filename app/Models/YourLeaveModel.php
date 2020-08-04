@@ -5,9 +5,9 @@ use CodeIgniter\Model;
 class YourLeaveModel extends Model
 {
     protected $table      = 'leave_request';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'l_id';
     protected $returnType     = 'array';
-    protected $allowedFields = ['startDate', 'endDate', 'time', 'duration', 'leave_type', 'status', 'comment', 'user_id'];
+    protected $allowedFields = ['startDate', 'exactime_start', 'endDate', 'exactime_end', 'duration', 'leave_type', 'comment', 'user_id'];
 
     public function getAllYourLeave() 
     {

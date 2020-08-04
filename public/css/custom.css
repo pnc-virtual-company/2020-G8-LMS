@@ -167,3 +167,12 @@ body {
     margin-top: 5px;
 
   }
+
+  #editProfile{
+    margin-left: 10px;
+    width: 96%;
+  }
+  #employeeProfile{
+    margin-left: 10px;
+    width: 96%;
+  }
