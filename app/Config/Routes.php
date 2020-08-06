@@ -42,6 +42,7 @@ $routes->add('department', 'Departments::index');
 $routes->add('positions', 'Position::position');
 $routes->add('departments', 'Department::department');
 
+// Route of Employee
 $routes->add('employees', 'Employee::showUser');
 $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
