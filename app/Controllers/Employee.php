@@ -118,6 +118,7 @@ class Employee extends BaseController
 
             ];
 
+        //validate fill of employee    
          if($this->validate($rules)){
                 $id = $this->request->getVar('u_id');
                 $firstname = $this->request->getVar('firstName');
