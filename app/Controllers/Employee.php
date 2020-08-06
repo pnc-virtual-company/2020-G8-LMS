@@ -17,6 +17,7 @@ class Employee extends BaseController
         $this->departments = new DepartmentModel();
     }
     
+    //Show user or employee
 	public function showUser()
 	{
         $data = [
