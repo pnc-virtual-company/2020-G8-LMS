@@ -81,6 +81,8 @@ class Employee extends BaseController
         $data = [];
         helper(['form']);
         if($this->request->getMethod() == "post"){
+            
+            //set rules 
             $rules = [
             
                 'firstName' => [
