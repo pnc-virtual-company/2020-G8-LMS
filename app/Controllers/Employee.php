@@ -75,13 +75,14 @@ class Employee extends BaseController
 		}
 		return redirect()->to('/employees');
 		}
-     
+
+    //Update Employee    
     public function updateEmployee() 
     {
         $data = [];
         helper(['form']);
         if($this->request->getMethod() == "post"){
-            
+
             //set rules 
             $rules = [
             
