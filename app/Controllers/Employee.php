@@ -28,6 +28,7 @@ class Employee extends BaseController
 		return view('employees/index', $data);
 	}
 
+    //Create Employee
 	public function createUser() 
     {
         $data = [];
