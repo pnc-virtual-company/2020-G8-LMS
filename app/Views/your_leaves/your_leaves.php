@@ -70,7 +70,7 @@
 
       <!-- Modal body -->
       <div class="modal-body text-right">
-        <form action="<?= base_url("deleteLeaveRequest/".$yourLeave['l_id']) ?>" method="post">
+        <form action="<?= base_url('/your_leave/deleteLeave/'.$yourLeave['l_id']) ?>" method="post">
           <div class="form-group">
             <p style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected your leave?
             </p>
@@ -100,7 +100,7 @@
       </div>
       <!-- Modal body -->
       <div class="modal-body text-right">
-        <form action="<?= base_url("addYourLeave")?>" method="post">
+        <form action="<?= base_url("your_leave/createYourLeave")?>" method="post">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">

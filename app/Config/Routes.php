@@ -49,8 +49,8 @@ $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
 
 $routes->add('your_leave', 'Your_leave::yourLeaveList');
-$routes->add('addYourLeave', 'Your_leave::createYourLeave');
-$routes->add('deleteLeaveRequest/(:num)', 'Your_leave::deleteLeaveRequest/$1');
+// $routes->add('addYourLeave', 'Your_leave::createYourLeave');
+// $routes->add('deleteLeave/(:num)', 'Your_leave::deleteLeaveRequest/$1');
 
 
 /**
