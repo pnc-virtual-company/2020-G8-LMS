@@ -152,7 +152,12 @@ body {
   }
   .edit_hover_class:hover a {
   visibility:visible;
-
+  }
+  .hover_your_leave a{
+    visibility: hidden;
+  }
+  .hover_your_leave:hover a{
+    visibility: visible;
   }
 .hr{
     width: 50%;
