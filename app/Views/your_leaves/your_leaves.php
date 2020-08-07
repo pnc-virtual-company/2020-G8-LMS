@@ -41,6 +41,8 @@
           <td><?= $yourLeave['duration']?></td>
           <td><?= $yourLeave['leave_type']?></td>
           <td> <span class="badge badge-info"> Requested </span> </td>
+          <!-- <td><?= $yourLeave['exactime_start']?></td>
+          <td><?= $yourLeave['exactime_end']?></td> -->
           <td style="display:flex;justify-content:flex-end">
             <a href="" data-toggle="modal" data-target="#deleteYourLeave<?= $yourLeave['l_id'] ?>"><i class="material-icons text-danger"
                 data-toggle="tooltip" title="Delete Your Leave!" data-placement="right">delete</i></a>
@@ -108,7 +110,7 @@
                   id="startDate" onchange="cal()">
               </div>
               <div class="form-group">
-                <select class="form-control" name="startTime">
+                <select class="form-control" name="exactime_start">
                   <option>select time start</option>
                   <option>Morning</option>
                   <option>Afternoon</option>
@@ -123,7 +125,7 @@
                   id="endDate" onchange="cal()">
               </div>
               <div class="form-group">
-                <select class="form-control" name="endTime">
+                <select class="form-control" name="exactime_end">
                   <option>select end time</option>
                   <option>Morning</option>
                   <option>Afternoon</option>
