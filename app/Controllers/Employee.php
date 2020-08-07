@@ -87,40 +87,7 @@ class Employee extends BaseController
 
             //set rules 
             $rules = [
-            
-                'firstName' => [
-                    'rules' => 'required',
-                    'errors'=>[
-                        'required'=> 'The firstname name field is required.',
-                    ] 
-                ],
-                'lastName' => [
-                    'rules' => 'required',
-                    'errors'=>[
-                        'required'=> 'The lastName name field is required.',
-                    ] 
-                ],
-                'email' => [
-                    'rules' => 'required|is_unique[user.email]',
-                    'errors'=>[
-                        'required'=> 'The email name field is required.',
-                        'is_unique' => 'The email already exists.',
-                    ] 
-                ],
-                
-                'position' => [
-                    'rules' => 'required',
-                    'errors'=>[
-                        'required'=> 'The position name field is required.',
-                    ] 
-                ],
-                'department' => [
-                    'rules' => 'required',
-                    'errors'=>[
-                        'required'=> 'The department name field is required.',
-                    ] 
-                ],
-
+                'email'=>'required|valid_email|min_length[6]|max_length[50]',
             ];
 
         //validate fill of employee    
