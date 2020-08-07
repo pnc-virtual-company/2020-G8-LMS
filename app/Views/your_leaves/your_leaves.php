@@ -1,5 +1,3 @@
-<!-- ======================================================================================== -->
-
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
@@ -55,8 +53,8 @@
   </div>
 </div>
 
-
 <!-- ========================================START Model DELETE================================================ -->
+
 <!-- The Modal -->
 <?php foreach($yourLeaveData as $yourLeave):?>
 <div class="modal fade" id="deleteYourLeave<?= $yourLeave['l_id'] ?>">

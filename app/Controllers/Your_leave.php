@@ -23,7 +23,7 @@ class Your_leave extends BaseController
 	//--------------------------------------------------------------------
 	}
 	
-	// how to create new leave request
+	// create new leave request
 	public function createYourLeave()
 	{
 		$data = [];
@@ -51,7 +51,7 @@ class Your_leave extends BaseController
 		return redirect()->to('/your_leave');
 	}
 
-	// Delete leave request of employee
+	// Delete leave request
 	public function deleteLeave($id)
 	{
 		$leaveRequest = new YourLeaveModel();
