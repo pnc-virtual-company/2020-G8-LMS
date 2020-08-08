@@ -15,8 +15,8 @@ class Your_leave extends BaseController
 		$data = [
 			'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
 		];
-		if(!session()->get('isLoggedIn')){
-			redirect()->to('/');
+		if(!session()->get('isLoggedIn')){	
+		redirect()->to(base_url('/'));
 	}
 	return view('your_leaves/your_leaves', $data);	 
     
@@ -47,8 +47,8 @@ class Your_leave extends BaseController
 			);
 			$this->yourLeaveRequest->insert($yourLeaveData);
 		}	
-		
-		return redirect()->to('/your_leave');
+		echo base_url('/your_leave');exit();
+		return redirect()->to(base_url('/your_leave'));
 	}
 
 	// Delete leave request
