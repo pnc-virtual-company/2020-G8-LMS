@@ -36,11 +36,45 @@ class Employee extends BaseController
 		if($this->request->getMethod() == "post"){
 		helper(['form']);
 		$rules = [
-		'firstName'=>'required|min_length[3]|max_length[20]|alpha',
-		'lastName'=>'required|min_length[3]|max_length[20]|alpha',
-		'email'=>'required|valid_email|min_length[6]|max_length[50]',
-		'password'=>'required|min_length[8]|max_length[225]',
-		];
+                'firstName' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The firstname name field is required.',
+                    ] 
+                ],
+                'lastName' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The lastName name field is required.',
+                    ] 
+                ],
+                'email' => [
+                    'rules' => 'required|is_unique[user.email]',
+                    'errors'=>[
+                        'required'=> 'The email name field is required.',
+                        'is_unique' => 'The email already exists.',
+                    ] 
+                ],
+                
+                'position' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The position name field is required.',
+                    ] 
+                ],
+                'department' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The department name field is required.',
+                    ] 
+                ],
+                'startDate' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The startdate name field is required.',
+                    ] 
+                ],
+            ];
 
 		if($this->validate($rules)){
 
