@@ -18,7 +18,7 @@
       </div>
       <h4 class="font-weight-bolder"> Your Leave requests </h4>
       <br>
-      <table class="table table-borderless table-hover">
+      <table class="table table-borderless table-hover" id="myTable">
         <tr>
           <th class="hide"> ID </th>
           <th> Start date </th>
@@ -29,7 +29,7 @@
           <th> </th>
         </tr>
         <?php foreach($yourLeaveData as $yourLeave):?>
-        <tr class="hover_your_leave">
+        <tr class="hover_your_leave" >
           <td class="hide"> <?= $yourLeave['l_id']?> </td>
           <td><?= $yourLeave['startDate']?></td>
           <td><?= $yourLeave['endDate']?></td>
@@ -180,3 +180,4 @@
 </div>       
 <!-- =================================END MODEL CREATE==================================================== -->
 <?= $this->endSection() ?>
+
