@@ -153,6 +153,4 @@ body {
   .edit_hover_class:hover a {
   visibility:visible;
 }
-img {
-  page-break-inside: avoid;
-}
+
