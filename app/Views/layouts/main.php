@@ -85,7 +85,7 @@
             return false;
         }
 		</script>
-<!-- script of your leave and employee search -->
+<!-- script of your leave, employee, position, department search -->
 
 <script>
 	$(document).ready(function(){
