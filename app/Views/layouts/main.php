@@ -24,8 +24,6 @@
 </html>
 
 
-
-
 <script>
        $(document).ready(function(){
             $('.employeeInfo').on('click',function(){
@@ -48,4 +46,16 @@
                 $('#department_id:selected').val(data[9]);
             });
 	    })
-		</script>
+</script>
+
+<!-- filter search of Emoployee -->
+<script>
+	$(document).ready(function(){
+	$("#search").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#myTable tr").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+	});
+</script>

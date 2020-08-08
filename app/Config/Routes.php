@@ -39,6 +39,8 @@ $routes->add('department', 'Department::index',['filter' => 'auth']);
 $routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'auth']);
 $routes->add('removePosition/(:num)', 'Position::deletePosition/$1');
 
+
+// Route of Employee
 $routes->add('employees', 'Employee::showUser',['filter' => 'auth']);
 $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');

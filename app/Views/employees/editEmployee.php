@@ -3,7 +3,7 @@
         <div class="modal fade" id="updateEmployee">
     <div class="modal-dialog">
         <div class="modal-content">
-      
+        
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Update Empoyee</h4>
@@ -21,6 +21,7 @@
                             <input type="text" class="form-control" name="firstName" id="firstName" placeholder="firstName">
                         </div>
                     </div>
+                    
                     <!-- input Last name -->
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -60,6 +61,7 @@
                                 </select>
                         </div>          
                     </div>
+                    
                     <!-- startDate -->
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -68,6 +70,7 @@
                                 id="startdate" data-date-format="DD-YY-MM" class="form-control">
                         </div>             
                     </div>
+                    
                     <!-- profile -->
                     <div class="col-sm-6">
 						<div class="form-group">
@@ -84,7 +87,8 @@
                         <option>Admin</option>
                         <option>Manager</option>
                     </select>
-                </div>     
+                </div>   
+
                 <!-- input button discard and update -->
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
@@ -95,5 +99,5 @@
         </div>
     </div>
 </div>
-    <!-- =================================END MODEL UPDATE=========================== -->
+<!-- =================================END MODEL UPDATE================================== -->
      
