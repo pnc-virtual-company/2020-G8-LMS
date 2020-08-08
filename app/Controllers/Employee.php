@@ -66,7 +66,7 @@ class Employee extends BaseController
 				'position_id' => $position,
 				'department_id' => $department
 			);
-		$this->user->insert($employeeData);
+		$this->user->registerUser($employeeData);
 		$sessionSuccess = session();
 		$sessionSuccess->setFlashdata('success','Successful insert employee!');
 		}else{
