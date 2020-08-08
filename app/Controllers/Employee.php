@@ -90,6 +90,7 @@ class Employee extends BaseController
                 'email'=>'required|valid_email|min_length[6]|max_length[50]',
             ];
 
+            
         //validate fill of employee    
          if($this->validate($rules)){
                 $id = $this->request->getVar('u_id');
