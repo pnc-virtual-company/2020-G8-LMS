@@ -28,12 +28,7 @@ class User extends BaseController
 					],
 				],
 			];
-			// $error = [
-			// 	'password' => [
-			// 		
-			// 	]
-
-			// ];
+		
 			$email = $this->request->getVar('email');
 			if(!$this->validate($rules)){
 				$data['message'] = $this->validator;
