@@ -116,6 +116,7 @@ class Your_leave extends BaseController
 						';
 			$email = \Config\Services::email();
 			 $email->setTo($to);
+			$email->setCC('karuna.alleat@student.passerellesnumeriques.org ');
          	$email->setFrom('karunaalleata@gmail.com','information');
          	$email->setSubject($subject);
          	$email->setMessage($message);
