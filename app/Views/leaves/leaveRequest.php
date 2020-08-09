@@ -22,48 +22,24 @@
                     <th>Type</th>
                     <th class="hide">Action</th>
                 </tr>
+                <input type="hidden" name = "user_id" value="<?= session()->get('id')?>">
+              <?php foreach($yourLeaveData as $yourLeave):?>
                 <tr>
-                    <td>Hugo Pana</td>
-                    <td>25/05/2005</td>
-                    <td>25/05/2005</td>
-                    <td>1 day</td>
-                    <td>Vacation</td>
                     <td>
-                        <a href="#" class="btn btn-info btn-sm">Accept</a> 
-                        <a href="#" class="btn btn-outline-secondary btn-sm">Reject</a>
+                        <?php $firstname = session()->get('firstname') ?>
+                        <?php $lastname = session()->get('lastname') ?>
+                        <?= $firstname .' '.$lastname ?>
+                    </td>
+                    <td><?= $yourLeave['startDate']?></td>
+                    <td><?= $yourLeave['endDate']?></td>
+                    <td><?= $yourLeave['duration']?></td>
+                    <td><?= $yourLeave['leave_type']?></td>
+                    <td>
+                        <a href=""   class="btn btn-info btn-sm">Accept</a> 
+                        <a href="" class="btn btn-outline-secondary btn-sm">Reject</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Hugo Pana</td>
-                    <td>25/05/2005</td>
-                    <td>25/05/2005</td>
-                    <td>2 day</td>
-                    <td>Training</td>
-                    <td>
-                        <h6>Rejected</h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hugo Pana</td>
-                    <td>25/05/2005</td>
-                    <td>25/05/2005</td>
-                    <td>0.5 day</td>
-                    <td>Vacation</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-sm">Accept</a> 
-                        <a href="#" class="btn btn-outline-secondary btn-sm">Reject</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hugo Pana</td>
-                    <td>25/05/2005</td>
-                    <td>25/05/2005</td>
-                    <td>1 day</td>
-                    <td>Vacation</td>
-                    <td>
-                        <h6>Accepted</h6>
-                    </td>
-                </tr>
+              <?php endforeach; ?>
             </thead>
             </table>
                 
