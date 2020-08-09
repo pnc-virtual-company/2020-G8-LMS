@@ -46,7 +46,7 @@ class Department extends BaseController
 				$sessionError = session();
 				$validation = $this->validator;
 				$sessionError->setFlashdata('error', $validation);
-				return redirect()->to('/department');
+				return redirect()->to(base_url('/department'));
 				}
 				
 			}
@@ -81,7 +81,7 @@ class Department extends BaseController
 					$sessionError = session();
 					$validation = $this->validator;
 					$sessionError->setFlashdata('error', $validation);
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}
 		}
 	}
@@ -91,7 +91,7 @@ class Department extends BaseController
 	public function deleteDepartment($id)
 	{	
 		$this->department->delete($id);
-        return redirect()->to('/department');
+        return redirect()->to(base_url('/department'));
 	}
 
 }
