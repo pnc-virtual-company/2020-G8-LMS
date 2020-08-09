@@ -20,7 +20,7 @@
       <br>
       <table class="table table-borderless table-hover">
         <tr>
-          <th class="hide"> ID </th>
+          <th class="hide"> Id </th>
           <th> Start date </th>
           <th> End date </th>
           <th> Duration </th>
