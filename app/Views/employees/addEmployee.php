@@ -87,9 +87,9 @@
                             <option>Manager</option>
                             <option>Employee</option>
                             <option>HR</option>
-						<?php if(session('role') == 'Admin'): ?>
-                            <option>Admin</option>
-						<?php endif; ?>
+							<?php if(session('role') == 'Admin'): ?>
+							<option value="Admin">Admin</option>
+							<?php endif; ?>
                         </select>
                     </div>
 					<!-- input discard and create -->
