@@ -16,9 +16,17 @@ class Leave extends BaseController
 
 	public function showSummitedleaves()
 	{
-		$data = [
-			'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
-		];
+		if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager') {
+			$data = [
+				'yourLeaveData' => $this->yourLeaveRequest->managerGetAll(),
+				
+			];
+		}else {
+			$data = [
+				'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
+				
+			];
+		}
 		if(!session()->get('isLoggedIn')){
 			redirect()->to('/');
 	}

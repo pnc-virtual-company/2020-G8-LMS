@@ -26,9 +26,7 @@
               <?php foreach($yourLeaveData as $yourLeave):?>
                 <tr>
                     <td>
-                        <?php $firstname = session()->get('firstname') ?>
-                        <?php $lastname = session()->get('lastname') ?>
-                        <?= $firstname .' '.$lastname ?>
+                    <?= $yourLeave['firstName'].' '.$yourLeave['lastName']?>
                     </td>
                     <td><?= $yourLeave['startDate']?></td>
                     <td><?= $yourLeave['endDate']?></td>
