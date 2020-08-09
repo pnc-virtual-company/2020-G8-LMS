@@ -84,12 +84,12 @@
 						<div class="form-group">
                         <select class="form-control" name="role">
                             <option selected>Role</option>
-						
-									    <option value="Admin">Admin</option>									
-										<option value="HR">HR</option>
-										<option value="Manager">Manager</option>
-										<option value="Employee">Employee</option>
-                            
+                            <option>Manager</option>
+                            <option>Employee</option>
+                            <option>HR</option>
+						<?php if(session('role') == 'Admin'): ?>
+                            <option>Admin</option>
+						<?php endif; ?>
                         </select>
                     </div>
 					<!-- input discard and create -->

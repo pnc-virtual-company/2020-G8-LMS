@@ -7,10 +7,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="nav navbar-nav ml-auto">
          <a class="nav-link mt-2" href="<?= base_url('/your_leave')?>">Your leaves</a>
+         
+         <?php if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager'): ?>
          <a class="nav-link mt-2" href="<?= base_url('/leave')?>">Leaves</a>
+         <?php endif; ?>
+
+         <?php if(session('role')== 'Admin' || session('role') == 'HR'): ?>
          <a class="nav-link mt-2" href="<?= base_url('/employees')?>">Employees</a>
          <a class="nav-link mt-2" href="<?= base_url('/position')?>">Positions</a>
          <a class="nav-link mt-2" href="<?= base_url('/department')?>">Departments</a>
+         <?php endif; ?>
+
            <li class="dropdown mt-2">
              <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
              
