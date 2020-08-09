@@ -14,7 +14,9 @@
     		</div><br>
 			<h3 class="font-weight-bolder employee"> Employee </h3>
 		</div>
-	</div>
+
+		</div>
+
 </div>   
 
 <div class="col-11">
@@ -85,7 +87,7 @@
 			
 		</div>
 	</div>
-  <!-- ========================================START Model DELETE================================================ -->
+<!-- ========================================START Model DELETE================================================ -->
 <!-- delete employee -->
 <?php foreach($userData as $user): ?>
 <div class="modal fade" id="deleteEmployee<?= $user['u_id'] ?>">
@@ -99,7 +101,7 @@
         
             <!-- Modal body -->
             <div class="modal-body text-right">
-			    <form  action="remove/<?= $user['u_id']?>" method="post">
+			    <form  action="<?= base_url("remove/".$user['u_id'])?>" method="post">
 				    <div class="form-group">
 					    <p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Employee?</p>
 				    </div>

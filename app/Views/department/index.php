@@ -138,13 +138,13 @@
         
         <!-- Modal body -->
 		<div class="modal-body text-right">
-			<form  action="/department/deleteDepartment/<?= $values['d_id']?>" method="post">
+			<form  action="<?= base_url("/department/deleteDepartment/".$values['d_id']) ?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Department?</p>
 			</div>
 			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
 		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-danger">
+		    <input type="submit" value="REMOVE" class="createBtn text-info">
         </div>
         </form>
       </div>

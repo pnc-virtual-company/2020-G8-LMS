@@ -6,11 +6,11 @@
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="nav navbar-nav ml-auto">
-         <a class="nav-link mt-2" href="/your_leave">Your leaves</a>
-         <a class="nav-link mt-2" href="/leave">Leaves</a>
-         <a class="nav-link mt-2" href="/employees">Employees</a>
-         <a class="nav-link mt-2" href="/position">Positions</a>
-         <a class="nav-link mt-2" href="/department">Departments</a>
+         <a class="nav-link mt-2" href="<?= base_url('/your_leave')?>">Your leaves</a>
+         <a class="nav-link mt-2" href="<?= base_url('/leave')?>">Leaves</a>
+         <a class="nav-link mt-2" href="<?= base_url('/employees')?>">Employees</a>
+         <a class="nav-link mt-2" href="<?= base_url('/position')?>">Positions</a>
+         <a class="nav-link mt-2" href="<?= base_url('/department')?>">Departments</a>
            <li class="dropdown mt-2">
              <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
              

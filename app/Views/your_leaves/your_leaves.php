@@ -30,7 +30,9 @@
         </tr>
         <?php foreach($yourLeaveData as $yourLeave):?>
         <tr class="hover_your_leave" >
+          
           <td class="hide"> <?= $yourLeave['l_id']?> </td>
+     
           <td><?= $yourLeave['startDate']?></td>
           <td><?= $yourLeave['endDate']?></td>
           <td><?= $yourLeave['duration']?></td>
@@ -50,8 +52,8 @@
   </div>
 </div>
 
-
 <!-- ========================================START Model DELETE================================================ -->
+
 <!-- The Modal -->
 <?php foreach($yourLeaveData as $yourLeave):?>
 <div class="modal fade" id="deleteYourLeave<?= $yourLeave['l_id'] ?>">
@@ -65,7 +67,7 @@
 
       <!-- Modal body -->
       <div class="modal-body text-right">
-        <form action="<?= base_url("deleteLeaveRequest/".$yourLeave['l_id']) ?>" method="post">
+        <form action="<?= base_url('/your_leave/deleteLeave/'.$yourLeave['l_id']) ?>" method="post">
           <div class="form-group">
             <p style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected your leave?
             </p>
@@ -180,4 +182,5 @@
 </div>       
 <!-- =================================END MODEL CREATE==================================================== -->
 <?= $this->endSection() ?>
+
 
