@@ -9,7 +9,7 @@ class Your_leave extends BaseController
 	{
 		$this->yourLeaveRequest = new YourLeaveModel();
 	}
-
+	//Store your leave list
 	public function yourLeaveList()
 	{
 		$data = [
