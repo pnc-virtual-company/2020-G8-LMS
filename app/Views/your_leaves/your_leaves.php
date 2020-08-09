@@ -1,6 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-2"></div>
@@ -30,12 +31,14 @@
         </tr>
         <?php foreach($yourLeaveData as $yourLeave):?>
         <tr class="hover_your_leave" >
+          
           <td class="hide"> <?= $yourLeave['l_id']?> </td>
+     
           <td><?= $yourLeave['startDate']?></td>
           <td><?= $yourLeave['endDate']?></td>
           <td><?= $yourLeave['duration']?></td>
           <td><?= $yourLeave['leave_type']?></td>
-          <td> <span class="badge badge-info"> Requested </span> </td>
+          <td> <span class="badge badge-info">Requested </span> </td>
           <!-- <td><?= $yourLeave['exactime_start']?></td>
           <td><?= $yourLeave['exactime_end']?></td> -->
           <td style="display:flex;justify-content:flex-end">
@@ -50,8 +53,8 @@
   </div>
 </div>
 
-
 <!-- ========================================START Model DELETE================================================ -->
+
 <!-- The Modal -->
 <?php foreach($yourLeaveData as $yourLeave):?>
 <div class="modal fade" id="deleteYourLeave<?= $yourLeave['l_id'] ?>">
@@ -166,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="modal-footer">
                             <a data-dismiss="modal" class="btn closeModal">DISCARD</a>
                             &nbsp;
@@ -179,6 +182,8 @@
             </div>
         </div>
 </div>       
+
 <!-- =================================END MODEL CREATE==================================================== -->
 <?= $this->endSection() ?>
+
 

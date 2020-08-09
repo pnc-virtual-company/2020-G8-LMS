@@ -17,6 +17,7 @@ class Employee extends BaseController
         $this->departments = new DepartmentModel();
     }
     
+    //Show user or employee
 	public function showUser()
 	{
         $data = [
@@ -28,17 +29,52 @@ class Employee extends BaseController
 		return view('employees/index', $data);
 	}
 
+    //Create Employee
 	public function createUser() 
     {
         $data = [];
 		if($this->request->getMethod() == "post"){
 		helper(['form']);
 		$rules = [
-		'firstName'=>'required|min_length[3]|max_length[20]|alpha',
-		'lastName'=>'required|min_length[3]|max_length[20]|alpha',
-		'email'=>'required|valid_email|min_length[6]|max_length[50]',
-		'password'=>'required|min_length[8]|max_length[225]',
-		];
+                'firstName' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The firstname name field is required.',
+                    ] 
+                ],
+                'lastName' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The lastName name field is required.',
+                    ] 
+                ],
+                'email' => [
+                    'rules' => 'required|is_unique[user.email]',
+                    'errors'=>[
+                        'required'=> 'The email name field is required.',
+                        'is_unique' => 'The email already exists.',
+                    ] 
+                ],
+                
+                'position' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The position name field is required.',
+                    ] 
+                ],
+                'department' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The department name field is required.',
+                    ] 
+                ],
+                'startDate' => [
+                    'rules' => 'required',
+                    'errors'=>[
+                        'required'=> 'The startdate name field is required.',
+                    ] 
+                ],
+            ];
 
 		if($this->validate($rules)){
 
@@ -64,7 +100,7 @@ class Employee extends BaseController
 				'position_id' => $position,
 				'department_id' => $department
 			);
-		$this->user->insert($employeeData);
+		$this->user->registerUser($employeeData);
 		$sessionSuccess = session();
 		$sessionSuccess->setFlashdata('success','Successful insert employee!');
 		}else{
@@ -73,20 +109,23 @@ class Employee extends BaseController
 		$sessionError->setFlashdata('error', $validation);
 		}
 		}
-		return redirect()->to('/employees');
+		return redirect()->to(base_url('/employees'));
 		}
-     
+
+    //Update Employee    
     public function updateEmployee() 
     {
         $data = [];
         helper(['form']);
         if($this->request->getMethod() == "post"){
+
+            //set rules 
             $rules = [
-            
                 'email'=>'required|valid_email|min_length[6]|max_length[50]',
-        
             ];
 
+            
+        //validate fill of employee    
          if($this->validate($rules)){
                 $id = $this->request->getVar('u_id');
                 $firstname = $this->request->getVar('firstName');
@@ -114,13 +153,14 @@ class Employee extends BaseController
                         $sessionError->setFlashdata('error', $validation);
                     }
                 }
-        return redirect()->to("/employees");
+        return redirect()->to(base_url("/employees"));
     }
 
+    //Delete Employee 
     public function deleteEmployee($id){
         $employee = new UserModel();
         $employee->delete($id);
-        return redirect()->to('/employees');
+        return redirect()->to(base_url('/employees'));
     }
 
 	//--------------------------------------------------------------------

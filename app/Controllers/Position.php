@@ -51,7 +51,6 @@ class Position extends BaseController
 				
 			 }
 	}
-
 	//Function update departments
 	public function updatePosition()
 	{	

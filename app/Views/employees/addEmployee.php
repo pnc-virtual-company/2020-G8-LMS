@@ -1,4 +1,4 @@
-<!-- ========================================START Model CREATE================================================ -->
+<!-- =============================================START Model CREATE================================================ -->
 	<!-- The Modal -->
 	<div class="modal fade" id="createEmployee">
     <div class="modal-dialog">
@@ -87,7 +87,9 @@
                             <option>Manager</option>
                             <option>Employee</option>
                             <option>HR</option>
+						<?php if(session('role') == 'Admin'): ?>
                             <option>Admin</option>
+						<?php endif; ?>
                         </select>
                     </div>
 					<!-- input discard and create -->
@@ -100,4 +102,7 @@
 	 </div>
   </div>
 </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+
+<!-- =================================END MODEL CREATE==================================================== -->
+
+
