@@ -53,6 +53,7 @@ class User extends BaseController
 			'lastname' => $user['lastName'],
 			'email' => $user['email'],
 			'password' => $user['password'],
+			'role' => $user['role'],
 			'isLoggedIn' => true,
 			
 		];
