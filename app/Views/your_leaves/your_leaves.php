@@ -112,8 +112,8 @@
                                     <div class="form-group">
                                         <select name="exactime_start" id="startTime" class="ml-2 form-control" onchange="dateDiff();">
                                             <option selected disabled>Select Time</option>
-                                            <option>Morning</option>
-                                            <option>Afternoon</option>
+                                            <option value="1">Morning</option>
+                                            <option value="2">Afternoon</option>
                                         </select>
                                     </div>
                                 </div>
@@ -135,15 +135,15 @@
                                     <div class="form-group">
                                         <select name="exactime_end" id="endTime" class="ml-2 form-control" onchange="dateDiff();">
                                             <option selected disabled>Select Time</option>
-                                            <option>Morning</option>
-                                            <option>Afternoon</option>
+                                            <option value="1">Morning</option>
+                                            <option value="2">Afternoon</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                               <h6 class="ml-3"><strong>Duration: </strong><input type="text" id="duration" name="duration" 
-                              style="border:none;"> </h6>
+                              style="border:none;" onchange="" id="danger"> </h6>
                             </div>
 
                             <div class="row">
@@ -163,6 +163,7 @@
 
                             <div class="row">
                                 <div class="col-sm-12">
+                                    <input type="hidden" name = "user_id" value="<?= session()->get('u_id') ?>">
                                     <div class="form-group">
                                       <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Comment"></textarea>
                                     </div>

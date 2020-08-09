@@ -13,6 +13,7 @@ class Your_leave extends BaseController
 	//Store your leave list
 	public function yourLeaveList()
 	{
+		
 		if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager') {
 			$data = [
 				'yourLeaveData' => $this->yourLeaveRequest->managerGetAll(),
@@ -135,7 +136,7 @@ class Your_leave extends BaseController
 	{
 		$leaveRequest = new YourLeaveModel();
        	$leaveRequest->delete($id);
-       	return redirect()->to('/your_leave');
+       	return redirect()->to(base_url('/your_leave'));
 	}
 	
 }
