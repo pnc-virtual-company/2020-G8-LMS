@@ -152,5 +152,27 @@ body {
   }
   .edit_hover_class:hover a {
   visibility:visible;
+  }
+.hr{
+    width: 50%;
+    padding: 0px;
+  }
+  .jumbotron{
+    text-align: center;
+  }
+  .border{
+    width: 60%;
+    margin-left: 250px;
+    margin-top: 5px;
+
+  }
+
+#editProfile{
+  margin-left: 10px;
+  width: 96%;
+}
+#employeeProfile{
+  margin-left: 10px;
+  width: 96%;
 }
 

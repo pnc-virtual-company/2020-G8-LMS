@@ -38,7 +38,7 @@ class User extends BaseController
 				$user = $model->where('email',$email)->first();
 				
 				$this->setUserSession($user);
-				return redirect()->to('/your_leave');
+				return redirect()->to(base_url('/your_leave'));
 			}
 
 		}
