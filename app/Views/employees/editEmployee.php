@@ -80,14 +80,14 @@
 					</div>
                 </div>  
                 <!-- input role -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <select class="form-control"  name = "role">
                         <option>Employees</option>
                         <option>HR Officer</option>
                         <option>Admin</option>
                         <option>Manager</option>
                     </select>
-                </div>   
+                </div>    -->
 
                 <!-- input button discard and update -->
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
