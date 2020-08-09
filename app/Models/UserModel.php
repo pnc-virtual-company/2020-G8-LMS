@@ -19,7 +19,6 @@ class UserModel extends Model
     }
    
     //encrypt password user
-
     public function registerUser($userInfo){
 
 
