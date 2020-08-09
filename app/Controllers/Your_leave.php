@@ -54,7 +54,7 @@ class Your_leave extends BaseController
 	}
 
 	// Delete leave request
-	public function deleteLeave($id)
+	public function deleteLeaveRequest($id)
 	{
 		$leaveRequest = new YourLeaveModel();
        	$leaveRequest->delete($id);

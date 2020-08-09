@@ -84,9 +84,8 @@
 						<div class="form-group">
                         <select class="form-control" name="role">
                             <option selected>Role</option>
-							<?php if(session('role') == 'Admin'): ?>
-											<option value="Admin">Admin</option>
-										<?php endif; ?>
+						
+									    <option value="Admin">Admin</option>									
 										<option value="HR">HR</option>
 										<option value="Manager">Manager</option>
 										<option value="Employee">Employee</option>
