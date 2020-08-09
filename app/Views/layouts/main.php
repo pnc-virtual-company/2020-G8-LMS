@@ -45,10 +45,47 @@
                 $('#position_id:selected').val(data[8]);
                 $('#department_id:selected').val(data[9]);
             });
-	    })
-</script>
+	    });
 
-<!-- filter search of Emoployee -->
+        //Calculating
+        function dateDiff() {
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var startTime = document.getElementById('startTime').value;
+            var endTime = document.getElementById('endTime').value;
+
+            var dateToStart = new Date(startDate);
+            var dateToEnd = new Date(endDate);
+            var getDateTime = dateToEnd.getTime() - dateToStart.getTime();
+            var days = getDateTime/(1000*60*60*24);
+            var period = 0;
+            if(startTime == 1) {
+                if(endTime == 1) {
+                    period = 0.5;
+                }else{
+                    period = 1;
+                }
+            }else{
+                if(endTime == 1){
+                    period = 0;
+                }else{
+                    period = 0.5;
+                }
+            }
+            if(startDate > endDate) {
+                $('#danger').html('<div class="alert alert-danger"><strong>Error!</strong> End date cannot before start date.</div>');
+            }else if(startDate == endDate && startTime == 2 && endTime == 1) {
+                $('#danger').html('<div class="alert alert-danger"><strong>Error!</strong> Start date and end date can not select in the past. </div>');
+            }else{
+                document.getElementById('duration').value = (days + period) + "days";
+                $('#danger').html("");
+            }
+            return false;
+        }
+		</script>
+<!-- script of your leave, employee, position, department search -->
+
+
 <script>
 	$(document).ready(function(){
 	$("#search").on("keyup", function() {

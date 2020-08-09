@@ -39,20 +39,21 @@ $routes->add('department', 'Department::index',['filter' => 'auth']);
 $routes->add('leave', 'Leave::showSummitedleaves',['filter' => 'auth']);
 $routes->add('removePosition/(:num)', 'Position::deletePosition/$1');
 
-
 // Route of Employee
 $routes->add('employees', 'Employee::showUser',['filter' => 'auth']);
 $routes->add('addUser', 'Employee::createUser');
 $routes->add('remove/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
 
-$routes->add('your_leave', 'Your_leave::yourLeaveList');
+$routes->add('your_leave', 'Your_leave::yourLeaveList',['filter' => 'auth']);
+$routes->add('addYourLeave', 'Your_leave::createYourLeave');
+$routes->add('deleteLeaveRequest/(:num)', 'Your_leave::deleteLeaveRequest/$1');
 
                                                         
 $routes->add('email', 'Email::showEmail');
 $routes->add('email/verify', 'Email::showEmailVeryfy');
 $routes->add('sendback', 'Email::showEmailback');
-                                                        
+
 
 
 /**

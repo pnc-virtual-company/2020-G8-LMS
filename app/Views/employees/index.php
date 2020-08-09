@@ -6,17 +6,17 @@
 <div class="container mt-5">
     <!-- button search -->
 	<div class="row">
-		
 		<div class="col-11">
 		<div class="search">
         <div class="input-group mb-3">
             	<input type="text" id="search"  class="form-control" placeholder="Search">
-            	<div class="input-group-append"></div>
-				
+            	<div class="input-group-append"></div>	
     		</div><br>
 			<h3 class="font-weight-bolder employee"> Employee </h3>
 		</div>
+
 		</div>
+
 </div>   
 
 <div class="col-11">
