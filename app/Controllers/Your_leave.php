@@ -49,7 +49,7 @@ class Your_leave extends BaseController
 			);
 			$this->yourLeaveRequest->insert($yourLeaveData);
 		}	
-		echo base_url('/your_leave');exit();
+		
 		return redirect()->to(base_url('/your_leave'));
 	}
 
