@@ -19,8 +19,7 @@
              <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
              
              <?php $firstname = session()->get('firstname') ?>
-             <?php $lastname = session()->get('lastname') ?>
-              <?= $firstname .' '.$lastname ?>
+              <?= $firstname ?>
              </a>
              <div class="dropdown-menu">
                 <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
