@@ -16,7 +16,7 @@ class Your_leave extends BaseController
 			'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
 		];
 		if(!session()->get('isLoggedIn')){
-			redirect()->to('/');
+			redirect()->to(base_url('/'));
 	}
 	return view('your_leaves/your_leaves', $data);	 
     
@@ -48,7 +48,7 @@ class Your_leave extends BaseController
 			$this->yourLeaveRequest->insert($yourLeaveData);
 		}	
 		
-		return redirect()->to('/your_leave');
+		return redirect()->to(base_url('/your_leave'));
 	}
 
 	// Delete leave request of employee
@@ -56,7 +56,7 @@ class Your_leave extends BaseController
 	{
 		$leaveRequest = new YourLeaveModel();
        	$leaveRequest->delete($id);
-       	return redirect()->to('/your_leave');
+       	return redirect()->to(base_url('/your_leave'));
 	}
 	
 }
