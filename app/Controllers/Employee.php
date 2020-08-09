@@ -109,7 +109,7 @@ class Employee extends BaseController
 		$sessionError->setFlashdata('error', $validation);
 		}
 		}
-		return redirect()->to('/employees');
+		return redirect()->to(base_url('/employees'));
 		}
 
     //Update Employee    
@@ -153,14 +153,14 @@ class Employee extends BaseController
                         $sessionError->setFlashdata('error', $validation);
                     }
                 }
-        return redirect()->to("/employees");
+        return redirect()->to(base_url("/employees"));
     }
 
     //Delete Employee 
     public function deleteEmployee($id){
         $employee = new UserModel();
         $employee->delete($id);
-        return redirect()->to('/employees');
+        return redirect()->to(base_url('/employees'));
     }
 
 	//--------------------------------------------------------------------

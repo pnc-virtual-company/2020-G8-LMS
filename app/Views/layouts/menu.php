@@ -13,11 +13,11 @@
 
          <?php if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager'): ?>
          <a class="nav-link mt-2" href="<?= base_url('/leave')?>">Leaves</a>
+
          <?php endif; ?>
 
-
-
          <?php if(session('role')== 'Admin' || session('role') == 'HR'):?>
+
          <a class="nav-link mt-2" href="<?= base_url('/employees')?>">Employees</a>
          <a class="nav-link mt-2" href="<?= base_url('/position')?>">Positions</a>
          <a class="nav-link mt-2" href="<?= base_url('/department')?>">Departments</a>
@@ -26,8 +26,8 @@
            <li class="dropdown mt-2">
              <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
              
-             <?php $email = strstr(session()->get('email'),'@',true) ?>
-              <?= $email ?>
+             <?php $firstname = session()->get('firstname') ?>
+              <?= $firstname ?>
              </a>
              <div class="dropdown-menu">
                 <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
