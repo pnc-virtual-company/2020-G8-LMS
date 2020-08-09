@@ -19,7 +19,10 @@ class UserModel extends Model
     }
    
     //encrypt password user
+
     public function registerUser($userInfo){
+
+
         $this->insert([
         'firstName'=>$userInfo['firstName'],
         'lastName'=>$userInfo['lastName'],
@@ -33,3 +36,4 @@ class UserModel extends Model
         ]);
     }
 }
+
