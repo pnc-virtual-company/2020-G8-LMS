@@ -55,6 +55,7 @@ $routes->add('email/verify', 'Email::showEmailVeryfy');
 $routes->add('sendback', 'Email::showEmailback');
 
 
+// $routes->add('department', 'Departments::index');
 
 /**
  * --------------------------------------------------------------------
