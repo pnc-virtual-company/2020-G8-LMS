@@ -1,28 +1,28 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-
+<?= $this->include('position/updatePosition') ?>
+<?= $this->include('position/deletePosition') ?>
+<?= $this->include('position/createPosition') ?>
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
-
-<!-- alert message error of validation if user incorrect information or empty-->
-
-<?php if(session()->get('error')): ?>
-<div class="alert alert-danger alert-dismissible fade show">
-<button type="button" class="close" data-dismiss="alert">&times;</button>
-<strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
-</div>
-<?php endif ?>
-<!-- Search each position -->
+    <!-- alert message error of validation if user incorrect information or empty-->
+    <?php if(session()->get('error')): ?>
+    <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong> Error Message: </strong><?= session()->get('error')->listErrors() ?>
+    </div>
+    <?php endif ?>
+    <!-- Search each position -->
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
                 <div class="input-group-append"></div>
             </div>
             <br>
-<!-- List all position -->
+            <!-- List all position -->
             <table class="table table-borderless table-hover" id="myTable">
                 <thead>
                     <tr>
@@ -48,98 +48,10 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
-
         </div>
 		<div class="col-3"></div>
 	</div>
 </div>
-<!-- =======================================START CREATE POSITION========================================== -->
-<!-- The Modal -->
-	<div class="modal fade" id="createPosition">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Create Position</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body text-right">
-			<form  action="<?= base_url("/position/addPosition") ?>" method="post">
-				<div class="form-group">
-					<input type="text" name="pname" class="form-control" placeholder="Position Name" >
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-warning">
-        </div>
-        </div>
-        </form>
-
-      </div>
-    </div>
-  </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
-
-  <!-- ========================================START Model UPDATE================================================ -->
-	<?php foreach($positionData as $values) :?>
-  <!-- The Modal -->
-	<div class="modal fade" id="updatePosition<?= $values['p_id']; ?>">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Position</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-		<div class="modal-body text-right">
-			<form  action="<?= base_url("/position/updatePosition") ?>" method="post">
-				<div class="form-group">
-					<input type="hidden" class="form-control"  name="p_id" id="p_id" value="<?= $values['p_id']?>">
-				</div>
-				<div class="form-group">
-					<input type="text" name="pname" class="form-control" id="pname" value="<?= $values['pname']?>">
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-warning">
-        </div>
-        </form>
-      </div>
-    </div> 
-  </div>
-  <?php endforeach; ?>
-  <!-- =================================END MODEL UPDATE==================================================== -->
-  <!-- =================================START MODEL DELETE==================================================== -->
-  <?php foreach($positionData as $values) :?>
-  <!-- The Modal -->
-	<div class="modal fade" id="deletePosition<?= $values['p_id'];?>">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Delete Position</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <!-- Modal body -->
-		<div class="modal-body text-right">
-			<form  action="/position/deletePosition/<?= $values['p_id']?>" method="post">
-      <div class="form-group">
-				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Department?</p>
-			</div>
-			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
-		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-warning">
-        </div>
-        </form>
-      </div>
-    </div> 
-  </div>
-  <?php endforeach; ?>
-  <!-- =================================END MODEL DELETE==================================================== -->
   <!-- We use javascript for search -->
   <script>
     function myFunction() {
@@ -161,5 +73,4 @@
             }
           }
 </script>
-
 <?= $this->endSection() ?>
