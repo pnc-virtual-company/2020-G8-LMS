@@ -6,31 +6,18 @@
 <div class="container mt-5">
     <!-- button search -->
 	<div class="row">
-		
 		<div class="col-11">
 		<div class="search">
         <div class="input-group mb-3">
             	<input type="text" id="search"  class="form-control" placeholder="Search">
-            	<div class="input-group-append"></div>
-				
+            	<div class="input-group-append"></div>	
     		</div><br>
 			<h3 class="font-weight-bolder employee"> Employee </h3>
 		</div>
-		</div>
-		
-	</div>   
-<script>
-	$(document).ready(function(){
-	$("#search").on("keyup", function() {
-		var value = $(this).val().toLowerCase();
-		$("#myTable tr").filter(function() {
-		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-		});
-	});
-	});
-</script>
-            
 
+		</div>
+
+</div>   
 
 <div class="col-11">
          <!--alert message success if user correctly information-->
@@ -60,14 +47,14 @@
 						<th class="hide">ID</th>
 						<th>First Name</th>
 						<th>Last Name</th>
-						<!-- <th class="hide">Email</th> -->
-						<!-- <th class="hide">Password</th>
+						<th class="hide">Email</th> 
+						<th class="hide">Password</th>
 						<th class="hide">Role</th>
-						<th class="hide">Profile</th> -->
+						<th class="hide">Profile</th>
 						<th>Position</th>
 						<th>Department</th>
 						<th>Start Date</th>
-						<th></th>
+						<th>Manager</th>
 						
 					</tr>
 				</thead>
@@ -77,13 +64,14 @@
 							<td class="hide"><?= $user['u_id']?></td>
 							<td> <?= $user['firstName'] ?> </td>
 							<td> <?= $user['lastName'] ?> </td>
-							<!-- <td class="hide"><?= $user['email']?></td> -->
-							<!-- <td class = "hide"><?= $user['password']?></td>
+						    <td class="hide"><?= $user['email']?></td>
+							<td class = "hide"><?= $user['password']?></td>
 							<td class = "hide"><?= $user['role']?></td>
-							<td class = "hide"><?= $user['profile']?></td> -->
+							<td class = "hide"><?= $user['profile']?></td>
 							<td> <?= $user['pname'] ?> </td>
 							<td> <?= $user['dname'] ?> </td>
 							<td> <?= $user['startDate'] ?> </td>
+							<td> <?= $user['manager'] ?> </td>
 							
 							<!-- <button class = "submit" class = " employeeInfo"><i class="material-icons employeeInfo text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></button> -->
 							<td style="display:flex;justify-content:flex-end">
@@ -100,7 +88,7 @@
 			
 		</div>
 	</div>
-  <!-- ========================================START Model DELETE================================================ -->
+<!-- ========================================START Model DELETE================================================ -->
 <!-- delete employee -->
 <?php foreach($userData as $user): ?>
 <div class="modal fade" id="deleteEmployee<?= $user['u_id'] ?>">

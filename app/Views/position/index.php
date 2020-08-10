@@ -1,11 +1,14 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-
+<?= $this->include('position/updatePosition') ?>
+<?= $this->include('position/deletePosition') ?>
+<?= $this->include('position/createPosition') ?>
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
+
 
 <!-- alert message error of validation if user incorrect information or empty-->
 
@@ -16,13 +19,16 @@
 </div>
 <?php endif ?>
 <!-- Search each position -->
+
 			<h5 class="text-center"></h5>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
                 <div class="input-group-append"></div>
             </div>
             <br>
+
 <!-- List all position -->
+
             <table class="table table-borderless table-hover" id="myTable">
                 <thead>
                     <tr>
@@ -137,26 +143,5 @@
   </div>
   <?php endforeach; ?>
   <!-- =================================END MODEL DELETE==================================================== -->
-  <!-- We use javascript for search -->
-  <script>
-    function myFunction() {
-      var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                  } else {
-                  tr[i].style.display = "none";
-                }
-              }
-            }
-          }
-</script>
 
 <?= $this->endSection() ?>

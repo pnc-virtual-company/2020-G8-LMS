@@ -1,4 +1,4 @@
-<!-- ========================================START Model CREATE================================================ -->
+<!-- =============================================START Model CREATE================================================ -->
 	<!-- The Modal -->
 	<div class="modal fade" id="createEmployee">
     <div class="modal-dialog">
@@ -60,6 +60,7 @@
 									</select>
 								</div>
 							</div>
+								
 						<!-- startDate -->	
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -80,6 +81,20 @@
 							</div>
 
 						</div>
+
+					<!-- Manager -->
+					
+					<div class="form-group">
+						<select class="form-control" name="manager">
+							<option value="" selected disabled>Manager...</option>
+							<?php foreach($userData as $user): ?>
+								<?php if($user['role'] == "Manager"): ?>
+									<option value="<?= $user['firstName'] ?>"><?= $user['firstName'] ?></option>
+								<?php endif; ?>
+							<?php endforeach ?>
+					    </select>
+					</div>		
+							
 					<!-- input role -->
 						<div class="form-group">
                         <select class="form-control" name="role">
@@ -87,7 +102,9 @@
                             <option>Manager</option>
                             <option>Employee</option>
                             <option>HR</option>
-                            <option>Admin</option>
+							<?php if(session('role') == 'Admin'): ?>
+							<option value="Admin">Admin</option>
+							<?php endif; ?>
                         </select>
                     </div>
 					<!-- input discard and create -->
@@ -100,5 +117,7 @@
 	 </div>
   </div>
 </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+
+<!-- =================================END MODEL CREATE==================================================== -->
+
 

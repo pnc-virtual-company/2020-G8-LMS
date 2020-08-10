@@ -9,8 +9,9 @@ class PositionModel extends Model
     protected $returnType     = 'array';
 
     protected $allowedFields = ['pname'];
-
+  
     public function getAllPositions() 
+
     {
         return $this->db->table('position')->get()->getResultArray();
     }

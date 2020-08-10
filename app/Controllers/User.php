@@ -28,12 +28,7 @@ class User extends BaseController
 					],
 				],
 			];
-			// $error = [
-			// 	'password' => [
-			// 		
-			// 	]
-
-			// ];
+		
 			$email = $this->request->getVar('email');
 			if(!$this->validate($rules)){
 				$data['message'] = $this->validator;
@@ -58,6 +53,7 @@ class User extends BaseController
 			'lastname' => $user['lastName'],
 			'email' => $user['email'],
 			'password' => $user['password'],
+			'role' => $user['role'],
 			'isLoggedIn' => true,
 			
 		];
@@ -68,6 +64,7 @@ class User extends BaseController
 // logout user
     public function logoutUser() 
 	{
+
 		session()->destroy();
 	 return redirect()->to(base_url('/'));
 
