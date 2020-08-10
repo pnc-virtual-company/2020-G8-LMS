@@ -15,7 +15,7 @@ class UsersCheck implements FilterInterface
             }else{
                 $segment = '/'.$uri->getSegment(2);
             }
-           return redirect()->to($segment);
+           return redirect()->to(base_url($segment));
         }
     }
 
