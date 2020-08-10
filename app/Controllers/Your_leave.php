@@ -3,14 +3,14 @@ use App\Models\YourLeaveModel;
 use App\Models\UserModel;
 class Your_leave extends BaseController
 {
-
+// store Model in variable for use database 
 	protected  $yourLeaveRequest;
 	
 	public function __construct() 
 	{
 		$this->yourLeaveRequest = new YourLeaveModel();
 	}
-	//Store your leave list
+	//set role Manager Hr Admin and user nomal
 	public function yourLeaveList()
 	{
 		
@@ -22,20 +22,13 @@ class Your_leave extends BaseController
 		}else {
 			$data = [
 				'yourLeaveData' => $this->yourLeaveRequest->getAllYourLeave(),
-				
 			];
 		}
-		
-    
 		if(!session()->get('isLoggedIn')){	
 		redirect()->to(base_url('/'));
-
 	}
 	return view('your_leaves/your_leaves', $data);	 
-    
-	//--------------------------------------------------------------------
 	}
-	
 	// create new leave request
 	public function createYourLeave()
 	{
@@ -50,9 +43,7 @@ class Your_leave extends BaseController
 			$leaveType = $this->request->getVar('leave_type');
 			$comment = $this->request->getVar('comment');
 			$user = session()->get('id');
-			
-			
-			
+			// Get all name in database
 			$yourLeaveData = array(
 				'startDate'=>$startDate,
 				'exactime_start'=>$exactime_start,
@@ -62,12 +53,12 @@ class Your_leave extends BaseController
 				'leave_type'=>$leaveType,
 				'comment'=>$comment,
 				'user_id'=>$user,
-				
 			);
 			$this->yourLeaveRequest->insert($yourLeaveData);
+			// send mail to other user
 			$username = strstr(session()->get('email'),'@',true);
 			$from = $username.strstr(session()->get('email'),'@',false);
-			$to = "kalleata464@gmail.com";
+			$to = "karunaalleata@gmail.com";
          	$subject = "CodeIgniter 4 send email to you";
 			$message ='
 			<fieldset style="border:1px dotted teal;">
@@ -75,7 +66,7 @@ class Your_leave extends BaseController
 							<div class="container" style="width:90%; margin:0 outo; margin-top: 10px; display:flex;">
 								<div class="col-6" style="width:46%; margin-left:30px;">
 									<p>From: '.$from.'  </p>
-									<p>To: jack.thomas@gmail.com </p>
+									<p>To: karunaalleata@gmail.com </p>
 									<p>Subject: New leave request assigned to you</p>
 								</div>
 								<div class="col-6" style="width:46%; margin-left:30px;">
@@ -116,8 +107,9 @@ class Your_leave extends BaseController
 						</a>
 						';
 			$email = \Config\Services::email();
-			 $email->setTo($to);
-         	$email->setFrom('karunaalleata@gmail.com','information');
+			$email->setTo($to);
+			$email->setCC('karuna.alleat@student.passerellesnumeriques.org');
+         	$email->setFrom('kalleata464@gmail.com','information');
          	$email->setSubject($subject);
          	$email->setMessage($message);
          if($email->send()){
@@ -126,10 +118,8 @@ class Your_leave extends BaseController
              echo " can not send";
 		 }
 		}	
-		
 		return redirect()->to(base_url('/your_leave'));
 	}
-
 	// Delete leave request
 	public function deleteLeaveRequest($id)
 	{
