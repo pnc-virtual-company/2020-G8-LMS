@@ -1,5 +1,6 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
+<?= $this->include('layouts/menu') ?>
 <?= $this->include('your_leaves/createYourLeaves') ?>
 <?= $this->include('your_leaves/deleteYourLeave') ?>
 <div class="container mt-5">
