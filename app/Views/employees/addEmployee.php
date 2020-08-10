@@ -60,19 +60,7 @@
 									</select>
 								</div>
 							</div>
-							<!-- Manager -->
-							<div class="col-sm-6">
-								<div class="form-group">
-									<select class="form-control" name="manager">
-										<option value="" selected disabled>Manager...</option>
-										<?php foreach($userData as $user): ?>
-											<?php if($user['role'] == "Manager"): ?>
-												<option value="<?= $user['firstName'] ?>"><?= $user['firstName'] ?></option>
-											<?php endif; ?>
-										<?php endforeach ?>
-									</select>
-								</div>
-							</div>	
+								
 						<!-- startDate -->	
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -93,6 +81,20 @@
 							</div>
 
 						</div>
+
+					<!-- Manager -->
+					
+					<div class="form-group">
+						<select class="form-control" name="manager">
+							<option value="" selected disabled>Manager...</option>
+							<?php foreach($userData as $user): ?>
+								<?php if($user['role'] == "Manager"): ?>
+									<option value="<?= $user['firstName'] ?>"><?= $user['firstName'] ?></option>
+								<?php endif; ?>
+							<?php endforeach ?>
+					    </select>
+					</div>		
+							
 					<!-- input role -->
 						<div class="form-group">
                         <select class="form-control" name="role">

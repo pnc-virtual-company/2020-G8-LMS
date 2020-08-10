@@ -3,13 +3,21 @@ use App\Models\YourLeaveModel;
 use App\Models\UserModel;
 class Your_leave extends BaseController
 {
+	 protected $yourLeaveRequest;
 
-	protected  $yourLeaveRequest;
-	
 	public function __construct() 
-	{
-		$this->yourLeaveRequest = new YourLeaveModel();
+    {
+        $this->yourLeaveRequest = new YourLeaveModel();
 	}
+	
+	// public function yourLeave()
+	// {
+	// 	$data = [
+    //         'yourLeaveData' => $this->yourLeave->getAllSubject(),
+    //         "copy" => "@copyright By Dy Dy"
+    //     ];
+	// 	return view('your_leaves/yourLeave', $data);
+	// }
 	//Store your leave list
 	public function yourLeaveList()
 	{
@@ -31,7 +39,7 @@ class Your_leave extends BaseController
 		redirect()->to(base_url('/'));
 
 	}
-	return view('your_leaves/your_leaves', $data);	 
+	return view('your_leaves/yourLeave', $data);	 
     
 	//--------------------------------------------------------------------
 	}

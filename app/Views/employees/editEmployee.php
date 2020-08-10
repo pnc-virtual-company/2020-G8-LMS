@@ -40,7 +40,6 @@
                         <div class=" form-group">
                                 <select class="form-control" name="department" id="department_id">
                                     <?php foreach ($departmentData as $department ): ?>
-                                        <option value="" selected disabled>Department....</option>
                                     <option value="<?= $department['d_id']?>"><?= $department['dname'] ?></option>
                                     <?php endforeach;?>
                                 </select>
@@ -50,9 +49,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                                 <select class="form-control" name="position" id="position_id">
-
                                     <?php foreach ($positionData as $position ): ?>
-                                    <option value="" selected disabled>Position....</option>
                                     <option value="<?= $position['p_id']?>"><?= $position['pname'] ?></option>
                                     <?php endforeach;?>
                                 </select>
