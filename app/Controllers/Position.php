@@ -2,7 +2,9 @@
 use App\Models\PositionModel;
 class Position extends BaseController
 {
+
 	// store Model position for use it in position
+
 	protected $position;
 
 	public function __construct() 
@@ -11,13 +13,17 @@ class Position extends BaseController
     }
 	public function index()
 	{
+
 		$data = [
-            'positionData' => $this->position->getAllSubject(),
+            'positionData' => $this->position->getAllPositions(),
+
             "copy" => "@copyright by karuna"
         ];
 		return view('position/index', $data);
 	}
+
 	//function create position
+
 	public function addPosition()
 	{	
 		$data = [];
@@ -39,19 +45,24 @@ class Position extends BaseController
 					'pname' => $position
 					);
 					$this->position->insert($data);
+
 					return redirect()->to(base_url('/position'));
+
 				}else{
 				$data['validation'] = $this->validator;
 				$sessionError = session();
 				$validation = $this->validator;
 				$sessionError->setFlashdata('error', $validation);
+
 				return redirect()->to(base_url('/position'));
 				}
 			}
 		}
-		//Function update position
-		public function updatePosition()
-		{	
+		
+	//Function update position
+	public function updatePosition()
+	{	
+
 		$data = [];
 		if($this->request->getMethod() == "post"){
 			helper(['form']);
@@ -72,20 +83,26 @@ class Position extends BaseController
         			);
 					$this->position->update($Id, $data);
 					var_dump($data);
+
         			return redirect()->to(base_url('/position'));
+
 				}else{
 					$data['validation'] = $this->validator;
 					$sessionError = session();
 					$validation = $this->validator;
 					$sessionError->setFlashdata('error', $validation);
+
 			return redirect()->to(base_url('/position'));
 			}
 		}
 	}
+	
 	//Function delete position
+
 	public function deletePosition($id)
 	{	
 		$this->position->delete($id);
         return redirect()->to(base_url('/position'));
 	}
+
 }

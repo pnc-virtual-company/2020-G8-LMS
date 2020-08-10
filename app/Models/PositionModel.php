@@ -1,5 +1,4 @@
 <?php namespace App\Models;
-
 use CodeIgniter\Model;
 
 class PositionModel extends Model
@@ -10,10 +9,10 @@ class PositionModel extends Model
     protected $returnType     = 'array';
 
     protected $allowedFields = ['pname'];
+  
+    public function getAllPositions() 
 
-    public function getAllSubject() 
     {
         return $this->db->table('position')->get()->getResultArray();
     }
-
 }

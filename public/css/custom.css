@@ -89,6 +89,7 @@ body {
 }
 .hide {
   opacity: 0;
+  display: none;
 }
 
 .mt-10 {
@@ -146,9 +147,42 @@ body {
 .table{
   margin-right:auto;
 }
+
+
 .edit_hover_class a{
   visibility:hidden;
+  }
+  .edit_hover_class:hover a {
+  visibility:visible;
+  }
+  .hover_your_leave a{
+    visibility: hidden;
+  }
+  .hover_your_leave:hover a{
+    visibility: visible;
+
+  }
+.hr{
+    width: 50%;
+    padding: 0px;
+  }
+  .jumbotron{
+    text-align: center;
+  }
+  .border{
+    width: 60%;
+    margin-left: 250px;
+    margin-top: 5px;
+
+  }
+
+
+#editProfile{
+  margin-left: 10px;
+  width: 96%;
 }
-.edit_hover_class:hover a {
- visibility:visible;
+#employeeProfile{
+  margin-left: 10px;
+  width: 96%;
 }
+
