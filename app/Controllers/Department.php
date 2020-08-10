@@ -2,13 +2,14 @@
 use App\Models\DepartmentModel;
 class Department extends BaseController
 {
-	//Departments List
+	
 	protected $department;
 
 	public function __construct() 
     {
         $this->department = new DepartmentModel();
-    }
+	}
+	//Function show department list
 	public function index()
 	{
 		$data = [

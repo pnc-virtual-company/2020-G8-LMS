@@ -142,7 +142,7 @@
 			</div>
 			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
 		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-danger">
+		    <input type="submit" value="REMOVE" class="createBtn text-primary">
         </div>
         </form>
       </div>
