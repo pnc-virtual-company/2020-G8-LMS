@@ -8,7 +8,7 @@ class UserModel extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['firstName', 'lastName','startDate', 'profile', 'email', 'password', 'role', 'position_id', 'department_id'];
+    protected $allowedFields = ['firstName', 'lastName','startDate', 'profile', 'email', 'password', 'role', 'position_id', 'department_id', 'manager'];
 
     public function getUserInfo() 
     {
@@ -19,7 +19,6 @@ class UserModel extends Model
     }
    
     //encrypt password user
-
     public function registerUser($userInfo){
 
 
@@ -33,6 +32,7 @@ class UserModel extends Model
         'role'=>$userInfo['role'],
         'position_id'=>$userInfo['position_id'],
         'department_id'=>$userInfo['department_id'],
+        'manager'=>$userInfo['manager'],
         ]);
     }
 }

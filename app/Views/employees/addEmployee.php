@@ -60,6 +60,19 @@
 									</select>
 								</div>
 							</div>
+							<!-- Manager -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<select class="form-control" name="manager">
+										<option value="" selected disabled>Manager...</option>
+										<?php foreach($userData as $user): ?>
+											<?php if($user['role'] == "Manager"): ?>
+												<option value="<?= $user['firstName'] ?>"><?= $user['firstName'] ?></option>
+											<?php endif; ?>
+										<?php endforeach ?>
+									</select>
+								</div>
+							</div>	
 						<!-- startDate -->	
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -84,13 +97,12 @@
 						<div class="form-group">
                         <select class="form-control" name="role">
                             <option selected>Role</option>
+                            <option>Manager</option>
+                            <option>Employee</option>
+                            <option>HR</option>
 							<?php if(session('role') == 'Admin'): ?>
-											<option value="Admin">Admin</option>
-										<?php endif; ?>
-										<option value="HR">HR</option>
-										<option value="Manager">Manager</option>
-										<option value="Employee">Employee</option>
-                            
+							<option value="Admin">Admin</option>
+							<?php endif; ?>
                         </select>
                     </div>
 					<!-- input discard and create -->
@@ -103,5 +115,7 @@
 	 </div>
   </div>
 </div>
+
 <!-- =================================END MODEL CREATE==================================================== -->
+
 

@@ -89,6 +89,7 @@ body {
 }
 .hide {
   opacity: 0;
+  display: none;
 }
 
 .mt-10 {
@@ -153,6 +154,13 @@ body {
   .edit_hover_class:hover a {
   visibility:visible;
   }
+  .hover_your_leave a{
+    visibility: hidden;
+  }
+  .hover_your_leave:hover a{
+    visibility: visible;
+
+  }
 .hr{
     width: 50%;
     padding: 0px;
@@ -167,6 +175,7 @@ body {
 
   }
 
+
 #editProfile{
   margin-left: 10px;
   width: 96%;
@@ -175,4 +184,3 @@ body {
   margin-left: 10px;
   width: 96%;
 }
-
