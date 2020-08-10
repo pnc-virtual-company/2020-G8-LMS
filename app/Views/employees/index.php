@@ -47,14 +47,14 @@
 						<th class="hide">ID</th>
 						<th>First Name</th>
 						<th>Last Name</th>
-						<!-- <th class="hide">Email</th> -->
-						<!-- <th class="hide">Password</th>
+						<th class="hide">Email</th> 
+						<th class="hide">Password</th>
 						<th class="hide">Role</th>
-						<th class="hide">Profile</th> -->
+						<th class="hide">Profile</th>
 						<th>Position</th>
 						<th>Department</th>
 						<th>Start Date</th>
-						<th></th>
+						<th>Manager</th>
 						
 					</tr>
 				</thead>
@@ -64,13 +64,14 @@
 							<td class="hide"><?= $user['u_id']?></td>
 							<td> <?= $user['firstName'] ?> </td>
 							<td> <?= $user['lastName'] ?> </td>
-							<!-- <td class="hide"><?= $user['email']?></td> -->
-							<!-- <td class = "hide"><?= $user['password']?></td>
+						    <td class="hide"><?= $user['email']?></td>
+							<td class = "hide"><?= $user['password']?></td>
 							<td class = "hide"><?= $user['role']?></td>
-							<td class = "hide"><?= $user['profile']?></td> -->
+							<td class = "hide"><?= $user['profile']?></td>
 							<td> <?= $user['pname'] ?> </td>
 							<td> <?= $user['dname'] ?> </td>
 							<td> <?= $user['startDate'] ?> </td>
+							<td> <?= $user['manager'] ?> </td>
 							
 							<!-- <button class = "submit" class = " employeeInfo"><i class="material-icons employeeInfo text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></button> -->
 							<td style="display:flex;justify-content:flex-end">

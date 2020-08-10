@@ -3,13 +3,14 @@ use App\Models\YourLeaveModel;
 use App\Models\UserModel;
 class Your_leave extends BaseController
 {
+
 // store Model in variable for use database 
 	protected  $yourLeaveRequest;
-	
 	public function __construct() 
-	{
-		$this->yourLeaveRequest = new YourLeaveModel();
+    {
+        $this->yourLeaveRequest = new YourLeaveModel();
 	}
+
 	//set role Manager Hr Admin and user nomal
 	public function yourLeaveList()
 	{
@@ -27,7 +28,9 @@ class Your_leave extends BaseController
 		if(!session()->get('isLoggedIn')){	
 		redirect()->to(base_url('/'));
 	}
+
 	return view('your_leaves/your_leaves', $data);	 
+
 	}
 	// create new leave request
 	public function createYourLeave()
@@ -107,9 +110,11 @@ class Your_leave extends BaseController
 						</a>
 						';
 			$email = \Config\Services::email();
+
 			$email->setTo($to);
 			$email->setCC('karuna.alleat@student.passerellesnumeriques.org');
          	$email->setFrom('kalleata464@gmail.com','information');
+
          	$email->setSubject($subject);
          	$email->setMessage($message);
          if($email->send()){

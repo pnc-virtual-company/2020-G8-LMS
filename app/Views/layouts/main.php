@@ -46,6 +46,7 @@
                 $('#startDate').val(data[7]);
                 $('#position_id:selected').val(data[8]);
                 $('#department_id:selected').val(data[9]);
+                $('#manage:selected').val(data[9]);
             });
 	    });
 

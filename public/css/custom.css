@@ -89,6 +89,7 @@ body {
 }
 .hide {
   opacity: 0;
+  display: none;
 }
 
 .mt-10 {
@@ -183,4 +184,3 @@ body {
   margin-left: 10px;
   width: 96%;
 }
-

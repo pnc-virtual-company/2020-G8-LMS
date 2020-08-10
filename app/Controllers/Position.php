@@ -11,6 +11,7 @@ class Position extends BaseController
     }
 	public function index()
 	{
+		 
 		$data = [
             'positionData' => $this->position->getAllPositions(),
             "copy" => "@copyright by karuna"

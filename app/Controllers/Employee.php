@@ -87,6 +87,7 @@ class Employee extends BaseController
 				$role = $this->request->getVar('role');
 				$department = $this->request->getVar('department');
 				$position = $this->request->getVar('position');
+				$manager = $this->request->getVar('manager');
                 $employeeProfile= $file->getRandomName();
                 
 			$employeeData = array(
@@ -98,7 +99,8 @@ class Employee extends BaseController
 				'password'=>$password,
 				'role'=>$role,
 				'position_id' => $position,
-				'department_id' => $department
+                'department_id' => $department,
+                'manager' => $manager
 			);
 		$this->user->registerUser($employeeData);
 		$sessionSuccess = session();
@@ -136,6 +138,7 @@ class Employee extends BaseController
                 $role = $this->request->getVar('role');
                 $department = $this->request->getVar('department');
                 $position = $this->request->getVar('position');
+                $manager = $this->request->getVar('manager');
 
                 $employeeData = array(
                     'firstName'=>$firstname,
@@ -143,6 +146,7 @@ class Employee extends BaseController
                     'email'=>$email,
                     'position_id' => $position, 
                     'department_id' => $department,
+                    'manager' => $manager,
                 );
                         $this->user->update($id, $employeeData);
                         $sessionSuccess = session();

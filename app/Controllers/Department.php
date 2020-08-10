@@ -2,17 +2,17 @@
 use App\Models\DepartmentModel;
 class Department extends BaseController
 {
-	//Departments List
+	
 	protected $department;
 
 	public function __construct() 
     {
         $this->department = new DepartmentModel();
-    }
+	}
+	//Function show department list
 	public function index()
 	{
 		$data = [
-
             'departmentData' => $this->department->getAllDepartments(),
             "copy" => "@copyright By Hy Hy"
         ];
@@ -41,13 +41,13 @@ class Department extends BaseController
 					'dname' => $department
 					);
 					$this->department->insert($data);
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}else{
 				$data['validation'] = $this->validator;
 				$sessionError = session();
 				$validation = $this->validator;
 				$sessionError->setFlashdata('error', $validation);
-				return redirect()->to('/department');
+				return redirect()->to(base_url('/department'));
 				}
 				
 			}
@@ -76,14 +76,13 @@ class Department extends BaseController
 						'dname' => $department,
 					);
 					$this->department->update($Id, $data);
-          
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}else{
 					$data['validation'] = $this->validator;
 					$sessionError = session();
 					$validation = $this->validator;
 					$sessionError->setFlashdata('error', $validation);
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}
 		}
 	}
@@ -93,7 +92,7 @@ class Department extends BaseController
 	public function deleteDepartment($id)
 	{	
 		$this->department->delete($id);
-        return redirect()->to('/department');
+        return redirect()->to(base_url('/department'));
 	}
 
 }
