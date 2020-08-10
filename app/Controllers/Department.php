@@ -12,7 +12,7 @@ class Department extends BaseController
 	public function index()
 	{
 		$data = [
-            'departmentData' => $this->department->getAllDepartment(),
+            'departmentData' => $this->department->getAllDepartments(),
             "copy" => "@copyright By Hy Hy"
         ];
 		return view('department/index', $data);
@@ -40,7 +40,7 @@ class Department extends BaseController
 					'dname' => $department
 					);
 					$this->department->insert($data);
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}else{
 				$data['validation'] = $this->validator;
 				$sessionError = session();
@@ -75,7 +75,7 @@ class Department extends BaseController
 						'dname' => $department,
 					);
 					$this->department->update($Id, $data);
-					return redirect()->to('/department');
+					return redirect()->to(base_url('/department'));
 				}else{
 					$data['validation'] = $this->validator;
 					$sessionError = session();

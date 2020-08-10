@@ -1,18 +1,17 @@
 <?php namespace App\Models;
-
 use CodeIgniter\Model;
 
 class PositionModel extends Model
 {
-    protected $table      = 'positions';
-    protected $primaryKey = 'id';
-    protected $returnType     = 'array';
-    protected $allowedFields = ['title'];
-    public function listPosition($user)
-    {
-        $this->insert([
-                'title'=>$user['title'],
-        ]);
-    }
+    protected $table      = 'position';
+    protected $primaryKey = 'p_id';
 
+    protected $returnType     = 'array';
+
+    protected $allowedFields = ['pname'];
+
+    public function getAllPositions() 
+    {
+        return $this->db->table('position')->get()->getResultArray();
+    }
 }
