@@ -1,4 +1,5 @@
 <!-- ===================================START MODAL CREATE========================================== -->
+
 <div class="modal fade" id="createYourLeave" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -95,4 +96,3 @@
             </div>
         </div>
 </div>       
-<!-- =================================END MODEL CREATE==================================================== -->

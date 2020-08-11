@@ -1,7 +1,8 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <body>
-  <div class='container'>
+  <img src="images/G8-LMS.png" style="width:100%; height : 100%; background-image:cover;" >
+  <div class='container' style="margin-top: -45%; margin-left: 12% ">
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4 text-center">
@@ -35,7 +36,7 @@
           </div>
 
           <div class="form-group ml-3 mr-3">
-            <button type="submit" id="submit" class="btn btn-success form-control mb-4">Next</button>
+            <button type="submit" id="submit" class="btn btn-info form-control mb-4">Next</button>
           </div>
           </form>
         </div>

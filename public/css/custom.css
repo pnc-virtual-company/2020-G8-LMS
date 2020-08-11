@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url('/images/G8-LMS.png');
 }
 
 .auth__header {

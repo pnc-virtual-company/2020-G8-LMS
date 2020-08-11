@@ -102,7 +102,7 @@ class Position extends BaseController
 	public function deletePosition($id)
 	{	
 		$this->position->delete($id);
-        return redirect()->to(base_url('/position'));
+        return redirect()->to('/position');
 	}
 
 }

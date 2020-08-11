@@ -11,13 +11,13 @@
         </div>
         <!-- Modal body -->
 		<div class="modal-body text-right">
-			<form  action="/position/deletePosition/<?= $values['p_id']?>" method="post">
+			<form  action="<?= base_url("removePosition/".$values['p_id']) ?>" method="post">
       <div class="form-group">
 				<p  style="display:flex;justify-content:flex-start"> Are you sure you want to remove the selected Department?</p>
 			</div>
 			  <a data-dismiss="modal" class="closeModal">DON'T REMOVE</a>
 		 	  &nbsp;
-		    <input type="submit" value="REMOVE" class="createBtn text-warning">
+		    <input type="submit" value="REMOVE" class="createBtn text-info">
         </div>
         </form>
       </div>

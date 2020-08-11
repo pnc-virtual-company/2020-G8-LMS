@@ -13,7 +13,7 @@ class Leave extends BaseController
 	{
 		$this->yourLeaveRequest = new YourLeaveModel();
 	}
-
+	// set role for Admin employee Hr and Manager 
 	public function showSummitedleaves()
 	{
 		if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager') {
@@ -34,6 +34,7 @@ class Leave extends BaseController
     
 	//--------------------------------------------------------------------
 	}
+	//Create  leave request 
 	public function createYourLeave()
 	{
 		$data = [];
@@ -60,6 +61,7 @@ class Leave extends BaseController
 				
 			);
 			$this->yourLeaveRequest->insert($yourLeaveData);
+			//send mail
 			$username = strstr(session()->get('email'),'@',true);
 			$from = $username.strstr(session()->get('email'),'@',false);
 			$to = "kalleata464@gmail.com";

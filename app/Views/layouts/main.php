@@ -87,8 +87,8 @@ if(startDate > endDate){
 }
 
 </script>
-<!-- script of your leave, employee, position, department search -->
 
+<!-- script of your leave, employee, position, department search -->
 <script>
 	$(document).ready(function(){
 	$("#search").on("keyup", function() {

@@ -61,7 +61,7 @@ class User extends BaseController
 		session()->set($data);
 		return true;
 	}	
-// logout user
+	// logout user
     public function logoutUser() 
 	{
 
